@@ -197,6 +197,26 @@ section{padding-block:72px}
 
 
 
+
+/* CITATI: mijenjaju se svakih 15 s */
+.wave{height:auto;min-height:clamp(320px,34vw,460px);padding:0}
+.wave .wrap{padding-block:clamp(30px,5vw,60px) 40px}
+.qt{margin:0;max-width:min(30ch,58%);display:grid;gap:14px;transition:opacity .6s,transform .6s;filter:drop-shadow(0 4px 20px rgba(0,0,0,.95))}
+.qt.out{opacity:0;transform:translateY(8px)}
+.qt-l{font:500 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#F2C230}
+.qt blockquote{margin:0;color:#F8F4EA;font:800 clamp(1.35rem,2.8vw,2.1rem)/1.15 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.qt blockquote::before{content:"„"}.qt blockquote::after{content:"“"}
+.qt figcaption{font:500 .9rem var(--body);color:#E8E1CF}
+.qt figcaption::before{content:"— "}
+.qt-ctl{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:min(30ch,58%)}
+.qt-bar{flex:1;height:2px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.qt-bar i{display:block;height:100%;width:0;background:var(--grad)}
+.qt-bar i.run{animation:qbar var(--qd,15s) linear forwards}
+@keyframes qbar{to{width:100%}}
+#qtNext{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
+#qtNext:hover{border-color:#F2C230;color:#F2C230}
+@media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.55}}
+
 /* MATERIJALI: kartice koje otvaraju slike, video i PDF */
 .mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
 .mc{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:14px;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 18px;cursor:pointer;font:inherit;color:inherit;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
@@ -231,6 +251,7 @@ section{padding-block:72px}
 .ow-tag{font:800 clamp(1.15rem,2.2vw,1.45rem)/1.2 var(--display);text-transform:uppercase;letter-spacing:-.005em;margin-top:4px}
 .ow-t .ow-lead{font:600 1.15rem/1.45 var(--body);color:var(--ink)}
 .ow-t .ow-em{font:700 1.1rem/1.4 var(--display);color:var(--ink)}
+.ow-t .ow-pink{font:800 clamp(1.2rem,2.2vw,1.5rem)/1.3 var(--display);background:linear-gradient(100deg,#FF6F93 0%,#F23A62 55%,#D91F45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:34ch}
 .ow-more{display:grid;gap:14px;animation:pin .35s ease}
 .ow-btn{justify-self:start;padding:.65em 1.1em;font-size:.95rem}
 .ow-t blockquote{text-transform:uppercase}
@@ -590,7 +611,7 @@ footer a{color:var(--cyan)}
         <p>A kada započnem nešto novo, pristupam tome s istom ozbiljnošću, odgovornošću i željom da rezultat bude što bolji.</p>
         <p>Tijekom godina naučio sam da uspjeh ne dolazi uvijek najkraćim putem. Ponekad zahtijeva promjenu smjera, nove početke, teške odluke i spremnost da se krene ispočetka.</p>
         <p class="ow-em">Ali upravo u tome pronalazim snagu.</p>
-        <p>Ne želim biti ograničen onime što radim danas. Želim otkrivati što sve mogu ostvariti sutra.</p>
+        <p class="ow-pink">Ne želim biti ograničen onime što radim danas. Želim otkrivati što sve mogu ostvariti sutra.</p>
         <p>Vjerujem u znanje, profesionalnost, kreativnost i pošten poslovni odnos. Vjerujem da prava prilika nastaje onda kada se iskustvo susretne s idejom, a ideja s odlučnošću.</p>
         <p class="ow-em">I zato ne gradim svoju budućnost oko jedne djelatnosti.<br>Gradim je oko mogućnosti.</p>
         <p>Jer moj najveći projekt nikada nije bio samo jedan proizvod, jedna usluga ili jedna tvrtka.</p>
@@ -605,9 +626,16 @@ footer a{color:var(--cyan)}
 
 
 
-<div class="wave has-deco" aria-hidden="true"><span class="sun"></span><span class="floor"></span>
-  <div class="wrap"><p class="slog">Popravljeno. Snimljeno. <span class="gt">Objavljeno.</span></p></div>
-</div>
+<section class="wave" id="citati" aria-label="Citat"><span class="sun" aria-hidden="true"></span><span class="floor" aria-hidden="true"></span>
+  <div class="wrap">
+    <figure class="qt" id="qt" aria-live="polite">
+      <span class="qt-l" id="qtTema">Citat</span>
+      <blockquote id="qtTxt"></blockquote>
+      <figcaption id="qtAut"></figcaption>
+    </figure>
+    <div class="qt-ctl"><span class="qt-bar"><i id="qtBar"></i></span><button type="button" id="qtNext" aria-label="Sljedeći citat">›</button></div>
+  </div>
+</section>
 
 <section id="materijali" class="alt"><div class="wrap">
   <div class="sec-head"><span class="lbl">Galerija i materijali</span><h2>Slike, video i dokumenti</h2><p>Odaberite karticu i otvorite sadržaj.</p></div>
@@ -929,6 +957,46 @@ init('gallery', '#radovi', '#gTabs', '#gGrid', gRender, 8);
 init('video', '#video', '#vTabs', '#vGrid', vRender, 3);
 init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
 
+
+
+/* ====== CITATI: tema se bira u CITATI_TEME (prazno = sve teme) ====== */
+const CITATI_TEME = [];   // npr. ['poduzetništvo', 'inovacije']  · teme: poduzetništvo, uspjeh, inovacije, tehnologija, vrijeme, izazovi, poslovanje, horizont
+const CITATI_SEK = 15;
+const CITATI = [
+  { t: 'inovacije', a: 'Alan Kay', hr: 'Najbolji način da predvidiš budućnost jest da je izumiš.', en: 'The best way to predict the future is to invent it.' },
+  { t: 'poduzetništvo', a: 'Arthur Ashe', hr: 'Kreni odakle jesi. Iskoristi ono što imaš. Učini ono što možeš.', en: 'Start where you are. Use what you have. Do what you can.' },
+  { t: 'poduzetništvo', a: 'Wayne Gretzky', hr: 'Promašiš sto posto udaraca koje ne pokušaš.', en: 'You miss 100% of the shots you don’t take.' },
+  { t: 'izazovi', a: 'Marko Aurelije', aEn: 'Marcus Aurelius', hr: 'Ono što stoji na putu postaje put.', en: 'What stands in the way becomes the way.' },
+  { t: 'vrijeme', a: 'Seneka', aEn: 'Seneca', hr: 'Nije da imamo malo vremena, nego ga mnogo gubimo.', en: 'It is not that we have a short time to live, but that we waste a lot of it.' },
+  { t: 'poduzetništvo', a: 'Lao Ce', aEn: 'Lao Tzu', hr: 'Put od tisuću milja počinje jednim korakom.', en: 'A journey of a thousand miles begins with a single step.' },
+  { t: 'inovacije', a: 'Steve Jobs', hr: 'Ostanite gladni. Ostanite ludi.', en: 'Stay hungry. Stay foolish.' },
+  { t: 'tehnologija', a: 'Steve Jobs', hr: 'Dizajn nije samo kako nešto izgleda. Dizajn je kako nešto radi.', en: 'Design is not just what it looks like and feels like. Design is how it works.' },
+  { t: 'tehnologija', a: 'Antoine de Saint-Exupéry', hr: 'Savršenstvo nije kad se više nema što dodati, nego kad se više nema što oduzeti.', en: 'Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.' },
+  { t: 'uspjeh', a: 'Will Durant', hr: 'Mi smo ono što stalno činimo. Izvrsnost nije čin, nego navika.', en: 'We are what we repeatedly do. Excellence, then, is not an act, but a habit.' },
+  { t: 'poslovanje', a: 'Bill Gates', hr: 'Najnezadovoljniji kupci najveći su izvor učenja.', en: 'Your most unhappy customers are your greatest source of learning.' },
+  { t: 'vrijeme', a: 'Seneka', aEn: 'Seneca', hr: 'Dok odgađamo, život prolazi.', en: 'While we are postponing, life speeds by.' },
+  { t: 'horizont', a: 'Horizont LHB', hr: 'Ne čekamo prilike. Stvaramo ih.', en: 'We don’t wait for opportunities. We create them.' },
+  { t: 'horizont', a: 'Horizont LHB', hr: 'Za nas raznolikost nije prepreka. Ona je naša snaga.', en: 'For us, diversity is not an obstacle. It is our strength.' },
+  { t: 'horizont', a: 'Saša Batinac', hr: 'Iza svake ideje stoji čovjek koji se usudio pokušati.', en: 'Behind every idea stands a person who dared to try.' },
+  { t: 'horizont', a: 'Saša Batinac', hr: 'Ne gradim budućnost oko jedne djelatnosti. Gradim je oko mogućnosti.', en: 'I don’t build my future around one line of business. I build it around possibilities.' }
+];
+(() => {
+  const L = document.documentElement.lang === 'en' ? 'en' : 'hr';
+  let list = CITATI.filter(q => !CITATI_TEME.length || CITATI_TEME.includes(q.t));
+  if (!list.length) list = CITATI;
+  list = list.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]);
+  const box = $('#qt'), bar = $('#qtBar'); let i = -1, tm;
+  const tema = t => L === 'en' ? ({ poduzetništvo: 'Entrepreneurship', uspjeh: 'Success', inovacije: 'Innovation', tehnologija: 'Technology', vrijeme: 'Time', izazovi: 'Challenges', poslovanje: 'Business', horizont: 'Horizont LHB' }[t] || t) : t.charAt(0).toUpperCase() + t.slice(1);
+  const show = () => {
+    i = (i + 1) % list.length; const q = list[i];
+    $('#qtTxt').textContent = q[L]; $('#qtAut').textContent = L === 'en' ? (q.aEn || q.a) : q.a; $('#qtTema').textContent = tema(q.t);
+    box.classList.remove('out'); bar.classList.remove('run'); void bar.offsetWidth; if (!STILL) bar.classList.add('run');
+  };
+  const next = () => { clearTimeout(tm); box.classList.add('out'); setTimeout(show, STILL ? 0 : 600); tm = setTimeout(next, CITATI_SEK * 1000 + 600); };
+  bar.style.setProperty('--qd', CITATI_SEK + 's');
+  show(); tm = setTimeout(next, CITATI_SEK * 1000);
+  $('#qtNext').onclick = next;
+})();
 
 /* VLASNIK: cijela priča na klik */
 (() => { const b = $('#owBtn'), m = $('#owMore');
