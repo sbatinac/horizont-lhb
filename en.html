@@ -145,6 +145,8 @@ section{padding-block:72px}
 .alc-cd i{font-style:normal;display:grid;justify-items:center;min-width:clamp(42px,6vw,62px);padding:6px 4px;border:1px solid #E3E8F0;border-radius:10px;box-shadow:0 8px 20px -14px rgba(11,20,36,.35);font:500 .55rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:#3E8E2F}
 .alc-cd em{font:700 clamp(1.1rem,2.4vw,1.7rem)/1.1 var(--body);font-style:normal;color:#152A4A;letter-spacing:0}
 .alc-soon small{font-size:.72rem;color:#56627A}
+.dv .lbl.sis{color:#E3264E}
+.pink{background:linear-gradient(100deg,#FF6F93 0%,#F23A62 55%,#D91F45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;justify-self:start}
 .wp-soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 .75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,#FAF7F0 0 14px,#F3EEE2 14px 28px)}
 .dv h3{font-size:1.4rem}
 .dv{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
@@ -228,6 +230,36 @@ section{padding-block:72px}
 #qtNext{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
 #qtNext:hover{border-color:#F2C230;color:#F2C230}
 @media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.22;left:80%}}
+
+
+/* OBRAZAC ZA UPIT */
+.wiz{background:#fff;box-shadow:0 30px 70px -45px rgba(30,24,10,.35);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,4vw,40px);max-width:880px;display:grid;gap:22px;position:relative;overflow:hidden}
+.wiz::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.fld{border:0;margin:0;padding:0;display:grid;gap:8px;min-width:0}
+.fld legend,.fld>label{font-weight:600;padding:0;margin-bottom:2px}
+.fld legend{margin-bottom:8px}
+.rq{color:#E3264E;margin-left:3px}
+.fh{color:var(--muted);font-size:.88rem;font-weight:400}
+.fld input[type=text],.fld input[type=email],.fld input[type=tel],.fld textarea{width:100%;background:#fff;border:1.5px solid #DCD2BB;color:var(--ink);padding:12px 14px;border-radius:8px;font:inherit;min-width:0}
+.fld textarea{resize:vertical;min-height:120px}
+.fld input:focus,.fld textarea:focus{outline:none;border-color:#D9A520;box-shadow:0 0 0 3px rgba(217,165,32,.18)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.chip span{display:inline-block;border:1.5px solid #DCD2BB;background:#fff;color:var(--ink);padding:8px 14px;border-radius:999px;font-size:.92rem;font-weight:500;transition:background .15s,border-color .15s}
+.chip input:checked+span{background:var(--grad);border-color:transparent}
+.chip input:focus-visible+span{outline:3px solid var(--cyan);outline-offset:2px}
+.chip:hover span{border-color:#D9A520}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--muted)}
+.chk input{width:20px;height:20px;accent-color:#D9A520;margin-top:2px;flex:none}
+.err{color:#C0123F;font-size:.88rem;margin:0}
+.err:empty{display:none}
+.fld.bad input[type=text],.fld.bad input[type=email],.fld.bad input[type=tel],.fld.bad textarea,.fld.bad .chip span{border-color:#D0456B}
+.f-end{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.wz-msg{font-weight:600;margin:0}.wz-msg.bad{color:#C0123F}.wz-msg.ok{color:#2E7D32}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+@media (max-width:700px){.row2{grid-template-columns:1fr}}
 
 /* MATERIJALI: kartice koje otvaraju slike, video i PDF */
 .mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -435,6 +467,7 @@ section{padding-block:72px}
 footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.85rem;margin-top:72px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--cyan)}
+.adm{margin-left:8px;opacity:.25;text-decoration:none}.adm:hover{opacity:1}
 
 @media (max-width:1000px){
   nav{display:none}
@@ -480,7 +513,7 @@ footer a{color:var(--cyan)}
 <header><div class="wrap">
   <a class="brand" href="#"><span class="logo"><img src="logo-znak.webp" alt="" width="48" height="48"></span><span>Horizont <span class="lhb">LHB</span><small>d.o.o.</small></span></a>
   <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span><span></span></button>
-  <nav id="mnav"><a href="#o-nama">About</a><a href="#djelatnosti">Activities</a><a href="#vlasnik">Owner</a><a href="#materijali">Gallery</a><a href="#lokacija">Location</a><a href="#kontakt">Contact</a></nav>
+  <nav id="mnav"><a href="#o-nama">About</a><a href="#djelatnosti">Activities</a><a href="#vlasnik">Owner</a><a href="#materijali">Gallery</a><a href="#lokacija">Location</a><a href="#upit">Enquiry</a><a href="#kontakt">Contact</a></nav>
   <div class="hdr-r">
     <a class="lang" href="./" hreflang="hr" title="Hrvatski">HR</a>
     <div class="music" id="music" role="group" aria-label="Music">
@@ -557,7 +590,7 @@ footer a{color:var(--cyan)}
 </div></section>
 
 <section id="djelatnosti" class="alt has-deco"><div class="wrap">
-  <div class="sec-head"><span class="lbl">Activities</span><h2>What we do</h2><p>Each activity has its own website. Click to see it live.</p></div>
+  <div class="sec-head"><span class="lbl">Activities</span><h2 class="pink">What we do</h2><p>Each activity has its own website. Click to see it live.</p></div>
   <div class="divs">
     <a class="dv" href="https://batinac.com/pc-servis" target="_blank" rel="noopener">
       <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>batinac.com/pc-servis</em><b>● live</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/horizont-servisi/" title="IT service website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
@@ -614,11 +647,17 @@ footer a{color:var(--cyan)}
         <span class="go">Open shop ↗</span>
       </span>
     </a>
-  </div>
-  <div class="extra">
-    <div><h3>Turnkey websites</h3><p>Design, build, galleries, forms and admin. Online and ready from day one.</p></div>
-    <div><h3>Online shops</h3><p>Products, cart, orders and payments, with photos and video that sell.</p></div>
-    <div><h3>Print & PDF</h3><p>Flyers, catalogues, quotes and presentations in your company’s style.</p></div>
+    <a class="dv" href="https://sbatinac.github.io/koncept-zdravlje/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/koncept-zdravlje</em><b>● live</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/koncept-zdravlje/" title="Koncept Zdravlje website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="dv-b">
+        <span class="lbl sis">Our little sister · sole trader</span>
+        <h3>Koncept Zdravlje</h3>
+        <p>Lectures and consulting in pharmacy and nutrition, with a gallery, videos and documents.</p>
+        <ul><li>Lectures</li><li>Consulting</li><li>Nutrition</li></ul>
+        <span class="url">sbatinac.github.io/koncept-zdravlje</span>
+        <span class="go">Open Koncept Zdravlje ↗</span>
+      </span>
+    </a>
   </div>
 
   <div class="reg" id="sve-djelatnosti">
@@ -740,6 +779,53 @@ footer a{color:var(--cyan)}
   </div>
 </div></section>
 
+<section id="upit" class="alt"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Enquiry</span><h2>Send an enquiry</h2><p>For individuals and businesses. We reply as soon as possible.</p></div>
+  <form class="wiz" id="uForm" novalidate>
+    <fieldset class="fld" id="fs_tip"><legend>You are<span class="rq">*</span></legend>
+      <div class="chips">
+        <label class="chip"><input type="radio" name="tip" value="Fizička osoba"><span>Individual</span></label>
+        <label class="chip"><input type="radio" name="tip" value="Poslovni subjekt"><span>Business</span></label>
+      </div><p class="err" role="alert"></p>
+    </fieldset>
+    <div class="row2" id="pravna" hidden>
+      <div class="fld"><label for="f_firma">Business name<span class="rq">*</span></label><input type="text" id="f_firma" autocomplete="organization"><p class="err" role="alert"></p></div>
+      <div class="fld"><label for="f_oib">VAT ID<span class="rq">*</span></label><input type="text" id="f_oib" inputmode="numeric" maxlength="11" autocomplete="off" placeholder="11 digits"><p class="err" role="alert"></p></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label for="f_ime"><span id="f_ime_l">Full name</span><span class="rq">*</span></label><input type="text" id="f_ime" autocomplete="name"><p class="err" role="alert"></p></div>
+      <div class="fld"><label for="f_email">E-mail<span class="rq">*</span></label><input type="email" id="f_email" autocomplete="email"><p class="err" role="alert"></p></div>
+    </div>
+    <div class="row2">
+      <div class="fld"><label for="f_tel">Phone</label><input type="tel" id="f_tel" autocomplete="tel" inputmode="tel" placeholder="091 234 5678"><p class="err" role="alert"></p></div>
+      <div class="fld"><label for="f_grad">City</label><input type="text" id="f_grad" autocomplete="address-level2"></div>
+    </div>
+    <fieldset class="fld" id="fs_pod"><legend>What is your enquiry about?<span class="rq">*</span> <span class="fh">You can pick more than one.</span></legend>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="pod" value="IT i servis računala"><span>IT & computer service</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="Web stranica / web trgovina"><span>Website / online shop</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="Video produkcija"><span>Video production</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="Distribucija i zastupanje (Beorol)"><span>Distribution & representation (Beorol)</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="ALC web trgovina"><span>ALC online shop</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="Poslovna suradnja"><span>Business cooperation</span></label>
+        <label class="chip"><input type="checkbox" name="pod" value="Ostalo"><span>Other</span></label>
+      </div><p class="err" role="alert"></p>
+    </fieldset>
+    <fieldset class="fld"><legend>How should we contact you? <span class="fh">You can pick more than one.</span></legend>
+      <div class="chips">
+        <label class="chip"><input type="checkbox" name="kanal" value="E-pošta"><span>E-mail</span></label>
+        <label class="chip"><input type="checkbox" name="kanal" value="Telefonski poziv"><span>Phone call</span></label>
+        <label class="chip"><input type="checkbox" name="kanal" value="WhatsApp"><span>WhatsApp</span></label>
+        <label class="chip"><input type="checkbox" name="kanal" value="Viber"><span>Viber</span></label>
+      </div>
+    </fieldset>
+    <div class="fld"><label for="f_poruka">Message<span class="rq">*</span></label><textarea id="f_poruka" rows="5" placeholder="Briefly describe what you need…"></textarea><p class="err" role="alert"></p></div>
+    <div class="fld"><label class="chk"><input type="checkbox" id="f_gdpr"><span>I agree that my data will be used only to reply to this enquiry (GDPR).<span class="rq">*</span></span></label><p class="err" role="alert"></p></div>
+    <input type="text" id="f_web" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="f-end"><button type="submit" class="btn" id="uSend">Send enquiry →</button><p class="wz-msg" id="uMsg" role="status"></p></div>
+  </form>
+</div></section>
+
 <section id="kontakt" style="padding-bottom:0"><div class="wrap">
   <div class="kontakt">
     <div class="k-info">
@@ -786,7 +872,7 @@ footer a{color:var(--cyan)}
 
 <footer><div class="wrap">
   <span>Horizont LHB d.o.o. · <span data-f="adresaPuna"></span> · VAT ID <span data-f="oib"></span> · <a href="https://batinac.com/pc-servis">IT service</a> · <a href="https://batinac.com/video-produkcija">Video production</a></span>
-  <span>Not registered for VAT. Personal data is used for contact only (GDPR).</span>
+  <span>Not registered for VAT. Personal data is used for contact only (GDPR). <a class="adm" href="admin.html" aria-label="Admin" title="Admin">⚙</a></span>
 </div></footer>
 
 <div class="modal" id="mImg" role="dialog" aria-label="Photo">
@@ -829,7 +915,8 @@ const FIRMA = {
   foto:     ''                     // npr. 'vlasnik.webp' (ako postoji, zamjenjuje inicijale)
 };
 const SITE_URL = 'https://www.horizont-lhb.hr/en.html';
-const DIST_URL = ''; // npr. 'https://batinac.com/distribucija' – prazno = "Uskoro online"
+const DIST_URL = '';
+const ENDPOINT = 'UPISI_EXEC_LINK'; // Apps Script → Implementiraj → Web aplikacija → link koji završava na /exec // npr. 'https://batinac.com/distribucija' – prazno = "Uskoro online"
 const DRIVE_KEY = 'AIzaSyDp6XAdizCufGZ-lhwXZyIjazfJvkQzS7Q';
 const FOLDERS = {               // ID mapa s Google Drivea (podmape = tabovi)
   gallery: '1rs8AkvO7X-WYRnJqjjy5OX5TKpeLZ23h',
@@ -1050,6 +1137,57 @@ const CITATI = [
   };
   tick();
 })();
+
+
+/* OBRAZAC ZA UPIT */
+(() => {
+  const f = $('#uForm'); if (!f) return;
+  const EN = document.documentElement.lang === 'en';
+  const M = EN ? { tip: 'Choose individual or business.', firma: 'Enter the business name.', oib11: 'OIB has 11 digits.', oibBad: 'OIB is not valid, please check the digits.', imeF: 'Enter the contact person.', ime: 'Enter your full name.', mail: 'Enter a valid e-mail address.', tel: 'Enter a full phone number.', pod: 'Choose at least one option.', por: 'Please write a short message.', gdpr: 'Consent is required.', off: 'Sending is not available right now. Please call 091 358 4122.', send: 'Sending…', btn: 'Send enquiry →', ok: n => 'Thank you! Enquiry ' + n + ' has been sent. A confirmation is on its way to your e-mail.', fail: 'Sending failed. Please try again or call 091 358 4122.', imeL: 'Full name', kontL: 'Contact person' }
+    : { tip: 'Odaberite fizička osoba ili poslovni subjekt.', firma: 'Upišite naziv poslovnog subjekta.', oib11: 'OIB ima 11 znamenki.', oibBad: 'OIB nije ispravan, provjerite znamenke.', imeF: 'Upišite ime kontakt osobe.', ime: 'Upišite ime i prezime.', mail: 'Upišite ispravnu e-adresu.', tel: 'Upišite cijeli broj telefona.', pod: 'Odaberite barem jednu stavku.', por: 'Napišite kratku poruku.', gdpr: 'Potrebna je privola za obradu podataka.', off: 'Slanje trenutno nije moguće. Nazovite nas na 091 358 4122.', send: 'Šaljem…', btn: 'Pošalji upit →', ok: n => 'Hvala! Upit ' + n + ' je poslan. Potvrda stiže na Vaš e-mail.', fail: 'Slanje nije uspjelo. Pokušajte ponovno ili nazovite 091 358 4122.', imeL: 'Ime i prezime', kontL: 'Kontakt osoba' };
+  const g = id => document.getElementById(id), v = id => g(id).value.trim();
+  const checked = n => [...f.querySelectorAll(`input[name="${n}"]:checked`)].map(i => i.value);
+  const tip = () => (f.querySelector('input[name="tip"]:checked') || {}).value || '';
+  const pravna = () => tip() === 'Poslovni subjekt';
+  const mark = (el, t) => { const fl = el.closest('.fld'); fl.classList.toggle('bad', !!t); fl.querySelector('.err').textContent = t; return !t; };
+  const oibOk = s => { if (!/^\d{11}$/.test(s)) return false; let a = 10; for (let i = 0; i < 10; i++) { a = (a + +s[i]) % 10; a = (a || 10) * 2 % 11; } return (11 - a) % 10 === +s[10]; };
+  const sync = () => { g('pravna').hidden = !pravna(); g('f_ime_l').textContent = pravna() ? M.kontL : M.imeL; };
+  f.addEventListener('change', e => { sync(); const fl = e.target.closest('.fld.bad'); if (fl) { fl.classList.remove('bad'); fl.querySelector('.err').textContent = ''; } });
+  g('f_oib').addEventListener('input', e => { e.target.value = e.target.value.replace(/\D/g, '').slice(0, 11); });
+  const msg = g('uMsg'), btn = g('uSend');
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    if (v('f_web')) return;
+    const P = pravna(), tel = v('f_tel').replace(/\D/g, '');
+    const ok = [
+      mark(g('fs_tip'), tip() ? '' : M.tip),
+      P ? mark(g('f_firma'), v('f_firma') ? '' : M.firma) : true,
+      P ? mark(g('f_oib'), oibOk(v('f_oib')) ? '' : (v('f_oib').length === 11 ? M.oibBad : M.oib11)) : true,
+      mark(g('f_ime'), v('f_ime') ? '' : (P ? M.imeF : M.ime)),
+      mark(g('f_email'), /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('f_email')) ? '' : M.mail),
+      mark(g('f_tel'), !tel || tel.length >= 8 ? '' : M.tel),
+      mark(g('fs_pod'), checked('pod').length ? '' : M.pod),
+      mark(g('f_poruka'), v('f_poruka') ? '' : M.por),
+      mark(g('f_gdpr'), g('f_gdpr').checked ? '' : M.gdpr)
+    ].every(Boolean);
+    if (!ok) { const b = f.querySelector('.fld.bad input, .fld.bad textarea'); if (b) b.focus(); return; }
+    if (ENDPOINT.startsWith('UPISI')) { msg.className = 'wz-msg bad'; msg.textContent = M.off; return; }
+    btn.disabled = true; btn.textContent = M.send; msg.className = 'wz-msg'; msg.textContent = '';
+    try {
+      const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify({
+        jezik: EN ? 'EN' : 'HR', tip: tip(), firma: P ? v('f_firma') : '', oib: P ? v('f_oib') : '', ime: v('f_ime'), email: v('f_email'), telefon: v('f_tel'), grad: v('f_grad'),
+        podrucje: checked('pod').join(', '), kontakt_nacin: checked('kanal').join(', '), poruka: v('f_poruka') }) });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.ok === false) throw new Error();
+      f.reset(); sync(); msg.className = 'wz-msg ok'; msg.textContent = M.ok(j.nr || '');
+    } catch (err) { msg.className = 'wz-msg bad'; msg.textContent = M.fail; }
+    btn.disabled = false; btn.textContent = M.btn;
+  });
+})();
+
+/* BROJAČ POSJETA: jednom po sesiji */
+(() => { try { if (sessionStorage.getItem('hlhb_hit')) return; sessionStorage.setItem('hlhb_hit', '1'); } catch (e) {}
+  if (!ENDPOINT.startsWith('UPISI')) fetch(ENDPOINT + '?a=hit', { mode: 'no-cors' }).catch(() => {}); })();
 
 /* VLASNIK: cijela priča na klik */
 (() => { const b = $('#owBtn'), m = $('#owMore');

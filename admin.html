@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="hr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<link rel="icon" href="favicon.png">
+<title>Admin · Horizont LHB</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#FAF7F0;--card:#fff;--ink:#16140F;--muted:#6B6455;--line:#ECE5D6;--field:#DCD2BB;--gold:#D9A520;--grad:linear-gradient(100deg,#F6D35B,#E0A91E);--split:linear-gradient(90deg,#16140F,#6B5520 35%,#E3B23C 70%,#FFD96B);--pink:linear-gradient(100deg,#FF6F93,#F23A62 55%,#D91F45);
+  --display:"Bricolage Grotesque",system-ui,sans-serif;--body:"IBM Plex Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+[hidden]{display:none!important}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 max(16px,env(safe-area-inset-left,0px))}
+header{background:var(--ink);color:#F8F4EA;position:sticky;top:0;z-index:10}
+header::after{content:"";display:block;height:3px;background:var(--split)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font:800 1.05rem var(--display);text-decoration:none}
+.brand img{width:38px;height:38px;border-radius:8px;background:#fff}
+.brand small{display:block;font:500 .62rem var(--mono);letter-spacing:.18em;color:#F6D35B;text-transform:uppercase}
+.brand .lhb{background:var(--pink);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hb{display:flex;gap:8px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:6px;border:0;border-radius:8px;padding:9px 14px;font:600 .9rem var(--body);cursor:pointer;background:var(--grad);color:var(--ink);text-decoration:none}
+.btn.g{background:#fff;border:1.5px solid var(--field)}
+.btn.d{background:#fff;border:1.5px solid #E7B6C2;color:#B0123A}
+.btn.s{padding:6px 10px;font-size:.82rem}
+header .btn.g{background:transparent;color:#F8F4EA;border-color:#4A4334}
+.btn:disabled{opacity:.5;cursor:default}
+.lbl{font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1}
+/* prijava */
+.login{max-width:380px;margin:12vh auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;display:grid;gap:14px;position:relative;overflow:hidden;box-shadow:0 30px 70px -45px rgba(30,24,10,.4)}
+.login::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.login img{width:120px;justify-self:center}
+input,select,textarea{font:inherit;color:inherit;border:1.5px solid var(--field);border-radius:8px;padding:10px 12px;background:#fff;width:100%;min-width:0}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(217,165,32,.18)}
+.msg{font-weight:600;font-size:.9rem;min-height:1.2em}.msg.bad{color:#C0123F}.msg.ok{color:#2E7D32}
+/* pregled */
+main{padding:22px 0 60px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.st{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.st b{display:block;font:800 1.7rem var(--display)}
+.st span{color:var(--muted);font-size:.85rem}
+.st.new b{background:var(--pink);-webkit-background-clip:text;background-clip:text;color:transparent}
+.tools{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{border:1.5px solid var(--field);background:#fff;border-radius:999px;padding:6px 12px;font:600 .85rem var(--body);cursor:pointer}
+.tab.on{background:var(--grad);border-color:transparent}
+.tab small{font-family:var(--mono);font-weight:400;margin-left:3px}
+.tools input{max-width:280px;margin-left:auto}
+.list{display:grid;gap:10px}
+.up{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.up.nov{border-left:4px solid #F23A62}
+.uh{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:12px 16px;cursor:pointer}
+.uh .nr{font:500 .78rem var(--mono);color:var(--muted)}
+.uh .who b{font:700 1rem var(--display)}
+.uh .who span{display:block;color:var(--muted);font-size:.85rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pill{font:600 .72rem var(--mono);padding:4px 9px;border-radius:999px;white-space:nowrap;background:#F4F0E6}
+.pill[data-s="Novo"]{background:#FDE7EC;color:#B0123A}.pill[data-s="U obradi"]{background:#FFF4D6;color:#8A6400}.pill[data-s="Odgovoreno"]{background:#E3EEFF;color:#1559E0}.pill[data-s="Završeno"]{background:#E6F6EC;color:#1B7A3D}.pill[data-s="Arhiva"]{background:#EEE;color:#666}
+.ub{border-top:1px solid var(--line);padding:16px;display:grid;gap:14px}
+.kv{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px 18px}
+.kv div{display:grid;gap:2px;min-width:0}
+.kv b{font-weight:600;overflow-wrap:anywhere}
+.poruka{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;white-space:pre-wrap;overflow-wrap:anywhere}
+.acts{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.acts select{width:auto}
+.bil{display:grid;gap:6px}
+.bil textarea{min-height:70px;resize:vertical}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+/* postavke */
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:18px;margin-bottom:18px}
+.panel section{display:grid;gap:8px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.panel section:last-child{border-bottom:0;padding-bottom:0}
+.row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.row input{width:auto;flex:1;min-width:160px}
+.bars{display:flex;align-items:flex-end;gap:3px;height:80px}
+.bars i{flex:1;background:var(--grad);border-radius:3px 3px 0 0;min-height:2px;position:relative}
+.bars i:hover::after{content:attr(data-t);position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;font:500 .7rem var(--mono);padding:3px 6px;border-radius:4px;white-space:nowrap}
+@media (max-width:700px){.stats{grid-template-columns:1fr 1fr}.uh{grid-template-columns:1fr auto}.uh .nr{grid-column:1/-1}.tools input{max-width:none;margin-left:0}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="./"><img src="logo-znak.webp" alt=""><span>Horizont <span class="lhb">LHB</span><small>Admin · upiti</small></span></a>
+  <div class="hb" id="hb" hidden>
+    <button class="btn g" id="bRef">↻ Osvježi</button>
+    <button class="btn g" id="bSet">⚙ Postavke</button>
+    <button class="btn g" id="bOut">Odjava</button>
+  </div>
+</div></header>
+
+<form class="login" id="login">
+  <img src="logo-firma.webp" alt="Horizont LHB d.o.o.">
+  <h2>Prijava</h2>
+  <input type="password" id="pw" placeholder="Lozinka" autocomplete="current-password" required>
+  <button class="btn" type="submit">Prijavi se →</button>
+  <p class="msg" id="lMsg"></p>
+</form>
+
+<main class="wrap" id="app" hidden>
+  <div class="panel" id="set" hidden>
+    <section>
+      <span class="lbl">Google tablica</span>
+      <div class="row"><a class="btn g" id="tLink" target="_blank" rel="noopener">Otvori tablicu ↗</a><span class="msg" style="font-weight:400;color:var(--muted)">Svi upiti su spremljeni i u tablici.</span></div>
+    </section>
+    <section>
+      <span class="lbl">Brojač upita</span>
+      <p id="bInfo" style="margin:0"></p>
+      <div class="row"><input type="number" id="bOd" min="1" max="9999" placeholder="Sljedeći broj, npr. 25"><button class="btn" id="bSave">Spremi</button></div>
+      <p class="msg" id="bMsg"></p>
+    </section>
+    <section>
+      <span class="lbl">Posjete stranici (zadnjih 30 dana)</span>
+      <div class="bars" id="bars"></div>
+      <p id="pInfo" style="margin:0;color:var(--muted);font-size:.88rem"></p>
+    </section>
+    <section>
+      <span class="lbl">Telegram obavijesti (po želji)</span>
+      <p id="tgInfo" style="margin:0"></p>
+      <div class="row" id="tgTok"><input type="text" id="tgToken" placeholder="Token bota iz @BotFather (123456789:ABC…)"><button class="btn" id="tgSave">Spremi token</button></div>
+      <div class="row"><button class="btn g" id="tgLink">Poveži</button><button class="btn g" id="tgTest">Pošalji probu</button><button class="btn d" id="tgOff">Isključi</button></div>
+      <p class="msg" id="tgMsg"></p>
+    </section>
+  </div>
+
+  <div class="stats">
+    <div class="st new"><b id="sNovo">0</b><span>novih upita</span></div>
+    <div class="st"><b id="sObr">0</b><span>u obradi</span></div>
+    <div class="st"><b id="sUk">0</b><span>ukupno upita</span></div>
+    <div class="st"><b id="sPos">0</b><span>posjeta danas</span></div>
+  </div>
+  <div class="tools">
+    <div class="tabs" id="tabs"></div>
+    <input type="search" id="q" placeholder="Traži: ime, firma, OIB, mail, broj…">
+  </div>
+  <div class="list" id="list"></div>
+</main>
+
+<script>
+const ENDPOINT = 'UPISI_EXEC_LINK'; // isti /exec link kao u index.html
+const $ = s => document.querySelector(s);
+const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+let KEY = '', D = null, filt = 'Aktivni', otvoren = new Set(), zadnjiNovo = -1;
+try { KEY = sessionStorage.getItem('hlhb_k') || ''; } catch (e) {}
+
+async function api(akcija, extra) {
+  if (ENDPOINT.startsWith('UPISI')) throw new Error('U admin.html još nije upisan /exec link skripte.');
+  const r = await fetch(ENDPOINT, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(Object.assign({ _vrsta: 'admin', k: KEY, akcija }, extra || {})) });
+  const j = await r.json();
+  if (!j.ok) throw new Error(j.error || 'Greška.');
+  return j;
+}
+const col = (h, n) => h.indexOf(n);
+function upiti() {
+  if (!D) return [];
+  const H = D.upiti.headers, g = (r, n) => r[col(H, n)] || '';
+  return D.upiti.rows.map(r => ({
+    nr: g(r, 'Broj upita'), vrijeme: g(r, 'Vrijeme'), jezik: g(r, 'Jezik'), tip: g(r, 'Pošiljatelj'), firma: g(r, 'Naziv poslovnog subjekta'), oib: g(r, 'OIB'),
+    ime: g(r, 'Ime i prezime / kontakt osoba'), email: g(r, 'E-pošta'), telefon: g(r, 'Telefon'), grad: g(r, 'Grad'), podrucje: g(r, 'Područje'),
+    kanal: g(r, 'Kako kontaktirati'), poruka: g(r, 'Poruka'), status: g(r, 'Status') || 'Novo', biljeska: g(r, 'Bilješka')
+  })).reverse();
+}
+const intl = t => { const d = String(t || '').replace(/\D/g, ''); return d.startsWith('385') ? d : d.startsWith('0') ? '385' + d.slice(1) : d; };
+
+function render() {
+  const U = upiti(), S = D.statusi || ['Novo', 'U obradi', 'Odgovoreno', 'Završeno', 'Arhiva'];
+  const cnt = s => U.filter(u => u.status === s).length;
+  $('#sNovo').textContent = cnt('Novo'); $('#sObr').textContent = cnt('U obradi'); $('#sUk').textContent = U.length;
+  const P = D.posjete.rows || [], danas = new Date().toLocaleDateString('sv-SE', { timeZone: 'Europe/Zagreb' });
+  const pd = P.find(r => r[0] === danas); $('#sPos').textContent = pd ? pd[1] : 0;
+  const T = ['Aktivni', 'Sve'].concat(S);
+  const n = t => t === 'Sve' ? U.length : t === 'Aktivni' ? U.filter(u => u.status !== 'Arhiva' && u.status !== 'Završeno').length : cnt(t);
+  $('#tabs').innerHTML = T.map(t => `<button class="tab${t === filt ? ' on' : ''}" data-t="${esc(t)}">${esc(t)}<small>${n(t)}</small></button>`).join('');
+  const q = $('#q').value.trim().toLowerCase();
+  const L = U.filter(u => filt === 'Sve' ? true : filt === 'Aktivni' ? (u.status !== 'Arhiva' && u.status !== 'Završeno') : u.status === filt)
+    .filter(u => !q || Object.values(u).join(' ').toLowerCase().includes(q));
+  $('#list').innerHTML = L.length ? L.map(u => kartica(u, S)).join('') : '<p class="empty">Nema upita.</p>';
+  // posjete graf
+  const zadnjih = P.slice(-30), max = Math.max(1, ...zadnjih.map(r => +r[1] || 0));
+  $('#bars').innerHTML = zadnjih.map(r => `<i style="height:${Math.round((+r[1] || 0) / max * 100)}%" data-t="${esc(r[0])}: ${esc(r[1])}"></i>`).join('');
+  $('#pInfo').textContent = 'Ukupno u zadnjih 30 dana: ' + zadnjih.reduce((a, r) => a + (+r[1] || 0), 0);
+  $('#tLink').href = D.tablica;
+  const b = D.brojac; $('#bInfo').innerHTML = `Zadnji broj: <b>UP-${b.god}-${String(b.zadnji).padStart(4, '0')}</b> · sljedeći: <b>UP-${b.god}-${String(b.sljedeci).padStart(4, '0')}</b>${b.rucno ? ' (ručno postavljen)' : ''}`;
+  const tg = D.telegram || {}; $('#tgInfo').innerHTML = tg.povezan ? `✅ Povezano s botom <b>@${esc(tg.bot)}</b>.` : tg.bot ? `Bot <b>@${esc(tg.bot)}</b> spremljen. Pošalji mu /start u Telegramu pa klikni <b>Poveži</b>.` : 'Nije postavljeno. Napravi bota u @BotFather i upiši token.';
+}
+function kartica(u, S) {
+  const tel = intl(u.telefon), open = otvoren.has(u.nr);
+  const kv = (k, v) => v ? `<div><span class="lbl">${k}</span><b>${esc(v)}</b></div>` : '';
+  const sub = encodeURIComponent((u.jezik === 'EN' ? 'Re: your enquiry ' : 'Re: Vaš upit ') + u.nr + ' – Horizont LHB');
+  return `<article class="up${u.status === 'Novo' ? ' nov' : ''}" data-nr="${esc(u.nr)}">
+  <div class="uh" data-tg>
+    <span class="nr">${esc(u.nr)}<br>${esc(u.vrijeme)}</span>
+    <span class="who"><b>${esc(u.firma || u.ime)}</b><span>${esc(u.firma ? u.ime + ' · ' : '')}${esc(u.podrucje)}</span></span>
+    <span class="pill" data-s="${esc(u.status)}">${esc(u.status)}</span>
+  </div>
+  <div class="ub"${open ? '' : ' hidden'}>
+    <div class="kv">${kv('Pošiljatelj', u.tip)}${kv('Poslovni subjekt', u.firma)}${kv('OIB', u.oib)}${kv(u.firma ? 'Kontakt osoba' : 'Ime i prezime', u.ime)}${kv('E-pošta', u.email)}${kv('Telefon', u.telefon)}${kv('Grad', u.grad)}${kv('Kontakt putem', u.kanal)}${kv('Jezik', u.jezik)}</div>
+    <div class="poruka">${esc(u.poruka)}</div>
+    <div class="acts">
+      <a class="btn s" href="mailto:${esc(u.email)}?subject=${sub}">✉ Odgovori</a>
+      ${tel ? `<button class="btn g s" data-call="${tel}">📞 Nazovi</button><a class="btn g s" href="https://wa.me/${tel}" target="_blank" rel="noopener">WhatsApp</a><a class="btn g s" href="viber://chat?number=%2B${tel}">Viber</a>` : ''}
+      <select data-st aria-label="Status">${S.map(s => `<option${s === u.status ? ' selected' : ''}>${esc(s)}</option>`).join('')}</select>
+      <button class="btn d s" data-del>Obriši</button>
+    </div>
+    <div class="bil"><span class="lbl">Bilješka (vidiš samo ti)</span><textarea data-bil>${esc(u.biljeska)}</textarea><div class="row"><button class="btn g s" data-sb>Spremi bilješku</button><span class="msg" data-m></span></div></div>
+  </div>
+</article>`;
+}
+
+async function ucitaj(tiho) {
+  try {
+    D = await api('podaci'); render();
+    const n = upiti().filter(u => u.status === 'Novo').length;
+    if (zadnjiNovo >= 0 && n > zadnjiNovo) zvuk();
+    zadnjiNovo = n; document.title = (n ? '(' + n + ') ' : '') + 'Admin · Horizont LHB';
+    return true;
+  } catch (e) { if (!tiho) throw e; return false; }
+}
+function zvuk() { try { const c = new AudioContext(), o = c.createOscillator(), g = c.createGain(); o.connect(g); g.connect(c.destination); o.frequency.value = 880; g.gain.setValueAtTime(.2, c.currentTime); g.gain.exponentialRampToValueAtTime(.001, c.currentTime + .6); o.start(); o.stop(c.currentTime + .6); } catch (e) {} }
+
+async function prijava(k) {
+  KEY = k; $('#lMsg').className = 'msg'; $('#lMsg').textContent = 'Provjeravam…';
+  try {
+    await ucitaj(); try { sessionStorage.setItem('hlhb_k', k); } catch (e) {}
+    $('#login').hidden = true; $('#app').hidden = false; $('#hb').hidden = false;
+    setInterval(() => ucitaj(true), 60000);
+  } catch (e) { KEY = ''; $('#lMsg').className = 'msg bad'; $('#lMsg').textContent = e.message; try { sessionStorage.removeItem('hlhb_k'); } catch (x) {} }
+}
+$('#login').onsubmit = e => { e.preventDefault(); prijava($('#pw').value); };
+if (KEY) prijava(KEY);
+$('#bOut').onclick = () => { try { sessionStorage.removeItem('hlhb_k'); } catch (e) {} location.reload(); };
+$('#bRef').onclick = () => ucitaj(true);
+$('#bSet').onclick = () => { $('#set').hidden = !$('#set').hidden; };
+$('#q').oninput = render;
+$('#tabs').onclick = e => { const b = e.target.closest('.tab'); if (b) { filt = b.dataset.t; render(); } };
+
+$('#list').addEventListener('click', async e => {
+  const a = e.target.closest('.up'); if (!a) return; const nr = a.dataset.nr;
+  if (e.target.closest('[data-tg]')) { const b = a.querySelector('.ub'); b.hidden = !b.hidden; b.hidden ? otvoren.delete(nr) : otvoren.add(nr); return; }
+  const c = e.target.closest('[data-call]'); if (c) { location.href = 'tel:+' + c.dataset.call; return; }
+  if (e.target.closest('[data-sb]')) {
+    const m = a.querySelector('[data-m]'); m.className = 'msg'; m.textContent = 'Spremam…';
+    try { await api('spremi', { nr, biljeska: a.querySelector('[data-bil]').value }); m.className = 'msg ok'; m.textContent = 'Spremljeno.'; await ucitaj(true); }
+    catch (x) { m.className = 'msg bad'; m.textContent = x.message; }
+    return;
+  }
+  if (e.target.closest('[data-del]')) {
+    const l = prompt('Brisanje upita ' + nr + ' je trajno. Za potvrdu upiši lozinku:'); if (!l) return;
+    try { await api('brisi', { nr, lozinka: l }); otvoren.delete(nr); await ucitaj(true); } catch (x) { alert(x.message); }
+  }
+});
+$('#list').addEventListener('change', async e => {
+  const s = e.target.closest('[data-st]'); if (!s) return; const nr = s.closest('.up').dataset.nr;
+  s.disabled = true;
+  try { await api('spremi', { nr, status: s.value }); await ucitaj(true); } catch (x) { alert(x.message); s.disabled = false; }
+});
+$('#bSave').onclick = async () => {
+  const m = $('#bMsg'); m.className = 'msg'; m.textContent = 'Spremam…';
+  try { const j = await api('brojac', { od: $('#bOd').value }); D.brojac = j.brojac; render(); m.className = 'msg ok'; m.textContent = 'Spremljeno.'; } catch (x) { m.className = 'msg bad'; m.textContent = x.message; }
+};
+const tg = async (op, extra) => {
+  const m = $('#tgMsg'); m.className = 'msg'; m.textContent = 'Radim…';
+  try { const j = await api('tg', Object.assign({ op }, extra || {})); if (j.telegram) D.telegram = j.telegram; render(); m.className = 'msg ok'; m.textContent = op === 'test' ? 'Proba poslana.' : 'Gotovo.'; } catch (x) { m.className = 'msg bad'; m.textContent = x.message; }
+};
+$('#tgSave').onclick = () => tg('token', { token: $('#tgToken').value });
+$('#tgLink').onclick = () => tg('povezi');
+$('#tgTest').onclick = () => tg('test');
+$('#tgOff').onclick = () => confirm('Isključiti Telegram obavijesti?') && tg('iskljuci');
+</script>
+</body>
+</html>

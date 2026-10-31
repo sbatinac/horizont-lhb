@@ -107,6 +107,17 @@ T = {
  'Od ideje do': 'From idea to', 'poslovne prilike.': 'business opportunity.',
  'Servis': 'IT service', 'Nismo u sustavu PDV-a. Osobne podatke koristimo samo za kontakt (GDPR).': 'Not registered for VAT. Personal data is used for contact only (GDPR).',
  '⬇ Preuzmi': '⬇ Download',
+ 'Naša mala sestra · obrt': 'Our little sister · sole trader', 'Koncept Zdravlje': 'Koncept Zdravlje', 'Otvori Koncept Zdravlje ↗': 'Open Koncept Zdravlje ↗',
+ 'Predavanja i savjetovanje iz farmacije i nutricionizma, s galerijom, video materijalima i dokumentima.': 'Lectures and consulting in pharmacy and nutrition, with a gallery, videos and documents.',
+ 'Predavanja': 'Lectures', 'Savjetovanje': 'Consulting', 'Nutricionizam': 'Nutrition',
+ 'Upit': 'Enquiry', 'Pošaljite upit': 'Send an enquiry', 'Za fizičke osobe i poslovne subjekte. Odgovaramo u najkraćem roku.': 'For individuals and businesses. We reply as soon as possible.',
+ 'Upit šaljete kao': 'You are', 'Fizička osoba': 'Individual', 'Poslovni subjekt': 'Business', 'Naziv poslovnog subjekta': 'Business name',
+ 'Ime i prezime': 'Full name', 'Telefon / mobitel': 'Phone', 'Grad / mjesto': 'City', 'Na što se odnosi upit?': 'What is your enquiry about?',
+ 'Može više odgovora.': 'You can pick more than one.', 'IT i servis računala': 'IT & computer service', 'Web stranica / web trgovina': 'Website / online shop',
+ 'Distribucija i zastupanje (Beorol)': 'Distribution & representation (Beorol)', 'ALC web trgovina': 'ALC online shop', 'Poslovna suradnja': 'Business cooperation', 'Ostalo': 'Other',
+ 'Kako da Vas kontaktiramo?': 'How should we contact you?', 'Telefonski poziv': 'Phone call', 'Poruka': 'Message',
+ 'Slažem se da se moji podaci koriste isključivo za odgovor na ovaj upit (GDPR).': 'I agree that my data will be used only to reply to this enquiry (GDPR).',
+ 'Pošalji upit →': 'Send enquiry →',
  'Djelatnost 05': 'Activity 05', 'Otvaramo uskoro': 'Opening soon', 'dana': 'days', 'sati': 'hrs', 'min': 'min', 'sek': 'sec', '● uskoro': '● coming soon', '3. studenoga 2026. · alc-life.com': '3 November 2026 · alc-life.com', '● web trgovina': '● online shop', 'Web trgovina': 'Online shop', 'Otvori trgovinu ↗': 'Open shop ↗',
  'Naša nova web trgovina: HSC proizvodi, Teslass naočale, Syn(c)Energy narukvice i dodaci, s dostavom na kućnu adresu.':
    'Our new online shop: HSC products, Teslass glasses, Syn(c)Energy bracelets and accessories, delivered to your door.',
@@ -122,11 +133,13 @@ A = {
  'Horizont LHB d.o.o. – od ideje do poslovne prilike': 'Horizont LHB d.o.o. – from idea to business opportunity', 'Slika': 'Photo', 'Zatvori': 'Close',
  'Prethodna': 'Previous', 'Sljedeća': 'Next', 'Prethodni video': 'Previous video', 'Sljedeći video': 'Next video', 'Dokument': 'Document', 'Nazovi': 'Call',
  'Citat': 'Quote', 'Uvodni video Horizont LHB d.o.o.: servis računala, izrada web stranica i poslovanje, na kraju logotip': 'Horizont LHB d.o.o. intro video: IT service, web development and business, ending with the logo',
- 'Administracija': 'Admin', 'Pregled stranice Beorol': 'Beorol website preview',
+ 'Administracija': 'Admin', 'Pregled stranice Koncept Zdravlje': 'Koncept Zdravlje website preview', 'Pregled stranice Beorol': 'Beorol website preview',
 }
 # JavaScript i <head>
 J = [
  ('<html lang="hr">', '<html lang="en">'),
+ ('placeholder="11 znamenki"', 'placeholder="11 digits"'),
+ ('placeholder="Napišite ukratko što Vam treba…"', 'placeholder="Briefly describe what you need…"'),
  ("oib:      '04977480596',", "oib:      'HR04977480596',"),
  ('content="Horizont LHB d.o.o. – servis računala i konzola, video produkcija i izrada web stranica. Tko smo, gdje smo i kako do nas."', 'content="Horizont LHB d.o.o. – computer and console repair, video production, web development and trade. Who we are, where we are and how to reach us."'),
  ('content="Servis računala, video produkcija i web stranice. Jedna firma, jedan kontakt."', 'content="IT service, video production, websites and trade. One company, one contact."'),

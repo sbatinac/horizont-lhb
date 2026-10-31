@@ -16,3 +16,12 @@ Spremi sliku u repo (npr. `vlasnik.webp`, uspravno 4:5) i upiši `foto: 'vlasnik
 
 ## Citati
 U `index.html` → `CITATI_TEME` (prazno = sve teme) i popis `CITATI` (hr + en). Mijenjaju se svakih `CITATI_SEK` sekundi.
+
+## Upiti i admin
+1. Nova Google tablica (npr. *Horizont LHB – upiti*) → **Proširenja → Apps Script**, obriši sve i zalijepi `apps-script/Code.gs`.
+2. Upiši `ADMIN_KEY` (lozinka za admin) → **Spremi**. Upiti stižu na `NOTIFY_EMAIL` (sbatinac@horizont-lhb.hr).
+3. Odaberi funkciju `odobriDozvole` → **Pokreni** → dopusti pristup.
+4. **Implementiraj → Nova implementacija → Web aplikacija**: Izvrši kao **Ja**, Pristup **Svi** → Implementiraj.
+5. `/exec` link upiši u `index.html` i `admin.html` (`const ENDPOINT = '…'`), pa `python3 tools/build_en.py`.
+
+Admin: `https://www.horizont-lhb.hr/admin.html`
