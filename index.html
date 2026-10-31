@@ -90,6 +90,7 @@ nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
 .top .lbl{color:#B5AA90}
 .top h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;letter-spacing:-.03em;line-height:.95;margin-top:16px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.9))}
 .top h1 small{display:block;font-size:.36em;letter-spacing:.02em;margin-top:.3em;color:#E8E1CF}
+.brand .lhb{background:linear-gradient(100deg,#FF6F93 0%,#F23A62 55%,#D91F45 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .top h1 .gt{background:linear-gradient(100deg,#FFB3C7 0%,#FF6F93 40%,#F23A62 75%,#D91F45 100%);-webkit-background-clip:text;background-clip:text}
 .top .lead{color:#E8E1CF;font-size:1.1rem;max-width:46ch;margin-top:22px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .top .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
@@ -191,6 +192,31 @@ section{padding-block:72px}
 .wp p{color:var(--muted);font-size:.93rem}
 .wp .go{font-weight:600;color:var(--hot-text);margin-top:4px}
 
+
+
+/* MATERIJALI: kartice koje otvaraju slike, video i PDF */
+.mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mc{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:14px;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 18px;cursor:pointer;font:inherit;color:inherit;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+.mc::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--split);opacity:0;transition:opacity .2s}
+.mc:hover{border-color:#D9A520;transform:translateY(-2px);box-shadow:0 18px 40px -26px rgba(30,24,10,.45)}
+.mc[aria-expanded="true"]{border-color:#D9A520;box-shadow:0 18px 40px -26px rgba(217,165,32,.6)}
+.mc[aria-expanded="true"]::before{opacity:1}
+.mc-i{width:48px;height:48px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.mc-i svg{width:24px;height:24px;fill:none;stroke:#16140F;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mc-t{display:grid;gap:2px;min-width:0}
+.mc-t b{font:700 1.1rem var(--display)}
+.mc-t small{color:var(--muted);font-size:.85rem}
+.mc-n{font:500 .75rem var(--mono);color:var(--cyan);background:var(--cyan-soft);padding:3px 8px;border-radius:999px;white-space:nowrap}
+.mc-a{font-size:1.2rem;transition:transform .25s;color:var(--muted)}
+.mc[aria-expanded="true"] .mc-a{transform:rotate(180deg);color:#16140F}
+.panel{animation:pin .35s ease}
+@keyframes pin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.panel .sec-head{grid-template-columns:1fr auto;align-items:end;max-width:none}
+.panel .sec-head>*:not(.pclose){grid-column:1}
+.pclose{grid-column:2;grid-row:1/span 3;align-self:start}
+#materijali{padding-bottom:40px}
+#materijali + .panel{border-top:0}
+@media (max-width:900px){.mat{grid-template-columns:1fr}}
 
 /* vlasnik */
 .owner{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,5vw,60px);align-items:center}
@@ -399,9 +425,9 @@ footer a{color:var(--cyan)}
 </head>
 <body>
 <header><div class="wrap">
-  <a class="brand" href="#"><span class="logo"><img src="logo-znak.webp" alt="" width="48" height="48"></span><span>Horizont LHB<small>d.o.o.</small></span></a>
+  <a class="brand" href="#"><span class="logo"><img src="logo-znak.webp" alt="" width="48" height="48"></span><span>Horizont <span class="lhb">LHB</span><small>d.o.o.</small></span></a>
   <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Izbornik"><span></span><span></span><span></span></button>
-  <nav id="mnav"><a href="#o-nama">O nama</a><a href="#djelatnosti">Djelatnosti</a><a href="#vlasnik">Vlasnik</a><a href="#radovi">Galerija</a><a href="#video">Video</a><a href="#dokumenti">Dokumenti</a><a href="#lokacija">Lokacija</a><a href="#kontakt">Kontakt</a></nav>
+  <nav id="mnav"><a href="#o-nama">O nama</a><a href="#djelatnosti">Djelatnosti</a><a href="#vlasnik">Vlasnik</a><a href="#materijali">Galerija</a><a href="#lokacija">Lokacija</a><a href="#kontakt">Kontakt</a></nav>
   <div class="hdr-r">
     <div class="music" id="music" role="group" aria-label="Glazba">
       
@@ -544,22 +570,43 @@ footer a{color:var(--cyan)}
   <div class="wrap"><p class="slog">Popravljeno. Snimljeno. <span class="gt">Objavljeno.</span></p></div>
 </div>
 
-<section id="radovi" class="alt"><div class="wrap">
-  <div class="sec-head"><span class="lbl">Galerija</span><h2>Slike</h2><p>Radionica, oprema, projekti i radovi. Kliknite sliku za veći prikaz.</p></div>
+<section id="materijali" class="alt"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Galerija i materijali</span><h2>Slike, video i dokumenti</h2><p>Odaberite karticu i otvorite sadržaj.</p></div>
+  <div class="mat">
+    <button type="button" class="mc" data-open="#radovi" aria-expanded="false" aria-controls="radovi">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg></span>
+      <span class="mc-t"><b>Slike</b><small>Radionica, oprema i radovi</small></span>
+      <span class="mc-n" data-cnt="gallery">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+    <button type="button" class="mc" data-open="#video" aria-expanded="false" aria-controls="video">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></span>
+      <span class="mc-t"><b>Video materijali</b><small>Predstavljanje i projekti</small></span>
+      <span class="mc-n" data-cnt="video">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+    <button type="button" class="mc" data-open="#dokumenti" aria-expanded="false" aria-controls="dokumenti">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+      <span class="mc-t"><b>PDF dokumenti</b><small>Prezentacije, cjenici, katalozi</small></span>
+      <span class="mc-n" data-cnt="pdf">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+  </div>
+</div></section>
+
+<section id="radovi" class="alt panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Zatvori ✕</button><span class="lbl">Galerija</span><h2>Slike</h2><p>Radionica, oprema, projekti i radovi. Kliknite sliku za veći prikaz.</p></div>
   <div class="tabs" id="gTabs"></div>
   <div class="grid" id="gGrid"></div>
   <div class="more"><button class="btn ghost" id="gMore" hidden>Prikaži još</button></div>
 </div></section>
 
-<section id="video" class="cine"><div class="wrap">
-  <div class="sec-head"><span class="lbl">Video</span><h2>Video materijali</h2><p>Predstavljanje firme, projekti i kratke forme. Kliknite na video i pogledajte.</p></div>
+<section id="video" class="cine panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Zatvori ✕</button><span class="lbl">Video</span><h2>Video materijali</h2><p>Predstavljanje firme, projekti i kratke forme. Kliknite na video i pogledajte.</p></div>
   <div class="tabs" id="vTabs"></div>
   <div class="mz" id="vGrid"></div>
   <div class="more"><button class="btn ghost" id="vMore" hidden>Prikaži još videa</button></div>
 </div></section>
 
-<section id="dokumenti" class="alt has-deco"><div class="wrap">
-  <div class="sec-head"><span class="lbl">Dokumenti</span><h2>PDF materijali</h2><p>Prezentacije, cjenici, katalozi i dokumenti firme za pregled i preuzimanje.</p></div>
+<section id="dokumenti" class="alt panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Zatvori ✕</button><span class="lbl">Dokumenti</span><h2>PDF materijali</h2><p>Prezentacije, cjenici, katalozi i dokumenti firme za pregled i preuzimanje.</p></div>
   <div class="tabs" id="pTabs"></div>
   <div class="cards" id="pGrid"></div>
 </div></section>
@@ -832,15 +879,30 @@ function soon(grid, n) {
   if (grid === '#vGrid') { $(grid).innerHTML = ['f', 't', 'n', 'n', 'w', 't', 'n'].map(c => `<div class="mt in soon ${c}">Uskoro</div>`).join(''); return; }
   $(grid).innerHTML = Array.from({ length: n }, () => '<div class="soon">Uskoro</div>').join('');
 }
+const cnt = (type, n) => { const e = document.querySelector(`[data-cnt="${type}"]`); if (e) e.textContent = n ? n + (type === 'gallery' ? ' slika' : type === 'video' ? ' videa' : ' PDF') : 'uskoro'; };
 function init(type, sec, tabsEl, grid, render, n) {
-  if (!FOLDERS[type] || FOLDERS[type].startsWith('UPISI')) return soon(grid, n);
+  if (!FOLDERS[type] || FOLDERS[type].startsWith('UPISI')) { cnt(type, 0); return soon(grid, n); }
   $(grid).innerHTML = '<div class="msg">Učitavanje…</div>';
-  load(type).then(a => a.length ? tabs($(tabsEl), a, render) : soon(grid, n)) // prazna mapa = mjesta "Uskoro", sekcija ostaje vidljiva
+  load(type).then(a => { cnt(type, a.reduce((k, x) => k + x.files.length, 0)); return a.length ? tabs($(tabsEl), a, render) : soon(grid, n); })
     .catch(() => $(grid).innerHTML = '<div class="msg">Sadržaj se trenutno ne može učitati. Pokušajte osvježiti stranicu.</div>');
 }
 init('gallery', '#radovi', '#gTabs', '#gGrid', gRender, 8);
 init('video', '#video', '#vTabs', '#vGrid', vRender, 3);
 init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
+
+/* KARTICE: otvori jedan panel, ostali se zatvaraju */
+(() => {
+  const btns = [...document.querySelectorAll('.mc')];
+  const close = () => btns.forEach(b => { b.setAttribute('aria-expanded', 'false'); $(b.dataset.open).hidden = true; });
+  btns.forEach(b => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true'; close();
+    if (open) return;
+    b.setAttribute('aria-expanded', 'true'); const p = $(b.dataset.open); p.hidden = false;
+    p.querySelectorAll('.mt').forEach(t => t.classList.add('in'));
+    p.scrollIntoView({ behavior: STILL ? 'auto' : 'smooth', block: 'start' });
+  }));
+  document.querySelectorAll('.pclose').forEach(c => c.addEventListener('click', () => { close(); $('#materijali').scrollIntoView({ behavior: STILL ? 'auto' : 'smooth' }); }));
+})();
 
 
 /* INTRO VIDEO: bez zvuka na početku, staje na zadnjem kadru (logo); ambijentalni odsjaj */
