@@ -123,7 +123,10 @@ section{padding-block:72px}
 .about .txt{display:grid;gap:16px;font-size:1.05rem}
 .about .txt p{color:var(--muted)}
 .about .txt p strong{color:var(--ink)}
-.nums{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.about .txt .ab-lead{font:700 1.2rem var(--display);color:var(--ink)}
+.ab-mot{display:grid;gap:10px;margin-top:10px;padding:18px 0 4px 20px;border-left:3px solid;border-image:var(--split) 1}
+.about .txt .ab-mot p{font:800 clamp(1.1rem,2vw,1.35rem)/1.25 var(--display);color:var(--ink);text-transform:uppercase;letter-spacing:-.005em}
+.nums{position:sticky;top:100px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .num{border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:4px;background:#fff}
 .num b{font:800 1.6rem/1.1 var(--display)}
 .num span{color:var(--muted);font-size:.88rem}
@@ -480,15 +483,23 @@ footer a{color:var(--cyan)}
   <div class="about">
     <div class="txt">
       <span class="lbl">O nama</span>
-      <h2>Mala firma. <span class="gt">Puno znanja.</span></h2>
-      <p><strong>Horizont LHB d.o.o.</strong> spaja tri stvari koje danas trebaju i ljudi i firme: ispravnu opremu, dobar video i stranicu na internetu.</p>
-      <p>Računalo, laptop ili konzolu popravimo i vratimo kao novo. Firmi snimimo promotivni video, animiramo logo i složimo objave za mreže. Na kraju sve postavimo na web stranicu koju sami izradimo i održavamo.</p>
-      <p>Radite s jednom osobom od prvog poziva do gotovog posla. Bez posrednika, bez čekanja.</p>
+      <h2>Jedna tvrtka. <span class="gt">Beskrajne mogućnosti.</span></h2>
+      <p class="ab-lead">Ne vjerujemo u granice. Vjerujemo u prilike.</p>
+      <p>Vođeni ambicijom, inovacijama i neprestanom željom za napretkom, kontinuirano istražujemo nova tržišta, nove tehnologije i nove poslovne mogućnosti.</p>
+      <p>Od računalnih tehnologija, web dizajna i digitalne produkcije do trgovine, prodaje i razvoja poslovnih partnerstava, naše znanje i iskustvo povezuju različite djelatnosti u jednu snažnu poslovnu cjelinu.</p>
+      <p>Svaki novi izazov zahtijeva drugačiji pristup, ali naša načela uvijek ostaju ista: <strong>profesionalnost, preciznost, kreativnost i izvrsnost.</strong></p>
+      <p>Ne čekamo prilike. Stvaramo ih.</p>
+      <p>Ne ograničavamo se na jednu djelatnost, nego stalno širimo svoje poslovne horizonte.</p>
+      <p>Jer za nas raznolikost nije prepreka. <strong>Ona je naša snaga.</strong></p>
+      <div class="ab-mot">
+        <p>Mnogo djelatnosti. Jedna vizija. <span class="gt">Neograničena ambicija.</span></p>
+        <p>Jer za nas rast nije samo cilj. <span class="gt">Rast je dio našeg identiteta.</span></p>
+      </div>
     </div>
     <div class="nums">
-      <div class="num"><b>3 u 1</b><span>servis, video i web</span></div>
+      <div class="num"><b>22</b><span>registrirane djelatnosti</span></div>
       <div class="num"><b>1 kontakt</b><span>od upita do isporuke</span></div>
-      <div class="num"><b>Online</b><span>nalog, status i upiti</span></div>
+      <div class="num"><b>Od 2023.</b><span>u poslovanju</span></div>
       <div class="num"><b>Osijek</b><span>sjedište i radionica</span></div>
     </div>
   </div>
