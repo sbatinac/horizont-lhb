@@ -228,8 +228,8 @@ section{padding-block:72px}
 .qt-bar i{display:block;height:100%;width:0;background:var(--grad)}
 .qt-bar i.run{animation:qbar var(--qd,15s) linear forwards}
 @keyframes qbar{to{width:100%}}
-#qtNext{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
-#qtNext:hover{border-color:#F2C230;color:#F2C230}
+#qtNext,#qtPrev{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
+#qtNext:hover,#qtPrev:hover{border-color:#F2C230;color:#F2C230}
 @media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.22;left:80%}}
 
 
@@ -715,7 +715,7 @@ footer a{color:var(--cyan)}
       <blockquote id="qtTxt"></blockquote>
       <figcaption id="qtAut"></figcaption>
     </figure>
-    <div class="qt-ctl"><span class="qt-bar"><i id="qtBar"></i></span><button type="button" id="qtNext" aria-label="Next quote">›</button></div>
+    <div class="qt-ctl"><button type="button" id="qtPrev" aria-label="Previous quote">‹</button><span class="qt-bar"><i id="qtBar"></i></span><button type="button" id="qtNext" aria-label="Next quote">›</button></div>
   </div>
 </section>
 
@@ -1112,15 +1112,16 @@ const CITATI = [
   list = list.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]);
   const box = $('#qt'), bar = $('#qtBar'); let i = -1, tm;
   const tema = t => L === 'en' ? ({ poduzetništvo: 'Entrepreneurship', uspjeh: 'Success', inovacije: 'Innovation', tehnologija: 'Technology', vrijeme: 'Time', izazovi: 'Challenges', poslovanje: 'Business', horizont: 'Horizont LHB' }[t] || t) : t.charAt(0).toUpperCase() + t.slice(1);
-  const show = () => {
-    i = (i + 1) % list.length; const q = list[i];
+  const show = (d = 1) => {
+    i = (i + d + list.length) % list.length; const q = list[i];
     $('#qtTxt').textContent = q[L]; $('#qtAut').textContent = L === 'en' ? (q.aEn || q.a) : q.a; $('#qtTema').textContent = tema(q.t);
     box.classList.remove('out'); bar.classList.remove('run'); void bar.offsetWidth; if (!STILL) bar.classList.add('run');
   };
-  const next = () => { clearTimeout(tm); box.classList.add('out'); setTimeout(show, STILL ? 0 : 600); tm = setTimeout(next, CITATI_SEK * 1000 + 600); };
+  const next = (d = 1) => { clearTimeout(tm); box.classList.add('out'); setTimeout(() => show(d), STILL ? 0 : 600); tm = setTimeout(next, CITATI_SEK * 1000 + 600); };
   bar.style.setProperty('--qd', CITATI_SEK + 's');
   show(); tm = setTimeout(next, CITATI_SEK * 1000);
-  $('#qtNext').onclick = next;
+  $('#qtNext').onclick = () => next(1);
+  $('#qtPrev').onclick = () => next(-1);
 })();
 
 

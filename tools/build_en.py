@@ -129,7 +129,7 @@ T = {
 A = {
  'Izbornik': 'Menu', 'Glazba': 'Music', 'Osnovni podaci o firmi': 'Company details', 'Pregled stranice servisa': 'IT service website preview',
  'Pregled stranice video produkcije': 'Video production website preview', 'Pregled stranice distribucije': 'Distribution website preview',
- 'Sljedeći citat': 'Next quote', 'Karta lokacije Horizont LHB d.o.o.': 'Horizont LHB d.o.o. location map', 'Otvori lokaciju u Google kartama': 'Open location in Google Maps',
+ 'Sljedeći citat': 'Next quote', 'Prethodni citat': 'Previous quote', 'Karta lokacije Horizont LHB d.o.o.': 'Horizont LHB d.o.o. location map', 'Otvori lokaciju u Google kartama': 'Open location in Google Maps',
  'Horizont LHB d.o.o. – od ideje do poslovne prilike': 'Horizont LHB d.o.o. – from idea to business opportunity', 'Slika': 'Photo', 'Zatvori': 'Close',
  'Prethodna': 'Previous', 'Sljedeća': 'Next', 'Prethodni video': 'Previous video', 'Sljedeći video': 'Next video', 'Dokument': 'Document', 'Nazovi': 'Call',
  'Citat': 'Quote', 'Uvodni video Horizont LHB d.o.o.: servis računala, izrada web stranica i poslovanje, na kraju logotip': 'Horizont LHB d.o.o. intro video: IT service, web development and business, ending with the logo',
