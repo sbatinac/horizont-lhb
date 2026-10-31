@@ -14,7 +14,7 @@ T = {
  'Popravljamo računala i konzole, snimamo i montiramo video, izrađujemo web stranice. Jedna firma, jedan kontakt, sve na jednom mjestu.':
    'We repair computers and consoles, shoot and edit video, and build websites. One company, one contact, everything in one place.',
  'Kontaktirajte nas →': 'Contact us →', 'Gdje se nalazimo': 'Where to find us',
- 'Podaci o firmi': 'Company details', 'Naziv': 'Name', 'Sjedište': 'Registered office', 'OIB': 'VAT ID (OIB)', 'MBS': 'Reg. no. (MBS)',
+ 'Podaci o firmi': 'Company details', 'Naziv': 'Name', 'Sjedište': 'Registered office', 'OIB': 'VAT ID', '· OIB': '· VAT ID', 'MBS': 'Reg. no. (MBS)',
  '· Trgovački sud u Osijeku': '· Commercial Court in Osijek', 'Matični br.': 'Company no.', 'Osnovana': 'Founded', 'Direktor': 'Director',
  'Djelatnost': 'Activity', 'IT i servis, web, video, trgovina i posredovanje ·': 'IT & service, web, video, trade & brokerage ·',
  '22 djelatnosti ↓': '22 activities ↓', 'PDV': 'VAT', 'Nije u sustavu PDV-a': 'Not registered for VAT', 'Aktivno poslujemo': 'Active company',
@@ -127,6 +127,7 @@ A = {
 # JavaScript i <head>
 J = [
  ('<html lang="hr">', '<html lang="en">'),
+ ("oib:      '04977480596',", "oib:      'HR04977480596',"),
  ('content="Horizont LHB d.o.o. – servis računala i konzola, video produkcija i izrada web stranica. Tko smo, gdje smo i kako do nas."', 'content="Horizont LHB d.o.o. – computer and console repair, video production, web development and trade. Who we are, where we are and how to reach us."'),
  ('content="Servis računala, video produkcija i web stranice. Jedna firma, jedan kontakt."', 'content="IT service, video production, websites and trade. One company, one contact."'),
  ('<meta property="og:url" content="https://www.horizont-lhb.hr">', '<meta property="og:url" content="https://www.horizont-lhb.hr/en.html">'),
