@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Horizont LHB d.o.o. – computer and console repair, video production, web development and trade. Who we are, where we are and how to reach us.">
+<meta property="og:title" content="Horizont LHB d.o.o.">
+<meta property="og:description" content="IT service, video production, websites and trade. One company, one contact.">
+<meta property="og:image" content="og.jpg">
+<meta property="og:url" content="https://www.horizont-lhb.hr/en.html">
+<meta name="theme-color" content="#0F0E0B">
+<link rel="icon" href="favicon.png">
+<link rel="alternate" hreflang="hr" href="https://www.horizont-lhb.hr/">
+<link rel="alternate" hreflang="en" href="https://www.horizont-lhb.hr/en.html">
+<title>Horizont LHB d.o.o. – IT, video, web & trade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Isti sustav kao Horizont video produkcija: električno plava, zlatna i noćno plava */
+:root{
+  color-scheme:light;
+  --bg:#FFFFFF; --surface:#FAF7F0; --ink:#16140F; --muted:#6B6455; --line:#ECE5D6;
+  --hot:#D9A520; --hot-text:#8A6400; --cyan:#9A6B00; --cyan-soft:#FFF4D6; --on-hot:#16140F;
+  --gtext:linear-gradient(100deg,#2B2410 0%,#8A6A12 45%,#D9A520 100%);
+  --grad:linear-gradient(100deg,#F6D35B 0%,#E0A91E 100%);
+  --split:linear-gradient(90deg,#16140F 0%,#6B5520 35%,#E3B23C 70%,#FFD96B 100%);
+  --night:#0F0E0B;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 var(--body);margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,3.4vw,2.4rem);font-weight:800;letter-spacing:-.01em}
+h3{font-size:1.15rem;font-weight:700}
+p{margin:0}
+.lbl{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.gt{background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
+.btn{display:inline-flex;align-items:center;gap:.6em;background:var(--grad);color:var(--on-hot);font:600 1rem var(--body);text-decoration:none;padding:.9em 1.4em;border-radius:6px;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px -10px rgba(224,169,30,.75)}
+.btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8CEB6;box-shadow:none}
+.btn.ghost:hover{border-color:var(--hot);background:var(--hot);color:#fff}
+[hidden]{display:none!important}
+.tbd{background:#FFF1D2;color:#8A4B00;border-radius:4px;padding:0 4px;font-family:var(--mono);font-size:.85em}
+
+/* zaglavlje */
+header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);position:relative;z-index:20}
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap}
+.brand{font:800 1.15rem var(--display);display:flex;align-items:center;gap:.6em;text-decoration:none}
+.brand small{display:block;font:500 .66rem var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
+.logo{display:inline-flex;background:#fff;border-radius:8px;border:1px solid var(--line);overflow:hidden}
+.logo img{display:block;width:48px;height:48px}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}
+nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
+.burger{display:none;width:46px;height:46px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
+.burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+
+/* INTRO VIDEO na vrhu (kao video produkcija) */
+.banner{background:#16140F;position:relative;line-height:0;display:flex;justify-content:center;overflow:hidden;isolation:isolate}
+.banner .amb{position:absolute;inset:-12%;width:124%;height:124%;z-index:-1;filter:blur(48px) saturate(1.4) brightness(.8);transform:translateZ(0);opacity:.95}
+.banner::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--split);z-index:1}
+.banner video{display:block;width:100%;max-width:calc(min(80vh,1000px) * 16 / 9);height:auto;aspect-ratio:16/9;object-fit:cover;background:transparent;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+@media (max-width:1100px){.banner video{-webkit-mask-image:none;mask-image:none}}
+.vctl{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:18px;z-index:2;display:flex;gap:8px;line-height:1}
+.vbtn{background:rgba(15,14,11,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #4A4334;color:#F8F4EA;font:600 .85rem var(--body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.vbtn:hover{border-color:#F2C230;color:#F2C230}
+@media (max-width:560px){.vbtn{padding:6px 11px;font-size:.78rem}.vctl{position:static;justify-content:center;padding:10px 0 14px}.banner{flex-direction:column;align-items:center}}
+
+/* HERO: synthwave horizont, sunce i mreža */
+.top{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 55% at 50% 58%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#0A0907 0%,#2B2414 57%,#0F0E0B 58%);color:#F8F4EA;min-height:clamp(520px,74vh,760px);display:flex;align-items:flex-start}
+.top .sun{position:absolute;left:min(80%,calc(50% + 380px));top:58%;width:clamp(220px,28vw,380px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#F2C230 40%,#FF8A00 78%);
+  -webkit-mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
+  mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
+  filter:drop-shadow(0 0 50px rgba(217,165,32,.6))}
+.top .floor{position:absolute;left:-50%;right:-50%;top:58%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#0F0E0B;
+  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(227,178,60,.32) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
+.top .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#0F0E0B,transparent 50%)}
+@keyframes floor{to{background-position:0 46px}}
+.top::before{content:"";position:absolute;left:0;right:0;top:58%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(227,178,60,.5);z-index:1}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--split);z-index:2}
+.top .wrap{position:relative;z-index:2;width:100%;padding-block:clamp(36px,6vw,80px) 40px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start}
+.top .lbl{color:#B5AA90}
+.top h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;letter-spacing:-.03em;line-height:.95;margin-top:16px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.9))}
+.top h1 small{display:block;font-size:.36em;letter-spacing:.02em;margin-top:.3em;color:#E8E1CF}
+.brand .lhb{background:linear-gradient(100deg,#FF6F93 0%,#F23A62 55%,#D91F45 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.top h1 .gt{background:linear-gradient(100deg,#FFB3C7 0%,#FF6F93 40%,#F23A62 75%,#D91F45 100%);-webkit-background-clip:text;background-clip:text}
+.top .lead{color:#E8E1CF;font-size:1.1rem;max-width:46ch;margin-top:22px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.top .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.top .btn.ghost{color:#F8F4EA;border-color:#5A5240;background:rgba(15,14,11,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.top .btn.ghost:hover{background:var(--hot);border-color:var(--hot)}
+
+/* osobna iskaznica firme (staklo) */
+.idc{border-radius:12px;padding:22px 22px 18px;font-family:var(--mono);font-size:.86rem;position:relative;overflow:hidden;color:#F8F4EA;
+  background:linear-gradient(135deg,rgba(42,36,22,.72),rgba(12,11,9,.58));border:1px solid rgba(227,178,60,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 30px 70px -30px rgba(217,165,32,.6);
+  -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4)}
+.idc::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.idc .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1.5px dashed rgba(227,178,60,.3);padding-bottom:12px;margin-bottom:12px}
+.idc .hd b{font:700 1.05rem var(--display)}
+.tag{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;background:rgba(255,176,32,.16);color:#F6D35B;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.idc dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;margin:0}
+.idc dt{color:#B5AA90} .idc dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.idc .ft{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1.5px dashed rgba(227,178,60,.3);margin-top:14px;padding-top:12px;font-size:.78rem;color:#B5AA90}
+.idc .tbd{background:rgba(255,176,32,.18);color:#F6D35B}
+.live{display:inline-flex;align-items:center;gap:6px;color:#7FE3A2}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#28C840;animation:rec 1.6s ease-in-out infinite}
+@keyframes rec{50%{opacity:.25}}
+
+section{padding-block:72px}
+.sec-head{display:grid;gap:12px;max-width:62ch;margin-bottom:36px}
+.sec-head p{color:var(--muted)}
+.alt{background:var(--surface);border-block:1px solid var(--line)}
+
+/* o nama: činjenice */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,5vw,64px);align-items:start}
+.about .txt{display:grid;gap:16px;font-size:1.05rem}
+.about .txt p{color:var(--muted)}
+.about .txt p strong{color:var(--ink)}
+.about .txt .ab-lead{font:700 1.2rem var(--display);color:var(--ink)}
+.ab-mot{display:grid;gap:10px;margin-top:10px;padding:18px 0 4px 20px;border-left:3px solid;border-image:var(--split) 1}
+.about .txt .ab-mot p{font:800 clamp(1.1rem,2vw,1.35rem)/1.25 var(--display);color:var(--ink);text-transform:uppercase;letter-spacing:-.005em}
+.nums{position:sticky;top:100px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.num{border:1px solid var(--line);border-radius:10px;padding:18px;display:grid;gap:4px;background:#fff}
+.num b{font:800 1.6rem/1.1 var(--display)}
+.num span{color:var(--muted);font-size:.88rem}
+
+/* djelatnosti: dvije stranice uživo */
+.divs{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:16px}
+.wp-soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 .75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,#FAF7F0 0 14px,#F3EEE2 14px 28px)}
+.dv h3{font-size:1.4rem}
+.dv{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
+.dv:hover{border-color:var(--hot);transform:translateY(-3px);box-shadow:0 24px 50px -28px rgba(217,165,32,.45)}
+.dv:hover h3{color:#7A5A00}
+.dv h3{transition:color .25s;font-size:1.4rem}
+.wp-prev{display:block;position:relative;background:#16140F}
+.wp-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#1E1B15;color:#B5AA90;font:500 .7rem var(--mono)}
+.wp-bar i{width:9px;height:9px;border-radius:50%;background:#4A4334}.wp-bar i:first-child{background:#FF5F57}.wp-bar i:nth-child(2){background:#FEBC2E}.wp-bar i:nth-child(3){background:#28C840}
+.wp-bar em{font-style:normal;margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#28241B;padding:3px 8px;border-radius:5px}
+.wp-bar b{color:#4ADE80;font-weight:500;white-space:nowrap}
+.wp-vp{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.wp-vp iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.wp-vp::after{content:"";position:absolute;inset:0}
+.dv-b{display:grid;gap:10px;padding:20px 24px 24px}
+.dv-b p{color:var(--muted);font-size:.95rem}
+.dv ul{margin:2px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.dv li{font:500 .72rem var(--mono);letter-spacing:.04em;background:var(--surface);border:1px solid var(--line);padding:4px 9px;border-radius:999px;color:var(--muted)}
+.dv .url{font:500 .78rem var(--mono);color:var(--cyan)}
+.dv .go{font-weight:600;color:var(--hot-text);margin-top:4px}
+.extra{margin-top:20px;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.extra div{padding:20px 20px 20px 0;border-bottom:1px solid var(--line);display:grid;gap:6px}
+.extra div+div{padding-left:20px;border-left:1px solid var(--line)}
+.extra p{color:var(--muted);font-size:.93rem}
+
+
+/* sve registrirane djelatnosti */
+.reg{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3.5vw,34px);position:relative;overflow:hidden}
+.reg::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.reg-h{display:grid;gap:8px;max-width:70ch;margin-bottom:22px}
+.reg-h h3{font-size:1.45rem}
+.reg-h h3 small{font:600 .8rem var(--mono);background:var(--grad);color:var(--on-hot);padding:3px 8px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.reg-h p{color:var(--muted);font-size:.92rem}
+.reg-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.rg b{display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 1rem var(--display);padding-bottom:10px;margin-bottom:8px;border-bottom:1.5px solid var(--ink)}
+.rg b span{font:500 .72rem var(--mono);color:var(--cyan)}
+.rg ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.rg li{position:relative;padding-left:20px;font-size:.9rem;line-height:1.4;color:#3A352A}
+.rg li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:10px;border-radius:3px;background:var(--grad)}
+@media (max-width:1000px){.reg-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.reg-g{grid-template-columns:1fr}}
+
+/* web projekti */
+.webs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.wp{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+.wp:hover{box-shadow:0 24px 50px -28px rgba(217,165,32,.45)}
+.wp{grid-template-columns:minmax(0,1fr);min-width:0}
+.wp-b{display:grid;gap:10px;padding:18px 22px 22px;min-width:0}
+.webs{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))!important}
+.wp-prev{display:block;position:relative;background:#16140F}
+.wp-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#1E1B15;color:#B5AA90;font:500 .7rem var(--mono)}
+.wp-bar i{width:9px;height:9px;border-radius:50%;background:#4A4334}.wp-bar i:first-child{background:#FF5F57}.wp-bar i:nth-child(2){background:#FEBC2E}.wp-bar i:nth-child(3){background:#28C840}
+.wp-bar em{font-style:normal;margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#28241B;padding:3px 8px;border-radius:5px}
+.wp-bar b{color:#4ADE80;font-weight:500;white-space:nowrap}
+.wp-vp{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.wp-vp iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.wp-vp::after{content:"";position:absolute;inset:0}
+.wp:hover{border-color:var(--hot);transform:translateY(-3px)}
+.wp .url{font:500 .78rem var(--mono);color:var(--cyan);overflow-wrap:anywhere}
+.wp p{color:var(--muted);font-size:.93rem}
+.wp .go{font-weight:600;color:var(--hot-text);margin-top:4px}
+
+
+
+
+/* CITATI: mijenjaju se svakih 15 s */
+.wave{height:auto;min-height:clamp(320px,34vw,460px);padding:0}
+.wave .wrap{padding-block:clamp(30px,5vw,60px) 40px}
+.qt{margin:0;max-width:min(30ch,58%);display:grid;gap:14px;transition:opacity .6s,transform .6s;filter:drop-shadow(0 4px 20px rgba(0,0,0,.95))}
+.qt.out{opacity:0;transform:translateY(8px)}
+.qt-l{font:500 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#F2C230}
+.qt blockquote{margin:0;color:#F8F4EA;font:800 clamp(1.35rem,2.8vw,2.1rem)/1.15 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.qt blockquote::before{content:"„"}.qt blockquote::after{content:"“"}
+.qt figcaption{font:500 .9rem var(--body);color:#E8E1CF}
+.qt figcaption::before{content:"— "}
+.qt-ctl{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:min(30ch,58%)}
+.qt-bar{flex:1;height:2px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
+.qt-bar i{display:block;height:100%;width:0;background:var(--grad)}
+.qt-bar i.run{animation:qbar var(--qd,15s) linear forwards}
+@keyframes qbar{to{width:100%}}
+#qtNext{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
+#qtNext:hover{border-color:#F2C230;color:#F2C230}
+@media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.55}}
+
+/* MATERIJALI: kartice koje otvaraju slike, video i PDF */
+.mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.mc{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:14px;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:18px 18px;cursor:pointer;font:inherit;color:inherit;position:relative;overflow:hidden;transition:border-color .2s,transform .2s,box-shadow .2s}
+.mc::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--split);opacity:0;transition:opacity .2s}
+.mc:hover{border-color:#D9A520;transform:translateY(-2px);box-shadow:0 18px 40px -26px rgba(30,24,10,.45)}
+.mc[aria-expanded="true"]{border-color:#D9A520;box-shadow:0 18px 40px -26px rgba(217,165,32,.6)}
+.mc[aria-expanded="true"]::before{opacity:1}
+.mc-i{width:48px;height:48px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center}
+.mc-i svg{width:24px;height:24px;fill:none;stroke:#16140F;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.mc-t{display:grid;gap:2px;min-width:0}
+.mc-t b{font:700 1.1rem var(--display)}
+.mc-t small{color:var(--muted);font-size:.85rem}
+.mc-n{font:500 .75rem var(--mono);color:var(--cyan);background:var(--cyan-soft);padding:3px 8px;border-radius:999px;white-space:nowrap}
+.mc-a{font-size:1.2rem;transition:transform .25s;color:var(--muted)}
+.mc[aria-expanded="true"] .mc-a{transform:rotate(180deg);color:#16140F}
+.panel{animation:pin .35s ease}
+@keyframes pin{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.panel .sec-head{grid-template-columns:1fr auto;align-items:end;max-width:none}
+.panel .sec-head>*:not(.pclose){grid-column:1}
+.pclose{grid-column:2;grid-row:1/span 3;align-self:start}
+#materijali{padding-bottom:40px}
+#materijali + .panel{border-top:0}
+@media (max-width:900px){.mat{grid-template-columns:1fr}}
+
+/* vlasnik */
+.owner{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,5vw,60px);align-items:center}
+.ph-o{aspect-ratio:4/5;border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 70%,rgba(255,170,40,.35),transparent 70%),linear-gradient(#17140D,#2B2414 60%,#0F0E0B);display:flex;align-items:center;justify-content:center;box-shadow:0 40px 90px -45px rgba(217,165,32,.7)}
+.ph-o::after{content:"";position:absolute;inset:0;border-radius:16px;padding:2px;background:var(--split);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
+.ph-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ph-o .ini{font:800 clamp(4rem,10vw,6.5rem)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(100deg,#FFF4D0,#F7DC8A 42%,#EDBE45 62%,#D9A520);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ow-t{display:grid;gap:14px}
+.ow-tag{font:800 clamp(1.15rem,2.2vw,1.45rem)/1.2 var(--display);text-transform:uppercase;letter-spacing:-.005em;margin-top:4px}
+.ow-t .ow-lead{font:600 1.15rem/1.45 var(--body);color:var(--ink)}
+.ow-t .ow-em{font:700 1.1rem/1.4 var(--display);color:var(--ink)}
+.ow-t .ow-pink{font:800 clamp(1.2rem,2.2vw,1.5rem)/1.3 var(--display);background:linear-gradient(100deg,#FF6F93 0%,#F23A62 55%,#D91F45 100%);-webkit-background-clip:text;background-clip:text;color:transparent;max-width:34ch}
+.ow-more{display:grid;gap:14px;animation:pin .35s ease}
+.ow-btn{justify-self:start;padding:.65em 1.1em;font-size:.95rem}
+.ow-t blockquote{text-transform:uppercase}
+.owner{align-items:start}
+.owner .ph-o{position:sticky;top:100px}
+
+.ow-t .role{font:500 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
+.ow-t p{color:var(--muted);font-size:1.03rem;max-width:58ch}
+.ow-t blockquote{margin:6px 0 0;padding:14px 0 14px 20px;border-left:3px solid;border-image:var(--split) 1;font:700 clamp(1.15rem,2.2vw,1.45rem)/1.3 var(--display);color:var(--ink);max-width:40ch}
+.skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.skills span{border:1.5px solid var(--line);padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:500;background:#fff}
+
+/* traka sa sloganom */
+.wave{position:relative;overflow:hidden;height:clamp(220px,26vw,340px);background:radial-gradient(ellipse 60% 55% at 50% 56%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#0A0907 0%,#2B2414 55%,#0F0E0B 56%);display:flex;align-items:flex-start}
+.wave .sun{position:absolute;left:72%;top:55%;width:clamp(150px,17vw,230px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#F2C230 40%,#FF8A00 78%);
+  -webkit-mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
+  mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%)}
+.wave .floor{position:absolute;left:-50%;right:-50%;top:56%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#0F0E0B;
+  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(227,178,60,.32) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
+.wave .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#0F0E0B,transparent 50%)}
+.wave::before{content:"";position:absolute;left:0;right:0;top:56%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(227,178,60,.5);z-index:1}
+.wave .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(26px,4.5vw,56px)}
+.wave .slog{color:#F8F4EA;font:800 clamp(1.7rem,4.2vw,3rem)/1.02 var(--display);letter-spacing:-.02em;max-width:14ch;filter:drop-shadow(0 4px 20px rgba(0,0,0,.9))}
+.wave .slog .gt{background:linear-gradient(100deg,#FFF4D0 0%,#F7DC8A 42%,#EDBE45 62%,#D9A520 100%);-webkit-background-clip:text;background-clip:text}
+.d-slu{width:clamp(140px,17vw,240px);right:max(10px,calc(50% - 600px));top:10%;--r:-12deg;--fd:8.5s;z-index:3;filter:drop-shadow(0 0 40px rgba(217,165,32,.35)) drop-shadow(0 20px 30px rgba(0,0,0,.6))}
+
+/* UKRASI */
+.has-deco{position:relative;overflow:clip}
+.has-deco>.wrap{position:relative;z-index:1}
+.deco{position:absolute;z-index:0;pointer-events:none;user-select:none;height:auto;filter:drop-shadow(0 28px 34px rgba(30,24,10,.22));animation:float var(--fd,8s) ease-in-out infinite;transform:rotate(var(--r,0deg))}
+@keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 2deg))}}
+.d-mic{width:clamp(110px,12vw,180px);right:max(-20px,calc(50% - 640px));top:-30px;--r:14deg;--fd:7s;opacity:.9}
+.d-kla{width:clamp(110px,12vw,180px);right:max(10px,calc(50% - 600px));top:30px;--r:9deg;--fd:7.5s}
+
+
+/* GALERIJA / VIDEO / PDF (isto kao video produkcija) */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+.tab{background:var(--bg);border:1px solid var(--line);color:var(--muted);padding:8px 16px;border-radius:999px;cursor:pointer;font:600 .9rem var(--body)}
+.tab small{font-family:var(--mono);font-weight:400}
+.tab.on{background:var(--grad);color:var(--on-hot);border-color:transparent}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
+.ph{aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:pointer;background:#F1EBDD;border:0;padding:0;display:block}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
+.ph:hover img{transform:scale(1.05)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
+.card{background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;transition:border-color .2s}
+.card:hover{border-color:var(--hot)}
+.card .th{aspect-ratio:3/4;background:#F1EBDD center/cover no-repeat;position:relative;display:block}
+.card .th::after{content:"PDF";position:absolute;top:10px;right:10px;background:var(--cyan);color:#fff;padding:4px 7px;border-radius:4px;font:500 .7rem var(--mono);letter-spacing:.1em}
+.card .nm{display:block;padding:12px 14px;font-weight:600;font-size:.95rem;overflow-wrap:anywhere}
+.more{margin-top:24px}
+.msg{color:var(--muted);padding:24px 0}
+.skel{animation:sk 1.2s infinite alternate}
+@keyframes sk{from{opacity:.55}to{opacity:1}}
+.soon{aspect-ratio:1;border-radius:8px;border:1px dashed #DCD2BB;display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(30,24,10,.025) 12px 24px)}
+.cards .soon{aspect-ratio:3/4}
+.modal{position:fixed;inset:0;background:rgba(15,14,11,.94);z-index:100;display:none;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modal img{max-width:92vw;max-height:84vh;border-radius:6px}
+.modal iframe{width:min(1000px,94vw);height:86vh;border:0;border-radius:6px;background:#fff}
+.mx{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:calc(16px + env(safe-area-inset-right,0px));font-size:2rem;background:none;border:0;color:#fff;cursor:pointer}
+.nv{position:absolute;top:50%;transform:translateY(-50%);font-size:2rem;background:rgba(255,255,255,.12);border:0;color:#fff;width:50px;height:50px;border-radius:50%;cursor:pointer;z-index:2}
+.nv.l{left:calc(12px + env(safe-area-inset-left,0px))}.nv.r{right:calc(12px + env(safe-area-inset-right,0px))}
+.cap{position:absolute;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#ccc;font:.85rem var(--mono)}
+.dl{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));left:calc(18px + env(safe-area-inset-left,0px));color:#fff;font-weight:600}
+
+/* VIDEO: kino mozaik */
+#video.cine{background:#0F0E0B;color:#F8F4EA;position:relative;overflow:hidden}
+#video.cine::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(ellipse at center,rgba(217,165,32,.22),transparent 65%);pointer-events:none}
+#video.cine .wrap{position:relative}
+.cine .sec-head p,.cine .lbl{color:#B5AA90}
+.cine .tab{background:#1E1B15;border-color:#2E2A21;color:#B5AA90}
+.cine .tab.on{background:var(--grad);color:var(--on-hot);border-color:transparent}
+.cine .btn.ghost{color:#F8F4EA;border-color:#4A4334}
+.mz{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));grid-auto-rows:112px;grid-auto-flow:dense;gap:10px}
+.mt{position:relative;overflow:hidden;border-radius:12px;border:0;padding:0;margin:0;cursor:pointer;background:#1E1B15;color:#fff;text-align:left;font:inherit;grid-row:span 2;opacity:0;transform:translateY(28px) scale(.94);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);isolation:isolate}
+.mt.in{opacity:1;transform:none}
+.mt.w{grid-column:span 2;grid-row:span 2}
+.mt.t{grid-row:span 3}
+.mt.f{grid-column:span 3;grid-row:span 3}
+.mt .bg{position:absolute;inset:-6%;background:#1E1B15 center/cover no-repeat;animation:kb var(--d,16s) ease-in-out var(--dl,0s) infinite alternate;transition:filter .4s}
+@keyframes kb{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.16) translate(var(--x,3%),var(--y,-2%))}}
+.mt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,14,11,.88));z-index:1}
+.mt::before{content:"";position:absolute;inset:0;border-radius:12px;padding:2px;background:var(--split);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;z-index:3;pointer-events:none}
+.mt:hover::before,.mt:focus-visible::before{opacity:1}
+.mt:focus-visible{outline:none}
+.mt .pl{position:absolute;z-index:2;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:1.05rem;padding-left:3px;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.mt:hover .pl,.mt:focus-visible .pl{transform:scale(1.25);background:var(--grad);color:var(--on-hot);box-shadow:0 0 30px rgba(217,165,32,.7)}
+.mt.f .pl{width:72px;height:72px;margin:-36px 0 0 -36px;font-size:1.4rem}
+.mt .meta{position:absolute;left:12px;right:12px;bottom:10px;z-index:2;display:flex;justify-content:space-between;gap:8px;align-items:flex-end}
+.mt .meta b{font:700 .95rem/1.2 var(--display);overflow-wrap:anywhere;text-shadow:0 2px 10px rgba(0,0,0,.6)}
+.mt.f .meta b{font-size:1.3rem}
+.mt .dur{font:500 .7rem var(--mono);background:rgba(0,0,0,.6);padding:3px 6px;border-radius:4px;flex:none}
+.mt.soon{display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7A705A;border:1px dashed #3E382B;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.02) 12px 24px);cursor:default;aspect-ratio:auto}
+.mt.soon::before,.mt.soon::after{content:none}
+.vwrap{position:relative;width:min(1000px,94vw);aspect-ratio:16/9;max-height:84vh;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px #2E2A21,0 40px 120px -20px rgba(217,165,32,.5)}
+.vwrap.tall{width:auto;height:min(84vh,900px);aspect-ratio:9/16;max-width:94vw}
+.modal #mVidEl{position:absolute;inset:0;width:100%;height:100%;max-height:none;border:0;border-radius:0;background:transparent;opacity:0;transition:opacity .45s}
+.modal #mVidEl.on{opacity:1}
+.spin{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 20%,#D9A520 55%,#F2C230);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));animation:spin .9s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (max-width:700px){
+  .mz{grid-template-columns:1fr 1fr;grid-auto-rows:88px;gap:8px}
+  .mt.f{grid-column:span 2;grid-row:span 3}
+  .mt .pl{width:44px;height:44px;margin:-22px 0 0 -22px}
+  .mt .meta b{font-size:.82rem}
+  #mVid .nv{top:auto;bottom:calc(52px + env(safe-area-inset-bottom,0px));transform:none;width:46px;height:46px}#mVid .nv.l{left:calc(50% - 58px)}#mVid .nv.r{right:calc(50% - 58px)}
+}
+
+/* LOKACIJA */
+.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -50px rgba(30,24,10,.4)}
+.loc-i{padding:clamp(22px,3.5vw,36px);display:grid;gap:18px;align-content:start;position:relative}
+.loc-i::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.loc-i dl{display:grid;gap:14px;margin:0}
+.loc-i dt{font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.loc-i dd{margin:0;font-weight:600;font-size:1.05rem}
+.loc-i .btns{display:flex;gap:8px;flex-wrap:wrap}
+.loc-i .btns .btn{padding:.65em 1.05em;font-size:.92rem}
+.map{position:relative;min-height:380px;background:#F1EBDD}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.9)}
+.map-go{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:flex-start;padding:16px;text-decoration:none;cursor:pointer}
+.map-go .pin{display:grid;gap:2px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 14px 34px -14px rgba(30,24,10,.5);transition:transform .2s,border-color .2s}
+.map-go .pin b{font:700 1rem var(--display)}
+.map-go .pin small{font-size:.82rem;color:var(--hot-text);font-weight:600}
+.map-go:hover .pin,.map-go:focus-visible .pin{transform:translateY(-3px);border-color:var(--hot)}
+.adr-l,.tel-l,.tel2-l{text-decoration:none}
+.adr-l{border-bottom:1.5px dashed currentColor}
+.adr-l:hover{color:var(--hot-text)}
+.idc .adr-l:hover{color:#F6D35B}
+.k-num2{font:800 clamp(1.4rem,3vw,1.9rem)/1 var(--display);font-variant-numeric:tabular-nums}
+.k-num2 a{text-decoration:none}
+
+/* kontakt */
+.kontakt{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,56px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(22px,4vw,40px);align-items:center}
+.k-info{display:flex;flex-direction:column;gap:14px;min-width:0}
+.k-lead{color:var(--muted)}
+.k-row{display:grid;gap:8px;padding-top:18px;border-top:1px solid var(--line)}
+.k-num{font:800 clamp(1.8rem,4vw,2.6rem)/1 var(--display);font-variant-numeric:tabular-nums;text-decoration:none;justify-self:start;white-space:nowrap}
+.k-num:hover{filter:brightness(1.15)}
+.k-mail{font:700 clamp(1.05rem,2.2vw,1.35rem) var(--display);overflow-wrap:anywhere;text-decoration:none}
+.k-mail:hover{color:var(--hot-text)}
+.k-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.k-btns .btn{padding:.6em 1em;font-size:.92rem}
+.k-logo{display:grid;gap:18px;justify-items:center;text-align:center}
+.k-logo img{width:100%;max-width:440px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 80px -40px rgba(217,165,32,.6)}
+.k-logo .slog{font:800 clamp(1.6rem,3.4vw,2.4rem)/1.05 var(--display);letter-spacing:-.02em}
+
+/* JEZIK */
+.lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:38px;padding:0 10px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:600 .82rem var(--mono);letter-spacing:.08em;text-decoration:none;color:var(--ink)}
+.lang:hover{border-color:#D9A520;background:var(--grad)}
+
+/* GLAZBA */
+.hdr-r{display:flex;align-items:center;gap:10px}
+.music{display:flex;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
+.music .mlbl{font:500 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);padding:0 6px 0 9px}
+.mbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:0;color:var(--ink);font:600 .84rem var(--body);padding:6px 11px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.mbtn:hover{background:#F1EBDD}
+.mbtn.on{background:var(--grad);color:var(--on-hot);box-shadow:0 6px 18px -8px rgba(224,169,30,.8)}
+.mbtn .eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
+.mbtn .eq i{width:3px;height:30%;background:currentColor;border-radius:1px}
+.mbtn.on .eq i{animation:eq .9s ease-in-out infinite}
+.mbtn.on .eq i:nth-child(2){animation-delay:.2s}.mbtn.on .eq i:nth-child(3){animation-delay:.4s}
+@keyframes eq{0%,100%{height:30%}50%{height:100%}}
+.music.float{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:90;box-shadow:0 14px 40px -14px rgba(30,24,10,.45);background:#fff}
+
+footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.85rem;margin-top:72px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:var(--cyan)}
+
+@media (max-width:1000px){
+  nav{display:none}
+  .burger{display:inline-flex;order:3}
+  header.open nav{display:flex;order:5;width:100%;flex-direction:column;gap:0;border-top:1px solid var(--line);padding-top:6px}
+  header.open nav a{padding:13px 4px;border-bottom:1px solid var(--line);font-size:1.05rem;color:var(--ink)}
+  header.open nav a:last-child{border-bottom:0}
+  .hdr-r{order:2}
+}
+@media (max-width:900px){
+  .top .wrap{grid-template-columns:1fr}
+  .top{min-height:0}
+  .top .sun{top:auto;bottom:-6%;transform:translate(-50%,0);left:78%;width:46vw;opacity:.7}
+  .top::before,.top .floor{display:none}
+  .about,.owner,.kontakt,.loc{grid-template-columns:1fr}
+  .owner .ph-o{max-width:300px}
+  .divs{grid-template-columns:1fr}
+  .extra{grid-template-columns:1fr}
+  .extra div+div{padding-left:0;border-left:0}
+  .map{min-height:320px}
+}
+@media (max-width:700px){
+  header{position:sticky;top:0;z-index:50}
+  header .wrap{padding-block:10px;gap:10px}
+  .brand{font-size:.95rem;flex:1;min-width:0}
+  .logo img{width:40px;height:40px}
+  html{scroll-padding-top:72px}
+  .hdr-r{width:100%;justify-content:center;order:4}
+  .grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .cards{grid-template-columns:repeat(2,1fr);gap:10px}
+  .top .cta .btn{width:100%;justify-content:center}
+}
+@media (max-width:560px){
+  section{padding-block:52px}
+  .nums{grid-template-columns:1fr 1fr}
+  .num b{font-size:1.3rem}
+}
+@media (max-width:380px){.music .mlbl{display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}html{scroll-behavior:auto}.mt{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#"><span class="logo"><img src="logo-znak.webp" alt="" width="48" height="48"></span><span>Horizont <span class="lhb">LHB</span><small>d.o.o.</small></span></a>
+  <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span><span></span></button>
+  <nav id="mnav"><a href="#o-nama">About</a><a href="#djelatnosti">Activities</a><a href="#vlasnik">Owner</a><a href="#materijali">Gallery</a><a href="#lokacija">Location</a><a href="#kontakt">Contact</a></nav>
+  <div class="hdr-r">
+    <a class="lang" href="./" hreflang="hr" title="Hrvatski">HR</a>
+    <div class="music" id="music" role="group" aria-label="Music">
+      
+      <button type="button" class="mbtn" data-src="glazba-1.mp3" aria-pressed="false" title="Neon Sunset Drive"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Sunset</button>
+      <button type="button" class="mbtn" data-src="glazba-2.mp3" aria-pressed="false" title="Neon Overdrive"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Overdrive</button>
+    </div>
+  </div>
+</div></header>
+
+<div class="banner">
+  <canvas class="amb" id="amb" width="48" height="27" aria-hidden="true"></canvas>
+  <video id="intro" src="intro.mp4" poster="intro-poster.webp" muted playsinline preload="auto" width="854" height="480" aria-label="Horizont LHB d.o.o. intro video: IT service, web development and business, ending with the logo"></video>
+  <div class="vctl">
+    <button type="button" class="vbtn" id="vSound" aria-pressed="false">🔊 Sound on</button>
+    <button type="button" class="vbtn" id="vAgain">↻ Replay</button>
+  </div>
+</div>
+
+<div class="top">
+  <span class="sun" aria-hidden="true"></span><span class="floor" aria-hidden="true"></span>
+  <div class="wrap">
+    <div>
+      <span class="lbl">IT service · Video production · Web</span>
+      <h1>Horizont <span class="gt">LHB</span><small>limited liability company</small></h1>
+      <p class="lead">We repair computers and consoles, shoot and edit video, and build websites. One company, one contact, everything in one place.</p>
+      <div class="cta">
+        <a class="btn" href="#kontakt">Contact us →</a>
+        <a class="btn ghost" href="#lokacija">Where to find us</a>
+      </div>
+    </div>
+    <aside class="idc" aria-label="Company details">
+      <div class="hd"><b>Company details</b><span class="tag">d.o.o.</span></div>
+      <dl>
+        <dt>Name</dt><dd>Horizont LHB d.o.o.</dd>
+        <dt>Registered office</dt><dd><a class="adr-l" data-f="adresaPuna" target="_blank" rel="noopener"></a></dd>
+        <dt>VAT ID (OIB)</dt><dd data-f="oib"></dd>
+        <dt>Reg. no. (MBS)</dt><dd><span data-f="mbs"></span> · Commercial Court in Osijek</dd>
+        <dt>Company no.</dt><dd data-f="mb"></dd>
+        <dt>Founded</dt><dd data-f="osnovana"></dd>
+        <dt>Director</dt><dd data-f="vlasnik"></dd>
+        <dt>Activity</dt><dd>IT & service, web, video, trade & brokerage · <a href="#sve-djelatnosti" style="color:#F6D35B">22 activities ↓</a></dd>
+        <dt>VAT</dt><dd>Not registered for VAT</dd>
+      </dl>
+      <div class="ft"><span class="live">Active company</span><a class="tel-l" data-f="tel" style="color:inherit;text-decoration:none"></a></div>
+    </aside>
+  </div>
+</div>
+
+<section id="o-nama"><div class="wrap">
+  <div class="about">
+    <div class="txt">
+      <span class="lbl">About</span>
+      <h2>One company. <span class="gt">Endless possibilities.</span></h2>
+      <p class="ab-lead">We don’t believe in limits. We believe in opportunities.</p>
+      <p>Driven by ambition, innovation and a constant desire to move forward, we keep exploring new markets, new technologies and new business opportunities.</p>
+      <p>From computer technology, web design and digital production to trade, sales and building business partnerships, our knowledge and experience connect different activities into one strong business.</p>
+      <p>Every new challenge calls for a different approach, but our principles always stay the same: <strong>professionalism, precision, creativity and excellence.</strong></p>
+      <p>We don’t wait for opportunities. We create them.</p>
+      <p>We don’t limit ourselves to one line of business. We keep widening our horizons.</p>
+      <p>Because for us, diversity is not an obstacle. <strong>It is our strength.</strong></p>
+      <div class="ab-mot">
+        <p>Many activities. One vision. <span class="gt">Unlimited ambition.</span></p>
+        <p>Because for us, growth is not just a goal. <span class="gt">Growth is part of who we are.</span></p>
+      </div>
+    </div>
+    <div class="nums">
+      <div class="num"><b>22</b><span>registered activities</span></div>
+      <div class="num"><b>1 contact</b><span>from enquiry to delivery</span></div>
+      <div class="num"><b>Since 2023</b><span>in business</span></div>
+      <div class="num"><b>Osijek</b><span>office and workshop</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="djelatnosti" class="alt has-deco"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Activities</span><h2>What we do</h2><p>Each activity has its own website. Click to see it live.</p></div>
+  <div class="divs">
+    <a class="dv" href="https://batinac.com/pc-servis" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>batinac.com/pc-servis</em><b>● live</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/horizont-servisi/" title="IT service website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="dv-b">
+        <span class="lbl">Activity 01</span>
+        <h3>Computer & console repair</h3>
+        <p>Laptops, desktops and game consoles. Diagnostics, cleaning, part replacement, upgrades and data recovery. Online service orders and status tracking.</p>
+        <ul><li>Laptops</li><li>PC</li><li>PlayStation · Xbox · Nintendo</li><li>Used parts</li></ul>
+        <span class="url">batinac.com/pc-servis</span>
+        <span class="go">Open IT service ↗</span>
+      </span>
+    </a>
+    <a class="dv" href="https://batinac.com/video-produkcija" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>batinac.com/video-produkcija</em><b>● live</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/horizont-video_production/" title="Video production website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="dv-b">
+        <span class="lbl">Activity 02</span>
+        <h3>Video production</h3>
+        <p>Promo videos, Reels and TikTok, logo animation, visual identity and AI visuals. For companies, sole traders, associations and individuals.</p>
+        <ul><li>Promo video</li><li>Reels · TikTok</li><li>Logo animation</li><li>Editing</li></ul>
+        <span class="url">batinac.com/video-produkcija</span>
+        <span class="go">Open video production ↗</span>
+      </span>
+    </a>
+    <a class="dv" id="distCard" href="#" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em id="distUrl">horizont distribution</em><b>● live</b></span><span class="wp-vp"><iframe id="distFr" title="Distribution website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe><span class="wp-soon" id="distSoon">Online soon</span></span></span>
+      <span class="dv-b">
+        <span class="lbl">Activity 03</span>
+        <h3>Horizont distribution</h3>
+        <p>Trade and brokerage on domestic and foreign markets, representation of foreign companies and sale of a wide range of products.</p>
+        <ul><li>Wholesale</li><li>Brokerage</li><li>Representation</li></ul>
+        <span class="url" id="distUrl2"></span>
+        <span class="go">Open distribution ↗</span>
+      </span>
+    </a>
+    <a class="dv" href="https://sbatinac.github.io/beorol.hrvatska/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/beorol.hrvatska</em><b>● live</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/beorol.hrvatska/" title="Beorol website preview" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="dv-b">
+        <span class="lbl">Activity 04</span>
+        <h3>Beorol Hrvatska</h3>
+        <p>Representation and distribution of Beorol products in Croatia: painting and hand tools, protective equipment, technical chemicals, and home and garden products.</p>
+        <ul><li>Representation</li><li>Distribution</li><li>Tools & equipment</li></ul>
+        <span class="url">sbatinac.github.io/beorol.hrvatska</span>
+        <span class="go">Open Beorol ↗</span>
+      </span>
+    </a>
+  </div>
+  <div class="extra">
+    <div><h3>Turnkey websites</h3><p>Design, build, galleries, forms and admin. Online and ready from day one.</p></div>
+    <div><h3>Online shops</h3><p>Products, cart, orders and payments, with photos and video that sell.</p></div>
+    <div><h3>Print & PDF</h3><p>Flyers, catalogues, quotes and presentations in your company’s style.</p></div>
+  </div>
+
+  <div class="reg" id="sve-djelatnosti">
+    <div class="reg-h"><span class="lbl">Court register</span><h3>All registered activities <small>22</small></h3><p>Main activity: NACE 46.19 Agents involved in the sale of a variety of goods. Entered in the court register of the Commercial Court in Osijek, reg. no. (MBS) 030271774.</p></div>
+    <div class="reg-g">
+      <div class="rg"><b>IT & computers <span>9</span></b><ul><li>Repair of computers and peripheral equipment</li><li>Computer facilities and systems management</li><li>Computer consultancy</li><li>Computer programming</li><li>Data processing, hosting and related activities</li><li>Other information technology and computer service activities</li><li>Information society services</li><li>Web portals</li><li>Other information service activities</li></ul></div>
+      <div class="rg"><b>Web, design & media <span>5</span></b><ul><li>Web design</li><li>Specialised design activities</li><li>Motion picture, video and television programme production</li><li>Advertising and promotion</li><li>Media advertising</li></ul></div>
+      <div class="rg"><b>Trade & brokerage <span>5</span></b><ul><li>Purchase and sale of goods</li><li>Trade services</li><li>Trade brokerage on domestic and foreign markets</li><li>Representation of foreign companies</li><li>Agents in the sale of a variety of goods</li></ul></div>
+      <div class="rg"><b>Business services <span>3</span></b><ul><li>Business and other management consultancy</li><li>Organisation of meetings and trade fairs</li><li>Transport of persons and goods for own needs</li></ul></div>
+    </div>
+  </div>
+</div></section>
+
+
+
+<section id="vlasnik" class="alt"><div class="wrap">
+  <div class="owner">
+    <div class="ph-o" id="ownPh"><span class="ini" aria-hidden="true">SB</span></div>
+    <div class="ow-t">
+      <span class="lbl">Owner & director</span>
+      <h2 data-f="vlasnik"></h2>
+      <span class="role">Founder · entrepreneur · technology & creativity</span>
+      <h3 class="ow-tag">One vision. Many paths. <span class="gt">No limits.</span></h3>
+      <p class="ow-lead">Behind every business success there is an idea. Behind every idea there is a person who dared to try.</p>
+      <p>I have never believed that a person should be defined by a single job, a single activity or a single career path.</p>
+      <p>To me, entrepreneurship is much more than doing business. It is a constant search for possibilities, the ability to spot opportunities and the courage to step into something new.</p>
+      <p>My business experience covers sales, trade, building business relationships, negotiation and connecting partners across different markets. At the same time, my passion for technology and creativity takes me through computer systems, web design, digital production, artificial intelligence, and video and audio editing.</p>
+      <p class="ow-em">Seemingly different worlds. To me, parts of the same story.<br>A story of creating, connecting and constantly moving forward.</p>
+      <div class="ow-more" id="owMore" hidden>
+        <p>I don’t claim to know everything. But I know how to learn, explore, find a solution and bring the right people together around a good idea.</p>
+        <p>When a problem comes up, I don’t look for a reason to give up. I look for a way to solve it.</p>
+        <p>When I spot a business opportunity, I don’t just watch it from afar. I try to turn it into a real project.</p>
+        <p>And when I start something new, I approach it with the same seriousness, responsibility and drive to make the result as good as it can be.</p>
+        <p>Over the years I have learned that success doesn’t always take the shortest road. Sometimes it takes a change of direction, new beginnings, hard decisions and the willingness to start again.</p>
+        <p class="ow-em">But that is exactly where I find my strength.</p>
+        <p class="ow-pink">I don’t want to be limited by what I do today. I want to discover everything I can achieve tomorrow.</p>
+        <p>I believe in knowledge, professionalism, creativity and fair business. I believe real opportunity is born when experience meets an idea, and the idea meets determination.</p>
+        <p class="ow-em">That is why I don’t build my future around one line of business.<br>I build it around possibilities.</p>
+        <p>Because my biggest project has never been just one product, one service or one company.</p>
+        <p class="ow-em">My biggest project is creating a future in which ideas become reality.</p>
+      </div>
+      <button type="button" class="btn ghost ow-btn" id="owBtn" aria-expanded="false" aria-controls="owMore">Read the full story ↓</button>
+      <blockquote>Many activities. One vision. <span class="gt">Unlimited ambition.</span></blockquote>
+      <div class="skills"><span>Sales & trade</span><span>Negotiation & partnerships</span><span>Computer systems</span><span>Web design</span><span>Video & audio</span><span>Artificial intelligence</span></div>
+    </div>
+  </div>
+</div></section>
+
+
+
+<section class="wave" id="citati" aria-label="Quote"><span class="sun" aria-hidden="true"></span><span class="floor" aria-hidden="true"></span>
+  <div class="wrap">
+    <figure class="qt" id="qt" aria-live="polite">
+      <span class="qt-l" id="qtTema">Quote</span>
+      <blockquote id="qtTxt"></blockquote>
+      <figcaption id="qtAut"></figcaption>
+    </figure>
+    <div class="qt-ctl"><span class="qt-bar"><i id="qtBar"></i></span><button type="button" id="qtNext" aria-label="Next quote">›</button></div>
+  </div>
+</section>
+
+<section id="materijali" class="alt"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Gallery & materials</span><h2>Photos, videos & documents</h2><p>Pick a card to open it.</p></div>
+  <div class="mat">
+    <button type="button" class="mc" data-open="#radovi" aria-expanded="false" aria-controls="radovi">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 17-5-5-9 8"/></svg></span>
+      <span class="mc-t"><b>Photos</b><small>Workshop, equipment and work</small></span>
+      <span class="mc-n" data-cnt="gallery">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+    <button type="button" class="mc" data-open="#video" aria-expanded="false" aria-controls="video">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg></span>
+      <span class="mc-t"><b>Videos</b><small>Company and projects</small></span>
+      <span class="mc-n" data-cnt="video">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+    <button type="button" class="mc" data-open="#dokumenti" aria-expanded="false" aria-controls="dokumenti">
+      <span class="mc-i" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></svg></span>
+      <span class="mc-t"><b>PDF documents</b><small>Presentations, price lists, catalogues</small></span>
+      <span class="mc-n" data-cnt="pdf">…</span><span class="mc-a" aria-hidden="true">↓</span>
+    </button>
+  </div>
+</div></section>
+
+<section id="radovi" class="alt panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Close ✕</button><span class="lbl">Gallery</span><h2>Photos</h2><p>Workshop, equipment, projects and work. Click a photo to enlarge it.</p></div>
+  <div class="tabs" id="gTabs"></div>
+  <div class="grid" id="gGrid"></div>
+  <div class="more"><button class="btn ghost" id="gMore" hidden>Show more</button></div>
+</div></section>
+
+<section id="video" class="cine panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Close ✕</button><span class="lbl">Video</span><h2>Videos</h2><p>Company presentation, projects and short formats. Click a video to watch it.</p></div>
+  <div class="tabs" id="vTabs"></div>
+  <div class="mz" id="vGrid"></div>
+  <div class="more"><button class="btn ghost" id="vMore" hidden>Show more videos</button></div>
+</div></section>
+
+<section id="dokumenti" class="alt panel" hidden><div class="wrap">
+  <div class="sec-head"><button type="button" class="btn ghost pclose">Close ✕</button><span class="lbl">Documents</span><h2>PDF materials</h2><p>Presentations, price lists, catalogues and company documents to view and download.</p></div>
+  <div class="tabs" id="pTabs"></div>
+  <div class="cards" id="pGrid"></div>
+</div></section>
+
+<section id="lokacija"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Location</span><h2>Where to find us</h2><p>Visits by appointment. Please call or message before you come.</p></div>
+  <div class="loc">
+    <div class="loc-i">
+      <dl>
+        <div><dt>Address</dt><dd><a class="adr-l" data-f="adresa" target="_blank" rel="noopener"></a></dd></div>
+        <div><dt>City</dt><dd><span data-f="mjesto"></span>, Croatia</dd></div>
+        <div><dt>Opening hours</dt><dd data-f="radno"></dd></div>
+        <div><dt>Phone</dt><dd><a class="tel-l" data-f="tel"></a></dd></div>
+        <div><dt>Mobile</dt><dd><a class="tel2-l" data-f="tel2"></a></dd></div>
+      </dl>
+      <div class="btns">
+        <a class="btn" id="mapGo" target="_blank" rel="noopener">Get directions ↗</a>
+        <button type="button" class="btn ghost" id="adrCopy">Copy address</button>
+      </div>
+    </div>
+    <div class="map"><iframe id="mapFr" title="Horizont LHB d.o.o. location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+      <a class="map-go" id="mapOpen" target="_blank" rel="noopener" aria-label="Open location in Google Maps"><span class="pin"><b>📍 <span data-f="adresa"></span></b><small><span data-f="mjesto"></span> · Open in Google Maps ↗</small></span></a></div>
+  </div>
+</div></section>
+
+<section id="kontakt" style="padding-bottom:0"><div class="wrap">
+  <div class="kontakt">
+    <div class="k-info">
+      <span class="lbl">Contact</span>
+      <h2 style="margin-top:6px">Get in touch. <span class="gt">We reply fast.</span></h2>
+      <p class="k-lead">IT service, video or a website, it doesn’t matter. Tell us what you need and we’ll sort out the rest.</p>
+      <div class="k-row">
+        <span class="lbl">Phone</span>
+        <a class="k-num gt tel-l" data-f="tel" title="Call"></a>
+        <div class="k-btns">
+          <a class="btn tel-l">📞 Call</a>
+          <a class="btn ghost" id="kWa" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" id="kVb">Viber</a>
+        </div>
+      </div>
+      <div class="k-row">
+        <span class="lbl">Mobile</span>
+        <a class="k-num gt tel2-l" data-f="tel2" title="Call"></a>
+        <div class="k-btns">
+          <a class="btn tel2-l">📞 Call</a>
+          <a class="btn ghost" id="kWa2" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" id="kVb2">Viber</a>
+        </div>
+      </div>
+      <div class="k-row">
+        <span class="lbl">E-mail</span>
+        <a class="k-mail" id="kMail" data-f="email"></a>
+      </div>
+      <div class="k-row">
+        <span class="lbl">Share</span>
+        <div class="k-btns" id="shBtns">
+          <button type="button" class="btn ghost" id="shNative" hidden>Share</button>
+          <a class="btn ghost" data-s="wa" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" data-s="fb" target="_blank" rel="noopener">Facebook</a>
+          <a class="btn ghost" data-s="li" target="_blank" rel="noopener">LinkedIn</a>
+          <button type="button" class="btn ghost" id="shCopy">Copy link</button>
+        </div>
+      </div>
+    </div>
+    <div class="k-logo">
+      <img src="logo-firma.webp" alt="Horizont LHB d.o.o. – from idea to business opportunity" width="454" height="340" loading="lazy">
+      <p class="slog">From idea to <span class="gt">business opportunity.</span></p>
+    </div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <span>Horizont LHB d.o.o. · <span data-f="adresaPuna"></span> · OIB <span data-f="oib"></span> · <a href="https://batinac.com/pc-servis">IT service</a> · <a href="https://batinac.com/video-produkcija">Video production</a></span>
+  <span>Not registered for VAT. Personal data is used for contact only (GDPR).</span>
+</div></footer>
+
+<div class="modal" id="mImg" role="dialog" aria-label="Photo">
+  <button class="mx" onclick="closeM('mImg')" aria-label="Close">×</button>
+  <button class="nv l" onclick="step(-1)" aria-label="Previous">‹</button>
+  <img id="mImgEl" alt="">
+  <button class="nv r" onclick="step(1)" aria-label="Next">›</button>
+  <div class="cap" id="mCap"></div>
+</div>
+<div class="modal" id="mVid" role="dialog" aria-label="Video">
+  <button class="mx" onclick="closeM('mVid')" aria-label="Close">×</button>
+  <button class="nv l" onclick="vStep(-1)" aria-label="Previous video">‹</button>
+  <div class="vwrap" id="vWrap"><span class="spin" aria-hidden="true"></span><iframe id="mVidEl" title="Video" allow="autoplay; fullscreen" allowfullscreen></iframe></div>
+  <button class="nv r" onclick="vStep(1)" aria-label="Next video">›</button>
+  <div class="cap" id="vCap"></div>
+</div>
+<div class="modal" id="mPdf" role="dialog" aria-label="Document">
+  <a class="dl" id="mPdfDl" target="_blank" rel="noopener">⬇ Download</a>
+  <button class="mx" onclick="closeM('mPdf')" aria-label="Close">×</button>
+  <iframe id="mPdfEl" title="Document"></iframe>
+</div>
+
+<script>
+/* ====== PODACI O FIRMI: sve se mijenja samo ovdje ====== */
+const FIRMA = {
+  vlasnik:  'Saša Batinac',
+  adresa:   'Ulica Izidora Kršnjavoga 15',
+  postanski:'31000',
+  mjesto:   'Osijek',
+  oib:      '04977480596',
+  mbs:      '030271774',           // Trgovački sud u Osijeku
+  mb:       '05724775',            // matični broj
+  osnovana: '10. 2. 2023.',
+  radno:    'By appointment',
+  tel:      '091 358 4122',
+  telIntl:  '385913584122',
+  tel2:     '091 297 2024',
+  tel2Intl: '385912972024',
+  email:    'sbatinac@horizont-lhb.hr',
+  foto:     ''                     // npr. 'vlasnik.webp' (ako postoji, zamjenjuje inicijale)
+};
+const SITE_URL = 'https://www.horizont-lhb.hr/en.html';
+const DIST_URL = ''; // npr. 'https://batinac.com/distribucija' – prazno = "Uskoro online"
+const DRIVE_KEY = 'AIzaSyDp6XAdizCufGZ-lhwXZyIjazfJvkQzS7Q';
+const FOLDERS = {               // ID mapa s Google Drivea (podmape = tabovi)
+  gallery: '1rs8AkvO7X-WYRnJqjjy5OX5TKpeLZ23h',
+  video:   '1r9L5ZE8OYhQPbl53un1NusAnLUDLg-wq',
+  pdf:     '1ZD8U4x_kydg9TKm7-TPYwwtX61uZwMci'
+};
+const PAGE = 24;
+
+const $ = s => document.querySelector(s);
+const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+/* upis podataka u stranicu */
+(() => {
+  const F = FIRMA, nema = v => !v || v.startsWith('UPISI');
+  const mj = [F.postanski, F.mjesto].filter(Boolean).join(' ');
+  const val = {
+    ...F,
+    mjesto: mj,
+    adresaPuna: nema(F.adresa) || nema(F.mjesto) ? 'UPISI adresu' : `${F.adresa}, ${mj}`,
+    osnovanaKratko: nema(F.osnovana) ? 'Aktivno' : F.osnovana,
+    vlasnikIme: F.vlasnik.split(' ')[0]
+  };
+  document.querySelectorAll('[data-f]').forEach(el => {
+    const v = val[el.dataset.f] || '';
+    el.innerHTML = v.startsWith('UPISI') ? `<span class="tbd">${esc(v)}</span>` : esc(v);
+  });
+  $('#kWa').href = 'https://wa.me/' + F.telIntl;
+  $('#kVb').href = 'viber://chat?number=%2B' + F.telIntl;
+  $('#kMail').href = 'mailto:' + F.email;
+  $('#kWa2').href = 'https://wa.me/' + F.tel2Intl;
+  $('#kVb2').href = 'viber://chat?number=%2B' + F.tel2Intl;
+  document.querySelectorAll('.tel-l').forEach(a => a.href = 'tel:+' + F.telIntl);
+  document.querySelectorAll('.tel2-l').forEach(a => a.href = 'tel:+' + F.tel2Intl);
+  const q = `${F.adresa}, ${mj}, Hrvatska`;
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  $('#mapFr').src = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=16&hl=en&output=embed`;
+  $('#mapGo').href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`;
+  $('#mapOpen').href = mapUrl;
+  document.querySelectorAll('.adr-l').forEach(a => { a.href = mapUrl; a.title = 'Open in Google Maps'; });
+  $('#adrCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(val.adresaPuna); b.textContent = 'Copied'; } catch (x) { b.textContent = val.adresaPuna; } setTimeout(() => b.textContent = 'Copy address', 2200); };
+  if (F.foto) $('#ownPh').insertAdjacentHTML('beforeend', `<img src="${esc(F.foto)}" alt="${esc(F.vlasnik)}" loading="lazy">`);
+})();
+
+/* DISTRIBUCIJA: živi prikaz kad se upiše link */
+(() => {
+  const c = $('#distCard');
+  if (!DIST_URL) { c.removeAttribute('href'); c.style.cursor = 'default'; c.querySelector('.go').textContent = 'Website coming soon'; return; }
+  c.href = DIST_URL; const u = DIST_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  $('#distUrl').textContent = u; $('#distUrl2').textContent = u; $('#distSoon').remove(); $('#distFr').dataset.src = DIST_URL;
+})();
+
+/* GOOGLE DRIVE: slike, video, PDF */
+const thumb = (id, w) => `https://drive.google.com/thumbnail?id=${id}&sz=w${w}`;
+const FOLDER_MIME = 'application/vnd.google-apps.folder';
+const MATCH = { gallery: m => m.startsWith('image/'), video: m => m.startsWith('video/'), pdf: m => m === 'application/pdf' };
+async function listChildren(folderId) {
+  let out = [], token = '';
+  do {
+    const q = encodeURIComponent(`'${folderId}' in parents and trashed = false`);
+    const r = await fetch(`https://www.googleapis.com/drive/v3/files?q=${q}&key=${DRIVE_KEY}&fields=nextPageToken,files(id,name,mimeType,createdTime,videoMediaMetadata(width,height,durationMillis))&pageSize=1000&orderBy=createdTime desc` + (token ? `&pageToken=${token}` : ''));
+    if (!r.ok) throw new Error('Drive API ' + r.status);
+    const j = await r.json(); out = out.concat(j.files || []); token = j.nextPageToken || '';
+  } while (token);
+  return out;
+}
+async function load(type) {
+  const ok = MATCH[type];
+  const strip = f => { const m = f.videoMediaMetadata || {}; return { id: f.id, name: f.name.replace(/\.[^.]+$/, ''), date: Date.parse(f.createdTime), w: +m.width || 0, h: +m.height || 0, dur: +m.durationMillis || 0 }; };
+  const items = await listChildren(FOLDERS[type]);
+  const albums = [], root = items.filter(f => ok(f.mimeType)).map(strip);
+  if (root.length) albums.push({ name: 'Other', files: root });
+  const subs = items.filter(f => f.mimeType === FOLDER_MIME);
+  const sub = await Promise.all(subs.map(async s => ({ name: s.name, files: (await listChildren(s.id)).filter(f => ok(f.mimeType)).map(strip) })));
+  albums.push(...sub.filter(a => a.files.length));
+  return albums.sort((a, b) => a.name.localeCompare(b.name, 'hr'));
+}
+function tabs(el, albums, onPick) {
+  if (albums.length < 2) { el.innerHTML = ''; onPick(albums.flatMap(a => a.files)); return; }
+  const all = { name: 'All', files: albums.flatMap(a => a.files).sort((a, b) => b.date - a.date) }, list = [all, ...albums];
+  el.innerHTML = list.map((a, i) => `<button class="tab${i ? '' : ' on'}" data-i="${i}">${esc(a.name)} <small>${a.files.length}</small></button>`).join('');
+  el.onclick = e => { const b = e.target.closest('.tab'); if (!b) return; el.querySelectorAll('.tab').forEach(t => t.classList.remove('on')); b.classList.add('on'); onPick(list[b.dataset.i].files); };
+  onPick(all.files);
+}
+
+/* SLIKE */
+let gFiles = [], gShown = 0, cur = 0;
+function gRender(files) { gFiles = files; gShown = 0; $('#gGrid').innerHTML = ''; gMore(); }
+function gMore() {
+  const next = gFiles.slice(gShown, gShown + PAGE);
+  $('#gGrid').insertAdjacentHTML('beforeend', next.map((f, k) => `<button class="ph skel" onclick="openImg(${gShown + k})" aria-label="${esc(f.name)}"><img loading="lazy" src="${thumb(f.id, 600)}" alt="${esc(f.name)}" onload="this.parentNode.classList.remove('skel')"></button>`).join(''));
+  gShown += next.length; $('#gMore').hidden = gShown >= gFiles.length;
+}
+$('#gMore').onclick = gMore;
+function openImg(i) { cur = i; showImg(); $('#mImg').classList.add('open'); }
+function showImg() { const f = gFiles[cur]; $('#mImgEl').src = thumb(f.id, 1920); $('#mImgEl').alt = f.name; $('#mCap').textContent = `${f.name} · ${cur + 1}/${gFiles.length}`; }
+function step(d) { cur = (cur + d + gFiles.length) % gFiles.length; showImg(); }
+
+/* VIDEO MOZAIK */
+const VPAGE = 18, STILL = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let vFiles = [], vShown = 0, vCur = 0;
+const PATTERN = ['w', 'n', 't', 'n', 'n', 'w', 't', 'n', 'w', 'n'];
+function shape(f, i) { if (f.w && f.h) { const r = f.w / f.h; if (r < .8) return 't'; if (r > 1.2) return i === 0 ? 'f' : 'w'; return 'n'; } return i === 0 ? 'f' : PATTERN[i % PATTERN.length]; }
+const tall = f => f.w && f.h ? f.h > f.w * 1.2 : false;
+const mmss = ms => { const s = Math.round(ms / 1000); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
+const rnd = (a, b) => (a + Math.random() * (b - a)).toFixed(2);
+const vIO = 'IntersectionObserver' in window && !STILL ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); vIO.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' }) : null;
+function vRender(files) { vFiles = files; vShown = 0; $('#vGrid').innerHTML = ''; vMoreFn(); }
+function vMoreFn() {
+  const next = vFiles.slice(vShown, vShown + VPAGE);
+  $('#vGrid').insertAdjacentHTML('beforeend', next.map((f, k) => { const i = vShown + k;
+    return `<button class="mt ${shape(f, i)}" data-i="${i}" aria-label="Watch video: ${esc(f.name)}" style="--x:${rnd(-4, 4)}%;--y:${rnd(-3, 3)}%;--d:${rnd(12, 20)}s;--dl:-${rnd(0, 10)}s;transition-delay:${(k % 6) * 70}ms">` +
+      `<span class="bg" style="background-image:url('${thumb(f.id, 900)}')"></span><span class="pl" aria-hidden="true">▶</span>` +
+      `<span class="meta"><b>${esc(f.name)}</b>${f.dur ? `<span class="dur">${mmss(f.dur)}</span>` : ''}</span></button>`; }).join(''));
+  $('#vGrid').querySelectorAll('.mt:not(.seen)').forEach(t => { t.classList.add('seen'); vIO ? vIO.observe(t) : t.classList.add('in'); });
+  vShown += next.length; $('#vMore').hidden = vShown >= vFiles.length;
+}
+$('#vMore').onclick = vMoreFn;
+$('#vGrid').addEventListener('click', e => { const t = e.target.closest('.mt[data-i]'); if (t) openVid(+t.dataset.i); });
+function vLoad(f) {
+  const ifr = $('#mVidEl'); ifr.classList.remove('on');
+  $('#vWrap').classList.toggle('tall', tall(f));
+  ifr.onload = () => { if (ifr.src !== 'about:blank') ifr.classList.add('on'); };
+  ifr.src = `https://drive.google.com/file/d/${f.id}/preview`;
+  $('#vCap').textContent = `${f.name} · ${vCur + 1}/${vFiles.length}`;
+}
+function openVid(i) { if (window.musicPause) musicPause(); if (!intro.paused) intro.pause(); vCur = i; $('#mVid').classList.add('open'); vLoad(vFiles[i]); }
+function vStep(d) { if (!vFiles.length) return; vCur = (vCur + d + vFiles.length) % vFiles.length; vLoad(vFiles[vCur]); }
+
+/* PDF */
+function pRender(files) { $('#pGrid').innerHTML = files.map(f => `<button class="card" onclick="openPdf('${f.id}')"><span class="th" style="background-image:url('${thumb(f.id, 400)}')"></span><span class="nm">${esc(f.name)}</span></button>`).join(''); }
+function openPdf(id) { $('#mPdfEl').src = `https://drive.google.com/file/d/${id}/preview`; $('#mPdfDl').href = `https://drive.google.com/uc?export=download&id=${id}`; $('#mPdf').classList.add('open'); }
+
+/* MODAL */
+function closeM(id) {
+  $('#' + id).classList.remove('open');
+  if (id === 'mPdf') $('#mPdfEl').src = 'about:blank';
+  if (id === 'mVid') { $('#mVidEl').classList.remove('on'); $('#mVidEl').src = 'about:blank'; }
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') ['mImg', 'mVid', 'mPdf'].forEach(closeM);
+  if ($('#mImg').classList.contains('open')) { if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); }
+  if ($('#mVid').classList.contains('open')) { if (e.key === 'ArrowLeft') vStep(-1); if (e.key === 'ArrowRight') vStep(1); }
+});
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => { if (e.target === m) closeM(m.id); }));
+let tx = 0;
+$('#mImg').addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+$('#mImg').addEventListener('touchend', e => { const d = e.changedTouches[0].clientX - tx; if (Math.abs(d) > 50) step(d < 0 ? 1 : -1); });
+
+function soon(grid, n) {
+  if (grid === '#vGrid') { $(grid).innerHTML = ['f', 't', 'n', 'n', 'w', 't', 'n'].map(c => `<div class="mt in soon ${c}">Soon</div>`).join(''); return; }
+  $(grid).innerHTML = Array.from({ length: n }, () => '<div class="soon">Soon</div>').join('');
+}
+const cnt = (type, n) => { const e = document.querySelector(`[data-cnt="${type}"]`); if (e) e.textContent = n ? n + (type === 'gallery' ? ' photos' : type === 'video' ? ' videos' : ' PDF') : 'soon'; };
+function init(type, sec, tabsEl, grid, render, n) {
+  if (!FOLDERS[type] || FOLDERS[type].startsWith('UPISI')) { cnt(type, 0); return soon(grid, n); }
+  $(grid).innerHTML = '<div class="msg">Loading…</div>';
+  load(type).then(a => { cnt(type, a.reduce((k, x) => k + x.files.length, 0)); return a.length ? tabs($(tabsEl), a, render) : soon(grid, n); })
+    .catch(() => $(grid).innerHTML = '<div class="msg">Content can’t be loaded right now. Please refresh the page.</div>');
+}
+init('gallery', '#radovi', '#gTabs', '#gGrid', gRender, 8);
+init('video', '#video', '#vTabs', '#vGrid', vRender, 3);
+init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
+
+
+
+/* ====== CITATI: tema se bira u CITATI_TEME (prazno = sve teme) ====== */
+const CITATI_TEME = [];   // npr. ['poduzetništvo', 'inovacije']  · teme: poduzetništvo, uspjeh, inovacije, tehnologija, vrijeme, izazovi, poslovanje, horizont
+const CITATI_SEK = 15;
+const CITATI = [
+  { t: 'inovacije', a: 'Alan Kay', hr: 'Najbolji način da predvidiš budućnost jest da je izumiš.', en: 'The best way to predict the future is to invent it.' },
+  { t: 'poduzetništvo', a: 'Arthur Ashe', hr: 'Kreni odakle jesi. Iskoristi ono što imaš. Učini ono što možeš.', en: 'Start where you are. Use what you have. Do what you can.' },
+  { t: 'poduzetništvo', a: 'Wayne Gretzky', hr: 'Promašiš sto posto udaraca koje ne pokušaš.', en: 'You miss 100% of the shots you don’t take.' },
+  { t: 'izazovi', a: 'Marko Aurelije', aEn: 'Marcus Aurelius', hr: 'Ono što stoji na putu postaje put.', en: 'What stands in the way becomes the way.' },
+  { t: 'vrijeme', a: 'Seneka', aEn: 'Seneca', hr: 'Nije da imamo malo vremena, nego ga mnogo gubimo.', en: 'It is not that we have a short time to live, but that we waste a lot of it.' },
+  { t: 'poduzetništvo', a: 'Lao Ce', aEn: 'Lao Tzu', hr: 'Put od tisuću milja počinje jednim korakom.', en: 'A journey of a thousand miles begins with a single step.' },
+  { t: 'inovacije', a: 'Steve Jobs', hr: 'Ostanite gladni. Ostanite ludi.', en: 'Stay hungry. Stay foolish.' },
+  { t: 'tehnologija', a: 'Steve Jobs', hr: 'Dizajn nije samo kako nešto izgleda. Dizajn je kako nešto radi.', en: 'Design is not just what it looks like and feels like. Design is how it works.' },
+  { t: 'tehnologija', a: 'Antoine de Saint-Exupéry', hr: 'Savršenstvo nije kad se više nema što dodati, nego kad se više nema što oduzeti.', en: 'Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.' },
+  { t: 'uspjeh', a: 'Will Durant', hr: 'Mi smo ono što stalno činimo. Izvrsnost nije čin, nego navika.', en: 'We are what we repeatedly do. Excellence, then, is not an act, but a habit.' },
+  { t: 'poslovanje', a: 'Bill Gates', hr: 'Najnezadovoljniji kupci najveći su izvor učenja.', en: 'Your most unhappy customers are your greatest source of learning.' },
+  { t: 'vrijeme', a: 'Seneka', aEn: 'Seneca', hr: 'Dok odgađamo, život prolazi.', en: 'While we are postponing, life speeds by.' },
+  { t: 'horizont', a: 'Horizont LHB', hr: 'Ne čekamo prilike. Stvaramo ih.', en: 'We don’t wait for opportunities. We create them.' },
+  { t: 'horizont', a: 'Horizont LHB', hr: 'Za nas raznolikost nije prepreka. Ona je naša snaga.', en: 'For us, diversity is not an obstacle. It is our strength.' },
+  { t: 'horizont', a: 'Saša Batinac', hr: 'Iza svake ideje stoji čovjek koji se usudio pokušati.', en: 'Behind every idea stands a person who dared to try.' },
+  { t: 'horizont', a: 'Saša Batinac', hr: 'Ne gradim budućnost oko jedne djelatnosti. Gradim je oko mogućnosti.', en: 'I don’t build my future around one line of business. I build it around possibilities.' }
+];
+(() => {
+  const L = document.documentElement.lang === 'en' ? 'en' : 'hr';
+  let list = CITATI.filter(q => !CITATI_TEME.length || CITATI_TEME.includes(q.t));
+  if (!list.length) list = CITATI;
+  list = list.map(v => [Math.random(), v]).sort((a, b) => a[0] - b[0]).map(v => v[1]);
+  const box = $('#qt'), bar = $('#qtBar'); let i = -1, tm;
+  const tema = t => L === 'en' ? ({ poduzetništvo: 'Entrepreneurship', uspjeh: 'Success', inovacije: 'Innovation', tehnologija: 'Technology', vrijeme: 'Time', izazovi: 'Challenges', poslovanje: 'Business', horizont: 'Horizont LHB' }[t] || t) : t.charAt(0).toUpperCase() + t.slice(1);
+  const show = () => {
+    i = (i + 1) % list.length; const q = list[i];
+    $('#qtTxt').textContent = q[L]; $('#qtAut').textContent = L === 'en' ? (q.aEn || q.a) : q.a; $('#qtTema').textContent = tema(q.t);
+    box.classList.remove('out'); bar.classList.remove('run'); void bar.offsetWidth; if (!STILL) bar.classList.add('run');
+  };
+  const next = () => { clearTimeout(tm); box.classList.add('out'); setTimeout(show, STILL ? 0 : 600); tm = setTimeout(next, CITATI_SEK * 1000 + 600); };
+  bar.style.setProperty('--qd', CITATI_SEK + 's');
+  show(); tm = setTimeout(next, CITATI_SEK * 1000);
+  $('#qtNext').onclick = next;
+})();
+
+/* VLASNIK: cijela priča na klik */
+(() => { const b = $('#owBtn'), m = $('#owMore');
+  b.onclick = () => { const o = m.hidden; m.hidden = !o; b.setAttribute('aria-expanded', o); b.textContent = o ? 'Hide ↑' : 'Read the full story ↓'; if (!o) $('#vlasnik').scrollIntoView({ behavior: 'smooth' }); };
+})();
+
+/* KARTICE: otvori jedan panel, ostali se zatvaraju */
+(() => {
+  const btns = [...document.querySelectorAll('.mc')];
+  const close = () => btns.forEach(b => { b.setAttribute('aria-expanded', 'false'); $(b.dataset.open).hidden = true; });
+  btns.forEach(b => b.addEventListener('click', () => {
+    const open = b.getAttribute('aria-expanded') === 'true'; close();
+    if (open) return;
+    b.setAttribute('aria-expanded', 'true'); const p = $(b.dataset.open); p.hidden = false;
+    p.querySelectorAll('.mt').forEach(t => t.classList.add('in'));
+    p.scrollIntoView({ behavior: STILL ? 'auto' : 'smooth', block: 'start' });
+  }));
+  document.querySelectorAll('.pclose').forEach(c => c.addEventListener('click', () => { close(); $('#materijali').scrollIntoView({ behavior: STILL ? 'auto' : 'smooth' }); }));
+})();
+
+
+/* INTRO VIDEO: bez zvuka na početku, staje na zadnjem kadru (logo); ambijentalni odsjaj */
+const intro = document.getElementById('intro');
+(() => {
+  const c = document.getElementById('amb'), x = c.getContext('2d'); let last = 0;
+  const draw = () => { try { x.drawImage(intro, 0, 0, c.width, c.height); } catch (e) {} };
+  const loop = t => { if (t - last > 66) { draw(); last = t; } if (!intro.paused && !intro.ended) requestAnimationFrame(loop); };
+  intro.addEventListener('play', () => requestAnimationFrame(loop));
+  ['loadeddata', 'seeked', 'pause', 'ended'].forEach(ev => intro.addEventListener(ev, draw));
+  const p = new Image(); p.onload = () => { if (intro.readyState < 2) x.drawImage(p, 0, 0, c.width, c.height); }; p.src = intro.poster;
+  const snd = document.getElementById('vSound'), again = document.getElementById('vAgain');
+  if (STILL) { intro.poster = 'intro-kraj.webp'; intro.preload = 'none'; }
+  else intro.play().catch(() => { intro.poster = 'intro-kraj.webp'; });
+  const lbl = () => { snd.textContent = intro.muted ? '🔊 Sound on' : '🔇 Sound off'; snd.setAttribute('aria-pressed', !intro.muted); };
+  snd.onclick = () => { intro.muted = !intro.muted; if (!intro.muted) { if (window.musicPause) musicPause(); if (intro.ended || intro.paused) { intro.currentTime = 0; intro.play().catch(() => {}); } } lbl(); };
+  again.onclick = () => { intro.currentTime = 0; intro.play().catch(() => {}); };
+  intro.addEventListener('ended', () => { intro.muted = true; lbl(); });
+})();
+
+/* MOBILNI IZBORNIK */
+(() => {
+  const b = $('#burger'), h = document.querySelector('header');
+  b.onclick = () => { const o = h.classList.toggle('open'); b.setAttribute('aria-expanded', o); };
+  document.querySelectorAll('#mnav a').forEach(a => a.addEventListener('click', () => { h.classList.remove('open'); b.setAttribute('aria-expanded', 'false'); }));
+})();
+
+/* ŽIVI PRIKAZ STRANICA */
+(() => {
+  const vps = [...document.querySelectorAll('.wp-vp')]; if (!vps.length) return;
+  const fit = vp => { vp.querySelector('iframe').style.transform = 'scale(' + (vp.clientWidth / 1280) + ')'; };
+  const ro = 'ResizeObserver' in window ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
+  const ld = vp => { const f = vp.querySelector('iframe'); if (!f.src && f.dataset.src) f.src = f.dataset.src; fit(vp); ro && ro.observe(vp); };
+  if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { ld(e.target); io.unobserve(e.target); } }), { rootMargin: '300px' }); vps.forEach(v => io.observe(v)); }
+  else vps.forEach(ld);
+})();
+
+/* GLAZBA: svira samo na klik */
+(() => {
+  const box = $('#music'); if (!box) return;
+  const btns = [...box.querySelectorAll('.mbtn')], VOL = 0.55, A = {}; let curS = null;
+  const ramp = (a, to, ms, done) => { cancelAnimationFrame(a._raf); const from = a.volume, t0 = performance.now();
+    const st = t => { const k = Math.min(1, (t - t0) / ms); a.volume = Math.max(0, Math.min(1, from + (to - from) * (k * k * (3 - 2 * k)))); if (k < 1) a._raf = requestAnimationFrame(st); else if (done) done(); };
+    a._raf = requestAnimationFrame(st); };
+  const audio = src => A[src] || (A[src] = Object.assign(new Audio(src), { loop: true, preload: 'none', volume: 0 }));
+  const mark = () => btns.forEach(b => { const on = b.dataset.src === curS; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
+  const stop = src => { const a = A[src]; if (a) ramp(a, 0, 1500, () => a.pause()); };
+  btns.forEach(b => b.addEventListener('click', () => {
+    const src = b.dataset.src;
+    if (curS === src) { stop(src); curS = null; mark(); return; }
+    if (curS) stop(curS);
+    if (!intro.muted) { intro.muted = true; $('#vSound').textContent = '🔊 Sound on'; }
+    const a = audio(src); curS = src; mark();
+    a.play().then(() => ramp(a, VOL, 2000)).catch(() => { curS = null; mark(); });
+  }));
+  window.musicPause = () => { if (curS) { stop(curS); curS = null; mark(); } };
+  const ph = document.createElement('span'); ph.style.display = 'none'; box.after(ph);
+  const hdr = document.querySelector('header');
+  if ('IntersectionObserver' in window) new IntersectionObserver(([e]) => {
+    const f = !e.isIntersecting && getComputedStyle(hdr).position !== 'sticky';
+    if (f === box.classList.contains('float')) return;
+    box.classList.toggle('float', f); if (f) document.body.appendChild(box); else ph.before(box);
+  }).observe(hdr);
+})();
+
+/* PODIJELI */
+(() => {
+  const text = 'Horizont LHB d.o.o. – IT service, video production, websites and trade. ';
+  const u = encodeURIComponent(SITE_URL), t = encodeURIComponent(text + SITE_URL);
+  const L = { wa: 'https://wa.me/?text=' + t, fb: 'https://www.facebook.com/sharer/sharer.php?u=' + u, li: 'https://www.linkedin.com/sharing/share-offsite/?url=' + u };
+  document.querySelectorAll('#shBtns [data-s]').forEach(a => a.href = L[a.dataset.s]);
+  const n = $('#shNative');
+  if (navigator.share) { n.hidden = false; n.onclick = () => navigator.share({ title: 'Horizont LHB d.o.o.', text, url: SITE_URL }).catch(() => {}); }
+  const c = $('#shCopy');
+  c.onclick = async () => { try { await navigator.clipboard.writeText(SITE_URL); c.textContent = 'Link copied'; } catch (e) { c.textContent = SITE_URL; } setTimeout(() => c.textContent = 'Copy link', 2500); };
+})();
+</script>
+</body>
+</html>

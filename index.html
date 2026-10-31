@@ -10,6 +10,8 @@
 <meta property="og:url" content="https://www.horizont-lhb.hr">
 <meta name="theme-color" content="#0F0E0B">
 <link rel="icon" href="favicon.png">
+<link rel="alternate" hreflang="hr" href="https://www.horizont-lhb.hr/">
+<link rel="alternate" hreflang="en" href="https://www.horizont-lhb.hr/en.html">
 <title>Horizont LHB d.o.o.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -389,7 +391,8 @@ section{padding-block:72px}
 .k-info{display:flex;flex-direction:column;gap:14px;min-width:0}
 .k-lead{color:var(--muted)}
 .k-row{display:grid;gap:8px;padding-top:18px;border-top:1px solid var(--line)}
-.k-num{font:800 clamp(1.8rem,4vw,2.6rem)/1 var(--display);user-select:all;font-variant-numeric:tabular-nums}
+.k-num{font:800 clamp(1.8rem,4vw,2.6rem)/1 var(--display);font-variant-numeric:tabular-nums;text-decoration:none;justify-self:start;white-space:nowrap}
+.k-num:hover{filter:brightness(1.15)}
 .k-mail{font:700 clamp(1.05rem,2.2vw,1.35rem) var(--display);overflow-wrap:anywhere;text-decoration:none}
 .k-mail:hover{color:var(--hot-text)}
 .k-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
@@ -397,6 +400,10 @@ section{padding-block:72px}
 .k-logo{display:grid;gap:18px;justify-items:center;text-align:center}
 .k-logo img{width:100%;max-width:440px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 80px -40px rgba(217,165,32,.6)}
 .k-logo .slog{font:800 clamp(1.6rem,3.4vw,2.4rem)/1.05 var(--display);letter-spacing:-.02em}
+
+/* JEZIK */
+.lang{display:inline-flex;align-items:center;justify-content:center;min-width:44px;height:38px;padding:0 10px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:600 .82rem var(--mono);letter-spacing:.08em;text-decoration:none;color:var(--ink)}
+.lang:hover{border-color:#D9A520;background:var(--grad)}
 
 /* GLAZBA */
 .hdr-r{display:flex;align-items:center;gap:10px}
@@ -462,6 +469,7 @@ footer a{color:var(--cyan)}
   <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Izbornik"><span></span><span></span><span></span></button>
   <nav id="mnav"><a href="#o-nama">O nama</a><a href="#djelatnosti">Djelatnosti</a><a href="#vlasnik">Vlasnik</a><a href="#materijali">Galerija</a><a href="#lokacija">Lokacija</a><a href="#kontakt">Kontakt</a></nav>
   <div class="hdr-r">
+    <a class="lang" href="en.html" hreflang="en" title="English">EN</a>
     <div class="music" id="music" role="group" aria-label="Glazba">
       
       <button type="button" class="mbtn" data-src="glazba-1.mp3" aria-pressed="false" title="Neon Sunset Drive"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Sunset</button>
@@ -504,7 +512,7 @@ footer a{color:var(--cyan)}
         <dt>Djelatnost</dt><dd>IT i servis, web, video, trgovina i posredovanje · <a href="#sve-djelatnosti" style="color:#F6D35B">22 djelatnosti ↓</a></dd>
         <dt>PDV</dt><dd>Nije u sustavu PDV-a</dd>
       </dl>
-      <div class="ft"><span class="live">Aktivno poslujemo</span><span data-f="tel"></span></div>
+      <div class="ft"><span class="live">Aktivno poslujemo</span><a class="tel-l" data-f="tel" style="color:inherit;text-decoration:none"></a></div>
     </aside>
   </div>
 </div>
@@ -569,6 +577,17 @@ footer a{color:var(--cyan)}
         <ul><li>Veleprodaja</li><li>Posredovanje</li><li>Zastupanje</li></ul>
         <span class="url" id="distUrl2"></span>
         <span class="go">Otvori distribuciju ↗</span>
+      </span>
+    </a>
+    <a class="dv" href="https://sbatinac.github.io/beorol.hrvatska/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/beorol.hrvatska</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/beorol.hrvatska/" title="Pregled stranice Beorol" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="dv-b">
+        <span class="lbl">Djelatnost 04</span>
+        <h3>Beorol Hrvatska</h3>
+        <p>Zastupanje i distribucija Beorol proizvoda u Hrvatskoj: molersko-ličilački i ručni alat, zaštitna oprema, tehnička kemija te program za dom i dvorište.</p>
+        <ul><li>Zastupanje</li><li>Distribucija</li><li>Alati i oprema</li></ul>
+        <span class="url">sbatinac.github.io/beorol.hrvatska</span>
+        <span class="go">Otvori Beorol ↗</span>
       </span>
     </a>
   </div>
@@ -706,20 +725,19 @@ footer a{color:var(--cyan)}
       <h2 style="margin-top:6px">Javite se. <span class="gt">Odgovaramo brzo.</span></h2>
       <p class="k-lead">Za servis, video ili web stranicu, svejedno. Recite što trebate, dogovorimo ostalo.</p>
       <div class="k-row">
-        <span class="lbl" data-f="vlasnikIme"></span>
-        <b class="k-num gt" id="kNum" data-f="tel"></b>
+        <span class="lbl">Telefon</span>
+        <a class="k-num gt tel-l" data-f="tel" title="Nazovi"></a>
         <div class="k-btns">
-          <a class="btn" id="kTel">Nazovi</a>
+          <a class="btn tel-l">📞 Nazovi</a>
           <a class="btn ghost" id="kWa" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" id="kVb">Viber</a>
-          <button type="button" class="btn ghost" id="kCopy">Kopiraj broj</button>
         </div>
       </div>
       <div class="k-row">
         <span class="lbl">Mobitel</span>
-        <b class="k-num2"><a class="tel2-l" data-f="tel2"></a></b>
+        <a class="k-num gt tel2-l" data-f="tel2" title="Nazovi"></a>
         <div class="k-btns">
-          <a class="btn ghost tel2-l">Nazovi</a>
+          <a class="btn tel2-l">📞 Nazovi</a>
           <a class="btn ghost" id="kWa2" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" id="kVb2">Viber</a>
         </div>
@@ -783,9 +801,9 @@ const FIRMA = {
   mb:       '05724775',            // matični broj
   osnovana: '10. 2. 2023.',
   radno:    'Po dogovoru',
-  tel:      '091/358 4122',
+  tel:      '091 358 4122',
   telIntl:  '385913584122',
-  tel2:     '091/297 2024',
+  tel2:     '091 297 2024',
   tel2Intl: '385912972024',
   email:    'sbatinac@horizont-lhb.hr',
   foto:     ''                     // npr. 'vlasnik.webp' (ako postoji, zamjenjuje inicijale)
@@ -818,7 +836,6 @@ const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
     const v = val[el.dataset.f] || '';
     el.innerHTML = v.startsWith('UPISI') ? `<span class="tbd">${esc(v)}</span>` : esc(v);
   });
-  $('#kTel').href = 'tel:+' + F.telIntl;
   $('#kWa').href = 'https://wa.me/' + F.telIntl;
   $('#kVb').href = 'viber://chat?number=%2B' + F.telIntl;
   $('#kMail').href = 'mailto:' + F.email;
@@ -833,7 +850,6 @@ const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
   $('#mapOpen').href = mapUrl;
   document.querySelectorAll('.adr-l').forEach(a => { a.href = mapUrl; a.title = 'Otvori u Google kartama'; });
   $('#adrCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(val.adresaPuna); b.textContent = 'Kopirano'; } catch (x) { b.textContent = val.adresaPuna; } setTimeout(() => b.textContent = 'Kopiraj adresu', 2200); };
-  $('#kCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(F.tel.replace(/\D/g, '')); b.textContent = 'Kopirano'; } catch (x) { b.textContent = F.tel; } setTimeout(() => b.textContent = 'Kopiraj broj', 2200); };
   if (F.foto) $('#ownPh').insertAdjacentHTML('beforeend', `<img src="${esc(F.foto)}" alt="${esc(F.vlasnik)}" loading="lazy">`);
 })();
 

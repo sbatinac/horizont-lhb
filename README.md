@@ -10,3 +10,9 @@ Sve se mijenja na jednom mjestu, u `index.html` → `const FIRMA = { … }` (adr
 
 ## Fotografija vlasnika
 Spremi sliku u repo (npr. `vlasnik.webp`, uspravno 4:5) i upiši `foto: 'vlasnik.webp'`.
+
+## Engleska verzija
+`en.html` se slaže automatski iz `index.html`: `python3 tools/build_en.py`. Kad se promijeni hrvatski tekst, u `tools/build_en.py` dodaj prijevod i pokreni skriptu (javlja koji tekst nema prijevod).
+
+## Citati
+U `index.html` → `CITATI_TEME` (prazno = sve teme) i popis `CITATI` (hr + en). Mijenjaju se svakih `CITATI_SEK` sekundi.
