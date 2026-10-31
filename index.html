@@ -228,6 +228,15 @@ section{padding-block:72px}
 .ph-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph-o .ini{font:800 clamp(4rem,10vw,6.5rem)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(100deg,#FFF4D0,#F7DC8A 42%,#EDBE45 62%,#D9A520);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ow-t{display:grid;gap:14px}
+.ow-tag{font:800 clamp(1.15rem,2.2vw,1.45rem)/1.2 var(--display);text-transform:uppercase;letter-spacing:-.005em;margin-top:4px}
+.ow-t .ow-lead{font:600 1.15rem/1.45 var(--body);color:var(--ink)}
+.ow-t .ow-em{font:700 1.1rem/1.4 var(--display);color:var(--ink)}
+.ow-more{display:grid;gap:14px;animation:pin .35s ease}
+.ow-btn{justify-self:start;padding:.65em 1.1em;font-size:.95rem}
+.ow-t blockquote{text-transform:uppercase}
+.owner{align-items:start}
+.owner .ph-o{position:sticky;top:100px}
+
 .ow-t .role{font:500 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
 .ow-t p{color:var(--muted);font-size:1.03rem;max-width:58ch}
 .ow-t blockquote{margin:6px 0 0;padding:14px 0 14px 20px;border-left:3px solid;border-image:var(--split) 1;font:700 clamp(1.15rem,2.2vw,1.45rem)/1.3 var(--display);color:var(--ink);max-width:40ch}
@@ -567,10 +576,29 @@ footer a{color:var(--cyan)}
     <div class="ow-t">
       <span class="lbl">Vlasnik i direktor</span>
       <h2 data-f="vlasnik"></h2>
-      <span class="role">Osnivač · serviser · video producent · web developer</span>
-      <p>Firmu vodi osobno i radi svaki posao od početka do kraja: od otvaranja laptopa do zadnjeg reza videa i objave stranice na internetu. Spoj tehnike i kreative, bez prepuštanja posla drugima.</p>
-      <blockquote>„Ako nešto radim, radim to kao za sebe.”</blockquote>
-      <div class="skills"><span>Hardver i dijagnostika</span><span>Konzole</span><span>Snimanje i montaža</span><span>Animacija</span><span>Web razvoj</span><span>Automatizacija</span></div>
+      <span class="role">Osnivač · poduzetnik · tehnologija i kreativa</span>
+      <h3 class="ow-tag">Jedna vizija. Mnogo putova. <span class="gt">Bez granica.</span></h3>
+      <p class="ow-lead">Iza svakog poslovnog uspjeha stoji ideja. Iza svake ideje stoji čovjek koji se usudio pokušati.</p>
+      <p>Nikada nisam vjerovao da čovjeka treba definirati samo jedno zanimanje, jedna djelatnost ili jedan poslovni put.</p>
+      <p>Za mene je poduzetništvo mnogo više od poslovanja. Ono je neprestano istraživanje mogućnosti, prepoznavanje prilika i hrabrost da se zakorači u nešto novo.</p>
+      <p>Moje poslovno iskustvo obuhvaća prodaju, trgovinu, razvoj poslovnih odnosa, pregovore i povezivanje partnera na različitim tržištima. Istodobno, moja strast prema tehnologiji i kreativnosti vodi me kroz računalne sustave, web dizajn, digitalnu produkciju, umjetnu inteligenciju te obradu videa i zvuka.</p>
+      <p class="ow-em">Naizgled različiti svjetovi. Za mene, dijelovi iste priče.<br>Priče o stvaranju, povezivanju i neprestanom napretku.</p>
+      <div class="ow-more" id="owMore" hidden>
+        <p>Ne tvrdim da znam sve. Ali znam učiti, istraživati, pronaći rješenje i okupiti prave ljude oko dobre ideje.</p>
+        <p>Kada se pojavi problem, ne tražim razlog za odustajanje. Tražim način da ga riješim.</p>
+        <p>Kada prepoznam poslovnu priliku, ne promatram je samo izdaleka. Pokušavam je pretvoriti u stvaran projekt.</p>
+        <p>A kada započnem nešto novo, pristupam tome s istom ozbiljnošću, odgovornošću i željom da rezultat bude što bolji.</p>
+        <p>Tijekom godina naučio sam da uspjeh ne dolazi uvijek najkraćim putem. Ponekad zahtijeva promjenu smjera, nove početke, teške odluke i spremnost da se krene ispočetka.</p>
+        <p class="ow-em">Ali upravo u tome pronalazim snagu.</p>
+        <p>Ne želim biti ograničen onime što radim danas. Želim otkrivati što sve mogu ostvariti sutra.</p>
+        <p>Vjerujem u znanje, profesionalnost, kreativnost i pošten poslovni odnos. Vjerujem da prava prilika nastaje onda kada se iskustvo susretne s idejom, a ideja s odlučnošću.</p>
+        <p class="ow-em">I zato ne gradim svoju budućnost oko jedne djelatnosti.<br>Gradim je oko mogućnosti.</p>
+        <p>Jer moj najveći projekt nikada nije bio samo jedan proizvod, jedna usluga ili jedna tvrtka.</p>
+        <p class="ow-em">Moj najveći projekt je stvaranje budućnosti u kojoj ideje postaju stvarnost.</p>
+      </div>
+      <button type="button" class="btn ghost ow-btn" id="owBtn" aria-expanded="false" aria-controls="owMore">Pročitaj cijelu priču ↓</button>
+      <blockquote>Mnogo djelatnosti. Jedna vizija. <span class="gt">Neograničena ambicija.</span></blockquote>
+      <div class="skills"><span>Prodaja i trgovina</span><span>Pregovori i partnerstva</span><span>Računalni sustavi</span><span>Web dizajn</span><span>Video i zvuk</span><span>Umjetna inteligencija</span></div>
     </div>
   </div>
 </div></section>
@@ -900,6 +928,12 @@ function init(type, sec, tabsEl, grid, render, n) {
 init('gallery', '#radovi', '#gTabs', '#gGrid', gRender, 8);
 init('video', '#video', '#vTabs', '#vGrid', vRender, 3);
 init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
+
+
+/* VLASNIK: cijela priča na klik */
+(() => { const b = $('#owBtn'), m = $('#owMore');
+  b.onclick = () => { const o = m.hidden; m.hidden = !o; b.setAttribute('aria-expanded', o); b.textContent = o ? 'Sakrij ↑' : 'Pročitaj cijelu priču ↓'; if (!o) $('#vlasnik').scrollIntoView({ behavior: 'smooth' }); };
+})();
 
 /* KARTICE: otvori jedan panel, ostali se zatvaraju */
 (() => {
