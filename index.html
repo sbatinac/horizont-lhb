@@ -395,6 +395,7 @@ section{padding-block:72px}
 .k-lead{color:var(--muted)}
 .k-row{display:grid;gap:8px;padding-top:18px;border-top:1px solid var(--line)}
 .k-num{font:800 clamp(1.8rem,4vw,2.6rem)/1 var(--display);font-variant-numeric:tabular-nums;text-decoration:none;justify-self:start;white-space:nowrap}
+.k-num::before{content:"📞 ";font-size:.7em;vertical-align:.12em;-webkit-text-fill-color:initial}
 .k-num:hover{filter:brightness(1.15)}
 .k-mail{font:700 clamp(1.05rem,2.2vw,1.35rem) var(--display);overflow-wrap:anywhere;text-decoration:none}
 .k-mail:hover{color:var(--hot-text)}
@@ -515,7 +516,7 @@ footer a{color:var(--cyan)}
         <dt>Djelatnost</dt><dd>IT i servis, web, video, trgovina i posredovanje · <a href="#sve-djelatnosti" style="color:#F6D35B">22 djelatnosti ↓</a></dd>
         <dt>PDV</dt><dd>Nije u sustavu PDV-a</dd>
       </dl>
-      <div class="ft"><span class="live">Aktivno poslujemo</span><a class="tel-l" data-f="tel" style="color:inherit;text-decoration:none"></a></div>
+      <div class="ft"><span class="live">Aktivno poslujemo</span><a href="#kontakt" style="color:inherit">Kontakt ↓</a></div>
     </aside>
   </div>
 </div>
@@ -719,8 +720,6 @@ footer a{color:var(--cyan)}
         <div><dt>Adresa</dt><dd><a class="adr-l" data-f="adresa" target="_blank" rel="noopener"></a></dd></div>
         <div><dt>Mjesto</dt><dd><span data-f="mjesto"></span>, Hrvatska</dd></div>
         <div><dt>Radno vrijeme</dt><dd data-f="radno"></dd></div>
-        <div><dt>Telefon</dt><dd><a class="tel-l" data-f="tel"></a></dd></div>
-        <div><dt>Mobitel</dt><dd><a class="tel2-l" data-f="tel2"></a></dd></div>
       </dl>
       <div class="btns">
         <a class="btn" id="mapGo" target="_blank" rel="noopener">Upute za dolazak ↗</a>
@@ -742,7 +741,6 @@ footer a{color:var(--cyan)}
         <span class="lbl">Telefon</span>
         <a class="k-num gt tel-l" data-f="tel" title="Nazovi"></a>
         <div class="k-btns">
-          <a class="btn tel-l">📞 Nazovi</a>
           <a class="btn ghost" id="kWa" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" id="kVb">Viber</a>
         </div>
@@ -751,7 +749,6 @@ footer a{color:var(--cyan)}
         <span class="lbl">Mobitel</span>
         <a class="k-num gt tel2-l" data-f="tel2" title="Nazovi"></a>
         <div class="k-btns">
-          <a class="btn tel2-l">📞 Nazovi</a>
           <a class="btn ghost" id="kWa2" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" id="kVb2">Viber</a>
         </div>

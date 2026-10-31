@@ -101,7 +101,7 @@ T = {
  'Prezentacije, cjenici, katalozi i dokumenti firme za pregled i preuzimanje.': 'Presentations, price lists, catalogues and company documents to view and download.',
  'Dolazak uz prethodni dogovor. Nazovite ili pošaljite poruku prije nego krenete.': 'Visits by appointment. Please call or message before you come.',
  'Adresa': 'Address', 'Mjesto': 'City', ', Hrvatska': ', Croatia', 'Radno vrijeme': 'Opening hours', 'Telefon': 'Phone', 'Mobitel': 'Mobile',
- 'Upute za dolazak ↗': 'Get directions ↗', 'Kopiraj adresu': 'Copy address', '· Otvori u Google kartama ↗': '· Open in Google Maps ↗',
+ 'Upute za dolazak ↗': 'Get directions ↗', 'Kopiraj adresu': 'Copy address', 'Kontakt ↓': 'Contact ↓', '· Otvori u Google kartama ↗': '· Open in Google Maps ↗',
  'Javite se.': 'Get in touch.', 'Odgovaramo brzo.': 'We reply fast.', 'Za servis, video ili web stranicu, svejedno. Recite što trebate, dogovorimo ostalo.': 'IT service, video or a website, it doesn’t matter. Tell us what you need and we’ll sort out the rest.',
  '📞 Nazovi': '📞 Call', 'E-pošta': 'E-mail', 'Podijelite': 'Share', 'Podijeli': 'Share', 'Kopiraj link': 'Copy link',
  'Od ideje do': 'From idea to', 'poslovne prilike.': 'business opportunity.',
