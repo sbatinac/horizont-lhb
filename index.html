@@ -138,6 +138,13 @@ section{padding-block:72px}
 .shop-prev{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr));grid-template-rows:minmax(0,1fr);gap:2px;background:#ECE5D6!important}
 .shop-prev img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;background:#fff;transition:transform .5s}
 .dv:hover .shop-prev img{transform:scale(1.04)}
+.alc-soon{position:absolute;inset:0;z-index:2;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(6px,1.4vw,12px);padding:10px;text-align:center}
+.alc-soon img{width:min(46%,220px);height:auto}
+.alc-soon b{font:700 clamp(1rem,2vw,1.35rem) var(--body);color:#0B1424}
+.alc-cd{display:flex;gap:clamp(5px,1vw,10px)}
+.alc-cd i{font-style:normal;display:grid;justify-items:center;min-width:clamp(42px,6vw,62px);padding:6px 4px;border:1px solid #E3E8F0;border-radius:10px;box-shadow:0 8px 20px -14px rgba(11,20,36,.35);font:500 .55rem var(--body);letter-spacing:.14em;text-transform:uppercase;color:#3E8E2F}
+.alc-cd em{font:700 clamp(1.1rem,2.4vw,1.7rem)/1.1 var(--body);font-style:normal;color:#152A4A;letter-spacing:0}
+.alc-soon small{font-size:.72rem;color:#56627A}
 .wp-soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 .75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,#FAF7F0 0 14px,#F3EEE2 14px 28px)}
 .dv h3{font-size:1.4rem}
 .dv{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
@@ -597,7 +604,7 @@ footer a{color:var(--cyan)}
       </span>
     </a>
     <a class="dv" href="https://alc-life.com" target="_blank" rel="noopener">
-      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>alc-life.com</em><b>● web trgovina</b></span><span class="wp-vp shop-prev"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/170466605027294098.jpg?v=1792611051&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/osnovne_20boje_okrenuto_s_razmakom.png?v=1792611102&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/162400271606679089_ff5e46a0-5f4c-4bdb-9f63-553a77336824.png?v=1792607736&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/170484210545710227.jpg?v=1792611075&width=600" alt="" loading="lazy"></span></span>
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>alc-life.com</em><b id="alcBadge">● uskoro</b></span><span class="wp-vp shop-prev" id="alcPrev"><span class="alc-soon" id="alcSoon"><img src="alc-logo.webp" alt="" width="296" height="168"><b>Otvaramo uskoro</b><span class="alc-cd" id="alcCd"><i><em>00</em>dana</i><i><em>00</em>sati</i><i><em>00</em>min</i><i><em>00</em>sek</i></span><small>3. studenoga 2026. · alc-life.com</small></span><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/170466605027294098.jpg?v=1792611051&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/osnovne_20boje_okrenuto_s_razmakom.png?v=1792611102&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/162400271606679089_ff5e46a0-5f4c-4bdb-9f63-553a77336824.png?v=1792607736&width=600" alt="" loading="lazy"><img src="https://cdn.shopify.com/s/files/1/1090/6062/0618/files/170484210545710227.jpg?v=1792611075&width=600" alt="" loading="lazy"></span></span>
       <span class="dv-b">
         <span class="lbl">Djelatnost 05</span>
         <h3>ALC – Advanced Life Concepts</h3>
@@ -1029,6 +1036,21 @@ const CITATI = [
   $('#qtNext').onclick = next;
 })();
 
+
+/* ALC: odbrojavanje do otvaranja trgovine, nakon toga slike proizvoda */
+(() => {
+  const T = new Date('2026-11-03T00:00:00+01:00').getTime(), box = $('#alcSoon'); if (!box) return;
+  const L = document.documentElement.lang === 'en';
+  const el = [...box.querySelectorAll('.alc-cd em')], p = n => String(n).padStart(2, '0');
+  const tick = () => {
+    let d = Math.max(0, Math.floor((T - Date.now()) / 1000));
+    if (!d) { box.remove(); $('#alcBadge').textContent = L ? '● online shop' : '● web trgovina'; return; }
+    el[0].textContent = p(Math.floor(d / 86400)); el[1].textContent = p(Math.floor(d % 86400 / 3600)); el[2].textContent = p(Math.floor(d % 3600 / 60)); el[3].textContent = p(d % 60);
+    setTimeout(tick, 1000);
+  };
+  tick();
+})();
+
 /* VLASNIK: cijela priča na klik */
 (() => { const b = $('#owBtn'), m = $('#owMore');
   b.onclick = () => { const o = m.hidden; m.hidden = !o; b.setAttribute('aria-expanded', o); b.textContent = o ? 'Sakrij ↑' : 'Pročitaj cijelu priču ↓'; if (!o) $('#vlasnik').scrollIntoView({ behavior: 'smooth' }); };
@@ -1076,7 +1098,7 @@ const intro = document.getElementById('intro');
 
 /* ŽIVI PRIKAZ STRANICA */
 (() => {
-  const vps = [...document.querySelectorAll('.wp-vp')]; if (!vps.length) return;
+  const vps = [...document.querySelectorAll('.wp-vp')].filter(v => v.querySelector('iframe')); if (!vps.length) return;
   const fit = vp => { vp.querySelector('iframe').style.transform = 'scale(' + (vp.clientWidth / 1280) + ')'; };
   const ro = 'ResizeObserver' in window ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
   const ld = vp => { const f = vp.querySelector('iframe'); if (!f.src && f.dataset.src) f.src = f.dataset.src; fit(vp); ro && ro.observe(vp); };

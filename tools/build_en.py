@@ -107,7 +107,7 @@ T = {
  'Od ideje do': 'From idea to', 'poslovne prilike.': 'business opportunity.',
  'Servis': 'IT service', 'Nismo u sustavu PDV-a. Osobne podatke koristimo samo za kontakt (GDPR).': 'Not registered for VAT. Personal data is used for contact only (GDPR).',
  '⬇ Preuzmi': '⬇ Download',
- 'Djelatnost 05': 'Activity 05', '● web trgovina': '● online shop', 'Web trgovina': 'Online shop', 'Otvori trgovinu ↗': 'Open shop ↗',
+ 'Djelatnost 05': 'Activity 05', 'Otvaramo uskoro': 'Opening soon', 'dana': 'days', 'sati': 'hrs', 'min': 'min', 'sek': 'sec', '● uskoro': '● coming soon', '3. studenoga 2026. · alc-life.com': '3 November 2026 · alc-life.com', '● web trgovina': '● online shop', 'Web trgovina': 'Online shop', 'Otvori trgovinu ↗': 'Open shop ↗',
  'Naša nova web trgovina: HSC proizvodi, Teslass naočale, Syn(c)Energy narukvice i dodaci, s dostavom na kućnu adresu.':
    'Our new online shop: HSC products, Teslass glasses, Syn(c)Energy bracelets and accessories, delivered to your door.',
  'Djelatnost 04': 'Activity 04', 'Distribucija': 'Distribution', 'Alati i oprema': 'Tools & equipment', 'Otvori Beorol ↗': 'Open Beorol ↗',
