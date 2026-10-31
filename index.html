@@ -152,6 +152,23 @@ section{padding-block:72px}
 .extra div+div{padding-left:20px;border-left:1px solid var(--line)}
 .extra p{color:var(--muted);font-size:.93rem}
 
+
+/* sve registrirane djelatnosti */
+.reg{margin-top:40px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:clamp(20px,3.5vw,34px);position:relative;overflow:hidden}
+.reg::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
+.reg-h{display:grid;gap:8px;max-width:70ch;margin-bottom:22px}
+.reg-h h3{font-size:1.45rem}
+.reg-h h3 small{font:600 .8rem var(--mono);background:var(--grad);color:var(--on-hot);padding:3px 8px;border-radius:999px;vertical-align:middle;margin-left:6px}
+.reg-h p{color:var(--muted);font-size:.92rem}
+.reg-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
+.rg b{display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 1rem var(--display);padding-bottom:10px;margin-bottom:8px;border-bottom:1.5px solid var(--ink)}
+.rg b span{font:500 .72rem var(--mono);color:var(--cyan)}
+.rg ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
+.rg li{position:relative;padding-left:20px;font-size:.9rem;line-height:1.4;color:#2A3448}
+.rg li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:10px;border-radius:3px;background:var(--grad)}
+@media (max-width:1000px){.reg-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.reg-g{grid-template-columns:1fr}}
+
 /* vlasnik */
 .owner{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,5vw,60px);align-items:center}
 .ph-o{aspect-ratio:4/5;border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 70%,rgba(255,170,40,.35),transparent 70%),linear-gradient(#071232,#0B2557 60%,#040A18);display:flex;align-items:center;justify-content:center;box-shadow:0 40px 90px -45px rgba(30,107,255,.7)}
@@ -402,7 +419,7 @@ footer a{color:var(--cyan)}
         <dt>Matični br.</dt><dd data-f="mb"></dd>
         <dt>Osnovana</dt><dd data-f="osnovana"></dd>
         <dt>Direktor</dt><dd data-f="vlasnik"></dd>
-        <dt>Djelatnost</dt><dd>Servis IT opreme, video produkcija, izrada web stranica</dd>
+        <dt>Djelatnost</dt><dd>IT i servis, web, video, trgovina i posredovanje · <a href="#sve-djelatnosti" style="color:#FFC94D">22 djelatnosti ↓</a></dd>
         <dt>PDV</dt><dd>Nije u sustavu PDV-a</dd>
       </dl>
       <div class="ft"><span class="live">Aktivno poslujemo</span><span data-f="tel"></span></div>
@@ -458,6 +475,16 @@ footer a{color:var(--cyan)}
     <div><h3>Web stranice ključ u ruke</h3><p>Dizajn, izrada, galerije, obrasci i administracija. Postavljeno i spremno od prvog dana.</p></div>
     <div><h3>Web trgovine</h3><p>Proizvodi, košarica, narudžbe i plaćanje, s fotografijama i videom koji prodaju.</p></div>
     <div><h3>Tisak i PDF</h3><p>Letci, katalozi, ponude i prezentacije u stilu Vaše firme.</p></div>
+  </div>
+
+  <div class="reg" id="sve-djelatnosti">
+    <div class="reg-h"><span class="lbl">Sudski registar</span><h3>Sve registrirane djelatnosti <small>22</small></h3><p>Pretežna djelatnost: NKD 46.19 Posredovanje u nespecijaliziranoj trgovini na veliko. Upisano u sudski registar Trgovačkog suda u Osijeku, MBS 030271774.</p></div>
+    <div class="reg-g">
+      <div class="rg"><b>IT i računala <span>9</span></b><ul><li>Popravak računala i periferne opreme</li><li>Upravljanje računalnom opremom i sustavom</li><li>Savjetovanje u vezi s računalima</li><li>Računalno programiranje</li><li>Obrada podataka, usluge poslužitelja i djelatnosti povezane s njima</li><li>Ostale uslužne djelatnosti u vezi s informacijskom tehnologijom i računalima</li><li>Usluge informacijskog društva</li><li>Internetski portali</li><li>Ostale informacijske uslužne djelatnosti</li></ul></div>
+      <div class="rg"><b>Web, dizajn i mediji <span>5</span></b><ul><li>Web dizajn</li><li>Specijalizirane dizajnerske djelatnosti</li><li>Proizvodnja filmova, videofilmova i televizijskog programa</li><li>Promidžba (reklama i propaganda)</li><li>Oglašavanje preko medija</li></ul></div>
+      <div class="rg"><b>Trgovina i posredovanje <span>5</span></b><ul><li>Kupnja i prodaja robe</li><li>Pružanje usluga u trgovini</li><li>Obavljanje trgovačkog posredovanja na domaćem i inozemnom tržištu</li><li>Zastupanje inozemnih tvrtki</li><li>Posredovanje u trgovini raznovrsnim proizvodima</li></ul></div>
+      <div class="rg"><b>Poslovne usluge <span>3</span></b><ul><li>Savjetovanje u vezi s poslovanjem i ostalim upravljanjem</li><li>Organizacija sastanaka i poslovnih sajmova</li><li>Prijevoz osoba i tereta za vlastite potrebe</li></ul></div>
+    </div>
   </div>
 </div></section>
 
