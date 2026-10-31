@@ -7,6 +7,7 @@
 <meta property="og:title" content="Horizont LHB d.o.o.">
 <meta property="og:description" content="Servis računala, video produkcija i web stranice. Jedna firma, jedan kontakt.">
 <meta property="og:image" content="og.jpg">
+<meta property="og:url" content="https://www.horizont-lhb.hr">
 <meta name="theme-color" content="#040A18">
 <link rel="icon" href="favicon.png">
 <title>Horizont LHB d.o.o.</title>
@@ -59,6 +60,19 @@ nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
 .burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .burger[aria-expanded="true"] span:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+
+/* INTRO VIDEO na vrhu (kao video produkcija) */
+.banner{background:#0B1424;position:relative;line-height:0;display:flex;justify-content:center;overflow:hidden;isolation:isolate}
+.banner .amb{position:absolute;inset:-12%;width:124%;height:124%;z-index:-1;filter:blur(48px) saturate(1.4) brightness(.8);transform:translateZ(0);opacity:.95}
+.banner::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--split);z-index:1}
+.banner video{display:block;width:100%;max-width:calc(min(80vh,1000px) * 16 / 9);height:auto;aspect-ratio:16/9;object-fit:cover;background:transparent;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+@media (max-width:1100px){.banner video{-webkit-mask-image:none;mask-image:none}}
+.vctl{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:18px;z-index:2;display:flex;gap:8px;line-height:1}
+.vbtn{background:rgba(4,10,24,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #34466B;color:#F2F6FF;font:600 .85rem var(--body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.vbtn:hover{border-color:#FFC23D;color:#FFC23D}
+@media (max-width:560px){.vbtn{padding:6px 11px;font-size:.78rem}.vctl{position:static;justify-content:center;padding:10px 0 14px}.banner{flex-direction:column;align-items:center}}
 
 /* HERO: synthwave horizont, sunce i mreža */
 .top{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 55% at 50% 58%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#030814 0%,#0B2557 57%,#040A18 58%);color:#F2F6FF;min-height:clamp(520px,74vh,760px);display:flex;align-items:flex-start}
@@ -259,6 +273,17 @@ section{padding-block:72px}
 .loc-i .btns .btn{padding:.65em 1.05em;font-size:.92rem}
 .map{position:relative;min-height:380px;background:#E6ECF6}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.9)}
+.map-go{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:flex-start;padding:16px;text-decoration:none;cursor:pointer}
+.map-go .pin{display:grid;gap:2px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 14px 34px -14px rgba(8,20,45,.5);transition:transform .2s,border-color .2s}
+.map-go .pin b{font:700 1rem var(--display)}
+.map-go .pin small{font-size:.82rem;color:var(--hot-text);font-weight:600}
+.map-go:hover .pin,.map-go:focus-visible .pin{transform:translateY(-3px);border-color:var(--hot)}
+.adr-l,.tel-l,.tel2-l{text-decoration:none}
+.adr-l{border-bottom:1.5px dashed currentColor}
+.adr-l:hover{color:var(--hot-text)}
+.idc .adr-l:hover{color:#FFC94D}
+.k-num2{font:800 clamp(1.4rem,3vw,1.9rem)/1 var(--display);font-variant-numeric:tabular-nums}
+.k-num2 a{text-decoration:none}
 
 /* kontakt */
 .kontakt{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(24px,4vw,56px);background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(22px,4vw,40px);align-items:center}
@@ -346,6 +371,15 @@ footer a{color:var(--cyan)}
   </div>
 </div></header>
 
+<div class="banner">
+  <canvas class="amb" id="amb" width="48" height="27" aria-hidden="true"></canvas>
+  <video id="intro" src="intro.mp4" poster="intro-poster.webp" muted playsinline preload="auto" width="854" height="480" aria-label="Uvodni video Horizont LHB d.o.o.: servis računala, izrada web stranica i poslovanje, na kraju logotip"></video>
+  <div class="vctl">
+    <button type="button" class="vbtn" id="vSound" aria-pressed="false">🔊 Uključi zvuk</button>
+    <button type="button" class="vbtn" id="vAgain">↻ Ponovi</button>
+  </div>
+</div>
+
 <div class="top">
   <span class="sun" aria-hidden="true"></span><span class="floor" aria-hidden="true"></span>
   <div class="wrap">
@@ -362,9 +396,10 @@ footer a{color:var(--cyan)}
       <div class="hd"><b>Podaci o firmi</b><span class="tag">d.o.o.</span></div>
       <dl>
         <dt>Naziv</dt><dd>Horizont LHB d.o.o.</dd>
-        <dt>Sjedište</dt><dd data-f="adresaPuna"></dd>
+        <dt>Sjedište</dt><dd><a class="adr-l" data-f="adresaPuna" target="_blank" rel="noopener"></a></dd>
         <dt>OIB</dt><dd data-f="oib"></dd>
-        <dt>MBS</dt><dd data-f="mbs"></dd>
+        <dt>MBS</dt><dd><span data-f="mbs"></span> · Trgovački sud u Osijeku</dd>
+        <dt>Matični br.</dt><dd data-f="mb"></dd>
         <dt>Direktor</dt><dd data-f="vlasnik"></dd>
         <dt>Djelatnost</dt><dd>Servis IT opreme, video produkcija, izrada web stranica</dd>
         <dt>PDV</dt><dd>Nije u sustavu PDV-a</dd>
@@ -387,7 +422,7 @@ footer a{color:var(--cyan)}
       <div class="num"><b>3 u 1</b><span>servis, video i web</span></div>
       <div class="num"><b>1 kontakt</b><span>od upita do isporuke</span></div>
       <div class="num"><b>Online</b><span>nalog, status i upiti</span></div>
-      <div class="num"><b data-f="osnovanaKratko"></b><span>godina osnivanja</span></div>
+      <div class="num"><b>Osijek</b><span>sjedište i radionica</span></div>
     </div>
   </div>
 </div></section>
@@ -468,17 +503,19 @@ footer a{color:var(--cyan)}
   <div class="loc">
     <div class="loc-i">
       <dl>
-        <div><dt>Adresa</dt><dd data-f="adresa"></dd></div>
-        <div><dt>Mjesto</dt><dd data-f="mjesto"></dd></div>
+        <div><dt>Adresa</dt><dd><a class="adr-l" data-f="adresa" target="_blank" rel="noopener"></a></dd></div>
+        <div><dt>Mjesto</dt><dd><span data-f="mjesto"></span>, Hrvatska</dd></div>
         <div><dt>Radno vrijeme</dt><dd data-f="radno"></dd></div>
-        <div><dt>Telefon</dt><dd data-f="tel"></dd></div>
+        <div><dt>Telefon</dt><dd><a class="tel-l" data-f="tel"></a></dd></div>
+        <div><dt>Mobitel</dt><dd><a class="tel2-l" data-f="tel2"></a></dd></div>
       </dl>
       <div class="btns">
         <a class="btn" id="mapGo" target="_blank" rel="noopener">Upute za dolazak ↗</a>
         <button type="button" class="btn ghost" id="adrCopy">Kopiraj adresu</button>
       </div>
     </div>
-    <div class="map"><iframe id="mapFr" title="Karta lokacije Horizont LHB d.o.o." loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+    <div class="map"><iframe id="mapFr" title="Karta lokacije Horizont LHB d.o.o." loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+      <a class="map-go" id="mapOpen" target="_blank" rel="noopener" aria-label="Otvori lokaciju u Google kartama"><span class="pin"><b>📍 <span data-f="adresa"></span></b><small><span data-f="mjesto"></span> · Otvori u Google kartama ↗</small></span></a></div>
   </div>
 </div></section>
 
@@ -496,6 +533,15 @@ footer a{color:var(--cyan)}
           <a class="btn ghost" id="kWa" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn ghost" id="kVb">Viber</a>
           <button type="button" class="btn ghost" id="kCopy">Kopiraj broj</button>
+        </div>
+      </div>
+      <div class="k-row">
+        <span class="lbl">Mobitel</span>
+        <b class="k-num2"><a class="tel2-l" data-f="tel2"></a></b>
+        <div class="k-btns">
+          <a class="btn ghost tel2-l">Nazovi</a>
+          <a class="btn ghost" id="kWa2" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn ghost" id="kVb2">Viber</a>
         </div>
       </div>
       <div class="k-row">
@@ -549,19 +595,22 @@ footer a{color:var(--cyan)}
 /* ====== PODACI O FIRMI: sve se mijenja samo ovdje ====== */
 const FIRMA = {
   vlasnik:  'Saša Batinac',
-  adresa:   'UPISI ulicu i kućni broj',
-  postanski:'',
-  mjesto:   'UPISI mjesto',
-  oib:      'UPISI OIB',
-  mbs:      'UPISI MBS',
-  osnovana: 'UPISI',              // npr. '2019'
+  adresa:   'Ulica Izidora Kršnjavog 15',
+  postanski:'31000',
+  mjesto:   'Osijek',
+  oib:      '04977480596',
+  mbs:      '030271774',           // Trgovački sud u Osijeku
+  mb:       '05724775',            // matični broj
+  osnovana: '',
   radno:    'Po dogovoru',
   tel:      '091/358 4122',
   telIntl:  '385913584122',
-  email:    'horizont.servisi@gmail.com',
+  tel2:     '091/297 2024',
+  tel2Intl: '385912972024',
+  email:    'sbatinac@horizont-lhb.hr',
   foto:     ''                     // npr. 'vlasnik.webp' (ako postoji, zamjenjuje inicijale)
 };
-const SITE_URL = location.origin + location.pathname;
+const SITE_URL = 'https://www.horizont-lhb.hr';
 const DRIVE_KEY = 'AIzaSyDp6XAdizCufGZ-lhwXZyIjazfJvkQzS7Q';
 const FOLDERS = {               // ID mapa s Google Drivea (podmape = tabovi)
   gallery: '1rs8AkvO7X-WYRnJqjjy5OX5TKpeLZ23h',
@@ -592,9 +641,16 @@ const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
   $('#kWa').href = 'https://wa.me/' + F.telIntl;
   $('#kVb').href = 'viber://chat?number=%2B' + F.telIntl;
   $('#kMail').href = 'mailto:' + F.email;
-  const q = nema(F.adresa) || nema(F.mjesto) ? 'Hrvatska' : `Horizont LHB, ${F.adresa}, ${mj}, Hrvatska`;
-  $('#mapFr').src = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=${q === 'Hrvatska' ? 7 : 16}&output=embed`;
+  $('#kWa2').href = 'https://wa.me/' + F.tel2Intl;
+  $('#kVb2').href = 'viber://chat?number=%2B' + F.tel2Intl;
+  document.querySelectorAll('.tel-l').forEach(a => a.href = 'tel:+' + F.telIntl);
+  document.querySelectorAll('.tel2-l').forEach(a => a.href = 'tel:+' + F.tel2Intl);
+  const q = `${F.adresa}, ${mj}, Hrvatska`;
+  const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
+  $('#mapFr').src = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=16&hl=hr&output=embed`;
   $('#mapGo').href = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`;
+  $('#mapOpen').href = mapUrl;
+  document.querySelectorAll('.adr-l').forEach(a => { a.href = mapUrl; a.title = 'Otvori u Google kartama'; });
   $('#adrCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(val.adresaPuna); b.textContent = 'Kopirano'; } catch (x) { b.textContent = val.adresaPuna; } setTimeout(() => b.textContent = 'Kopiraj adresu', 2200); };
   $('#kCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(F.tel.replace(/\D/g, '')); b.textContent = 'Kopirano'; } catch (x) { b.textContent = F.tel; } setTimeout(() => b.textContent = 'Kopiraj broj', 2200); };
   if (F.foto) $('#ownPh').insertAdjacentHTML('beforeend', `<img src="${esc(F.foto)}" alt="${esc(F.vlasnik)}" loading="lazy">`);
@@ -674,7 +730,7 @@ function vLoad(f) {
   ifr.src = `https://drive.google.com/file/d/${f.id}/preview`;
   $('#vCap').textContent = `${f.name} · ${vCur + 1}/${vFiles.length}`;
 }
-function openVid(i) { if (window.musicPause) musicPause(); vCur = i; $('#mVid').classList.add('open'); vLoad(vFiles[i]); }
+function openVid(i) { if (window.musicPause) musicPause(); if (!intro.paused) intro.pause(); vCur = i; $('#mVid').classList.add('open'); vLoad(vFiles[i]); }
 function vStep(d) { if (!vFiles.length) return; vCur = (vCur + d + vFiles.length) % vFiles.length; vLoad(vFiles[vCur]); }
 
 /* PDF */
@@ -711,6 +767,25 @@ init('gallery', '#radovi', '#gTabs', '#gGrid', gRender, 8);
 init('video', '#video', '#vTabs', '#vGrid', vRender, 3);
 init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
 
+
+/* INTRO VIDEO: bez zvuka na početku, staje na zadnjem kadru (logo); ambijentalni odsjaj */
+const intro = document.getElementById('intro');
+(() => {
+  const c = document.getElementById('amb'), x = c.getContext('2d'); let last = 0;
+  const draw = () => { try { x.drawImage(intro, 0, 0, c.width, c.height); } catch (e) {} };
+  const loop = t => { if (t - last > 66) { draw(); last = t; } if (!intro.paused && !intro.ended) requestAnimationFrame(loop); };
+  intro.addEventListener('play', () => requestAnimationFrame(loop));
+  ['loadeddata', 'seeked', 'pause', 'ended'].forEach(ev => intro.addEventListener(ev, draw));
+  const p = new Image(); p.onload = () => { if (intro.readyState < 2) x.drawImage(p, 0, 0, c.width, c.height); }; p.src = intro.poster;
+  const snd = document.getElementById('vSound'), again = document.getElementById('vAgain');
+  if (STILL) { intro.poster = 'intro-kraj.webp'; intro.preload = 'none'; }
+  else intro.play().catch(() => { intro.poster = 'intro-kraj.webp'; });
+  const lbl = () => { snd.textContent = intro.muted ? '🔊 Uključi zvuk' : '🔇 Isključi zvuk'; snd.setAttribute('aria-pressed', !intro.muted); };
+  snd.onclick = () => { intro.muted = !intro.muted; if (!intro.muted) { if (window.musicPause) musicPause(); if (intro.ended || intro.paused) { intro.currentTime = 0; intro.play().catch(() => {}); } } lbl(); };
+  again.onclick = () => { intro.currentTime = 0; intro.play().catch(() => {}); };
+  intro.addEventListener('ended', () => { intro.muted = true; lbl(); });
+})();
+
 /* MOBILNI IZBORNIK */
 (() => {
   const b = $('#burger'), h = document.querySelector('header');
@@ -742,6 +817,7 @@ init('pdf', '#dokumenti', '#pTabs', '#pGrid', pRender, 4);
     const src = b.dataset.src;
     if (curS === src) { stop(src); curS = null; mark(); return; }
     if (curS) stop(curS);
+    if (!intro.muted) { intro.muted = true; $('#vSound').textContent = '🔊 Uključi zvuk'; }
     const a = audio(src); curS = src; mark();
     a.play().then(() => ramp(a, VOL, 2000)).catch(() => { curS = null; mark(); });
   }));
