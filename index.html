@@ -8,7 +8,7 @@
 <meta property="og:description" content="Servis računala, video produkcija i web stranice. Jedna firma, jedan kontakt.">
 <meta property="og:image" content="og.jpg">
 <meta property="og:url" content="https://www.horizont-lhb.hr">
-<meta name="theme-color" content="#040A18">
+<meta name="theme-color" content="#0F0E0B">
 <link rel="icon" href="favicon.png">
 <title>Horizont LHB d.o.o.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,12 @@
 /* Isti sustav kao Horizont video produkcija: električno plava, zlatna i noćno plava */
 :root{
   color-scheme:light;
-  --bg:#FFFFFF; --surface:#F3F6FC; --ink:#0B1424; --muted:#56627A; --line:#DFE6F1;
-  --hot:#1E6BFF; --hot-text:#1559E0; --cyan:#A85F00; --cyan-soft:#FFF1D2; --on-hot:#0A1630;
-  --gtext:linear-gradient(100deg,#1559F5 0%,#1E8BFF 48%,#F09000 100%);
-  --grad:linear-gradient(100deg,#FFC94D 0%,#FF9500 100%);
-  --split:linear-gradient(90deg,#1E6BFF 0%,#4FA3FF 42%,#FFD27A 58%,#FF9500 100%);
-  --night:#040A18;
+  --bg:#FFFFFF; --surface:#FAF7F0; --ink:#16140F; --muted:#6B6455; --line:#ECE5D6;
+  --hot:#D9A520; --hot-text:#8A6400; --cyan:#9A6B00; --cyan-soft:#FFF4D6; --on-hot:#16140F;
+  --gtext:linear-gradient(100deg,#2B2410 0%,#8A6A12 45%,#D9A520 100%);
+  --grad:linear-gradient(100deg,#F6D35B 0%,#E0A91E 100%);
+  --split:linear-gradient(90deg,#16140F 0%,#6B5520 35%,#E3B23C 70%,#FFD96B 100%);
+  --night:#0F0E0B;
   --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
@@ -39,9 +39,9 @@ p{margin:0}
 .lbl{font:500 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .gt{background:var(--gtext);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
 .btn{display:inline-flex;align-items:center;gap:.6em;background:var(--grad);color:var(--on-hot);font:600 1rem var(--body);text-decoration:none;padding:.9em 1.4em;border-radius:6px;border:0;cursor:pointer;transition:transform .15s,box-shadow .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px -10px rgba(255,149,0,.75)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 32px -10px rgba(224,169,30,.75)}
 .btn:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--cyan);outline-offset:3px}
-.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #BFCBE0;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid #D8CEB6;box-shadow:none}
 .btn.ghost:hover{border-color:var(--hot);background:var(--hot);color:#fff}
 [hidden]{display:none!important}
 .tbd{background:#FFF1D2;color:#8A4B00;border-radius:4px;padding:0 4px;font-family:var(--mono);font-size:.85em}
@@ -51,9 +51,9 @@ header{border-bottom:1px solid var(--line);background:rgba(255,255,255,.92);back
 header .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:14px;flex-wrap:wrap}
 .brand{font:800 1.15rem var(--display);display:flex;align-items:center;gap:.6em;text-decoration:none}
 .brand small{display:block;font:500 .66rem var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--cyan)}
-.logo{display:inline-flex;background:#000;border-radius:8px;border:1px solid var(--line);overflow:hidden}
+.logo{display:inline-flex;background:#fff;border-radius:8px;border:1px solid var(--line);overflow:hidden}
 .logo img{display:block;width:48px;height:48px}
-nav{display:flex;gap:20px;flex-wrap:wrap;font-size:.92rem}
+nav{display:flex;gap:16px;flex-wrap:wrap;font-size:.9rem}
 nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
 .burger{display:none;width:46px;height:46px;border-radius:8px;border:1.5px solid var(--line);background:var(--surface);cursor:pointer;flex-direction:column;justify-content:center;align-items:center;gap:5px;padding:0}
 .burger span{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform .2s,opacity .2s}
@@ -63,51 +63,51 @@ nav a{text-decoration:none;color:var(--muted)} nav a:hover{color:var(--ink)}
 
 
 /* INTRO VIDEO na vrhu (kao video produkcija) */
-.banner{background:#0B1424;position:relative;line-height:0;display:flex;justify-content:center;overflow:hidden;isolation:isolate}
+.banner{background:#16140F;position:relative;line-height:0;display:flex;justify-content:center;overflow:hidden;isolation:isolate}
 .banner .amb{position:absolute;inset:-12%;width:124%;height:124%;z-index:-1;filter:blur(48px) saturate(1.4) brightness(.8);transform:translateZ(0);opacity:.95}
 .banner::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--split);z-index:1}
 .banner video{display:block;width:100%;max-width:calc(min(80vh,1000px) * 16 / 9);height:auto;aspect-ratio:16/9;object-fit:cover;background:transparent;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
 @media (max-width:1100px){.banner video{-webkit-mask-image:none;mask-image:none}}
 .vctl{position:absolute;right:max(16px,env(safe-area-inset-right,0px));bottom:18px;z-index:2;display:flex;gap:8px;line-height:1}
-.vbtn{background:rgba(4,10,24,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #34466B;color:#F2F6FF;font:600 .85rem var(--body);padding:8px 14px;border-radius:999px;cursor:pointer}
-.vbtn:hover{border-color:#FFC23D;color:#FFC23D}
+.vbtn{background:rgba(15,14,11,.7);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid #4A4334;color:#F8F4EA;font:600 .85rem var(--body);padding:8px 14px;border-radius:999px;cursor:pointer}
+.vbtn:hover{border-color:#F2C230;color:#F2C230}
 @media (max-width:560px){.vbtn{padding:6px 11px;font-size:.78rem}.vctl{position:static;justify-content:center;padding:10px 0 14px}.banner{flex-direction:column;align-items:center}}
 
 /* HERO: synthwave horizont, sunce i mreža */
-.top{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 55% at 50% 58%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#030814 0%,#0B2557 57%,#040A18 58%);color:#F2F6FF;min-height:clamp(520px,74vh,760px);display:flex;align-items:flex-start}
-.top .sun{position:absolute;left:min(80%,calc(50% + 380px));top:58%;width:clamp(220px,28vw,380px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#FFC23D 40%,#FF8A00 78%);
+.top{position:relative;overflow:hidden;background:radial-gradient(ellipse 60% 55% at 50% 58%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#0A0907 0%,#2B2414 57%,#0F0E0B 58%);color:#F8F4EA;min-height:clamp(520px,74vh,760px);display:flex;align-items:flex-start}
+.top .sun{position:absolute;left:min(80%,calc(50% + 380px));top:58%;width:clamp(220px,28vw,380px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#F2C230 40%,#FF8A00 78%);
   -webkit-mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
   mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
-  filter:drop-shadow(0 0 50px rgba(30,107,255,.6))}
-.top .floor{position:absolute;left:-50%;right:-50%;top:58%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#040A18;
-  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(60,140,255,.6) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
-.top .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#040A18,transparent 50%)}
+  filter:drop-shadow(0 0 50px rgba(217,165,32,.6))}
+.top .floor{position:absolute;left:-50%;right:-50%;top:58%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#0F0E0B;
+  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(227,178,60,.32) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
+.top .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#0F0E0B,transparent 50%)}
 @keyframes floor{to{background-position:0 46px}}
-.top::before{content:"";position:absolute;left:0;right:0;top:58%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(79,163,255,.55);z-index:1}
+.top::before{content:"";position:absolute;left:0;right:0;top:58%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(227,178,60,.5);z-index:1}
 .top::after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--split);z-index:2}
 .top .wrap{position:relative;z-index:2;width:100%;padding-block:clamp(36px,6vw,80px) 40px;display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:start}
-.top .lbl{color:#9AA8C2}
+.top .lbl{color:#B5AA90}
 .top h1{font-size:clamp(2.6rem,7vw,5.4rem);font-weight:800;letter-spacing:-.03em;line-height:.95;margin-top:16px;filter:drop-shadow(0 6px 24px rgba(0,0,0,.9))}
-.top h1 small{display:block;font-size:.36em;letter-spacing:.02em;margin-top:.3em;color:#C9D4EA}
-.top h1 .gt{background:linear-gradient(100deg,#3D8BFF 0%,#8FC2FF 42%,#FFD27A 62%,#FFA51F 100%);-webkit-background-clip:text;background-clip:text}
-.top .lead{color:#C9D4EA;font-size:1.1rem;max-width:46ch;margin-top:22px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
+.top h1 small{display:block;font-size:.36em;letter-spacing:.02em;margin-top:.3em;color:#E8E1CF}
+.top h1 .gt{background:linear-gradient(100deg,#FFF4D0 0%,#F7DC8A 42%,#EDBE45 62%,#D9A520 100%);-webkit-background-clip:text;background-clip:text}
+.top .lead{color:#E8E1CF;font-size:1.1rem;max-width:46ch;margin-top:22px;text-shadow:0 2px 12px rgba(0,0,0,.8)}
 .top .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.top .btn.ghost{color:#F2F6FF;border-color:#4A5E88;background:rgba(4,10,24,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.top .btn.ghost{color:#F8F4EA;border-color:#5A5240;background:rgba(15,14,11,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
 .top .btn.ghost:hover{background:var(--hot);border-color:var(--hot)}
 
 /* osobna iskaznica firme (staklo) */
-.idc{border-radius:12px;padding:22px 22px 18px;font-family:var(--mono);font-size:.86rem;position:relative;overflow:hidden;color:#F2F6FF;
-  background:linear-gradient(135deg,rgba(18,32,66,.72),rgba(6,12,28,.55));border:1px solid rgba(143,194,255,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 30px 70px -30px rgba(30,107,255,.6);
+.idc{border-radius:12px;padding:22px 22px 18px;font-family:var(--mono);font-size:.86rem;position:relative;overflow:hidden;color:#F8F4EA;
+  background:linear-gradient(135deg,rgba(42,36,22,.72),rgba(12,11,9,.58));border:1px solid rgba(227,178,60,.28);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 30px 70px -30px rgba(217,165,32,.6);
   -webkit-backdrop-filter:blur(14px) saturate(1.4);backdrop-filter:blur(14px) saturate(1.4)}
 .idc::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
-.idc .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1.5px dashed rgba(143,194,255,.3);padding-bottom:12px;margin-bottom:12px}
+.idc .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1.5px dashed rgba(227,178,60,.3);padding-bottom:12px;margin-bottom:12px}
 .idc .hd b{font:700 1.05rem var(--display)}
-.tag{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;background:rgba(255,176,32,.16);color:#FFC94D;padding:4px 8px;border-radius:4px;white-space:nowrap}
+.tag{font:500 .68rem var(--mono);letter-spacing:.1em;text-transform:uppercase;background:rgba(255,176,32,.16);color:#F6D35B;padding:4px 8px;border-radius:4px;white-space:nowrap}
 .idc dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;margin:0}
-.idc dt{color:#8FA0C0} .idc dd{margin:0;min-width:0;overflow-wrap:anywhere}
-.idc .ft{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1.5px dashed rgba(143,194,255,.3);margin-top:14px;padding-top:12px;font-size:.78rem;color:#8FA0C0}
-.idc .tbd{background:rgba(255,176,32,.18);color:#FFC94D}
+.idc dt{color:#B5AA90} .idc dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.idc .ft{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;border-top:1.5px dashed rgba(227,178,60,.3);margin-top:14px;padding-top:12px;font-size:.78rem;color:#B5AA90}
+.idc .tbd{background:rgba(255,176,32,.18);color:#F6D35B}
 .live{display:inline-flex;align-items:center;gap:6px;color:#7FE3A2}
 .live::before{content:"";width:8px;height:8px;border-radius:50%;background:#28C840;animation:rec 1.6s ease-in-out infinite}
 @keyframes rec{50%{opacity:.25}}
@@ -128,15 +128,17 @@ section{padding-block:72px}
 .num span{color:var(--muted);font-size:.88rem}
 
 /* djelatnosti: dvije stranice uživo */
-.divs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.divs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.wp-soon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font:500 .75rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,#FAF7F0 0 14px,#F3EEE2 14px 28px)}
+.dv h3{font-size:1.25rem}
 .dv{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s;min-width:0}
-.dv:hover{border-color:var(--hot);transform:translateY(-3px);box-shadow:0 24px 50px -28px rgba(30,107,255,.45)}
-.dv:hover h3{color:#0F3A9E}
+.dv:hover{border-color:var(--hot);transform:translateY(-3px);box-shadow:0 24px 50px -28px rgba(217,165,32,.45)}
+.dv:hover h3{color:#7A5A00}
 .dv h3{transition:color .25s;font-size:1.4rem}
-.wp-prev{display:block;position:relative;background:#0B1424}
-.wp-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#0E1A33;color:#9AA8C2;font:500 .7rem var(--mono)}
-.wp-bar i{width:9px;height:9px;border-radius:50%;background:#34466B}.wp-bar i:first-child{background:#FF5F57}.wp-bar i:nth-child(2){background:#FEBC2E}.wp-bar i:nth-child(3){background:#28C840}
-.wp-bar em{font-style:normal;margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#16264A;padding:3px 8px;border-radius:5px}
+.wp-prev{display:block;position:relative;background:#16140F}
+.wp-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#1E1B15;color:#B5AA90;font:500 .7rem var(--mono)}
+.wp-bar i{width:9px;height:9px;border-radius:50%;background:#4A4334}.wp-bar i:first-child{background:#FF5F57}.wp-bar i:nth-child(2){background:#FEBC2E}.wp-bar i:nth-child(3){background:#28C840}
+.wp-bar em{font-style:normal;margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#28241B;padding:3px 8px;border-radius:5px}
 .wp-bar b{color:#4ADE80;font-weight:500;white-space:nowrap}
 .wp-vp{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
 .wp-vp iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
@@ -164,17 +166,38 @@ section{padding-block:72px}
 .rg b{display:flex;justify-content:space-between;align-items:center;gap:8px;font:700 1rem var(--display);padding-bottom:10px;margin-bottom:8px;border-bottom:1.5px solid var(--ink)}
 .rg b span{font:500 .72rem var(--mono);color:var(--cyan)}
 .rg ul{list-style:none;margin:0;padding:0;display:grid;gap:7px}
-.rg li{position:relative;padding-left:20px;font-size:.9rem;line-height:1.4;color:#2A3448}
+.rg li{position:relative;padding-left:20px;font-size:.9rem;line-height:1.4;color:#3A352A}
 .rg li::before{content:"";position:absolute;left:0;top:.42em;width:10px;height:10px;border-radius:3px;background:var(--grad)}
 @media (max-width:1000px){.reg-g{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.reg-g{grid-template-columns:1fr}}
 
+/* web projekti */
+.webs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.wp{display:grid;align-content:start;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;text-decoration:none;transition:border-color .2s,transform .2s,box-shadow .2s}
+.wp:hover{box-shadow:0 24px 50px -28px rgba(217,165,32,.45)}
+.wp{grid-template-columns:minmax(0,1fr);min-width:0}
+.wp-b{display:grid;gap:10px;padding:18px 22px 22px;min-width:0}
+.webs{grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr))!important}
+.wp-prev{display:block;position:relative;background:#16140F}
+.wp-bar{display:flex;align-items:center;gap:6px;padding:8px 12px;background:#1E1B15;color:#B5AA90;font:500 .7rem var(--mono)}
+.wp-bar i{width:9px;height:9px;border-radius:50%;background:#4A4334}.wp-bar i:first-child{background:#FF5F57}.wp-bar i:nth-child(2){background:#FEBC2E}.wp-bar i:nth-child(3){background:#28C840}
+.wp-bar em{font-style:normal;margin-left:8px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#28241B;padding:3px 8px;border-radius:5px}
+.wp-bar b{color:#4ADE80;font-weight:500;white-space:nowrap}
+.wp-vp{display:block;position:relative;aspect-ratio:16/10;overflow:hidden;background:#fff}
+.wp-vp iframe{position:absolute;top:0;left:0;width:1280px;height:800px;border:0;transform-origin:0 0;pointer-events:none;background:#fff}
+.wp-vp::after{content:"";position:absolute;inset:0}
+.wp:hover{border-color:var(--hot);transform:translateY(-3px)}
+.wp .url{font:500 .78rem var(--mono);color:var(--cyan);overflow-wrap:anywhere}
+.wp p{color:var(--muted);font-size:.93rem}
+.wp .go{font-weight:600;color:var(--hot-text);margin-top:4px}
+
+
 /* vlasnik */
 .owner{display:grid;grid-template-columns:minmax(0,340px) 1fr;gap:clamp(24px,5vw,60px);align-items:center}
-.ph-o{aspect-ratio:4/5;border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 70%,rgba(255,170,40,.35),transparent 70%),linear-gradient(#071232,#0B2557 60%,#040A18);display:flex;align-items:center;justify-content:center;box-shadow:0 40px 90px -45px rgba(30,107,255,.7)}
+.ph-o{aspect-ratio:4/5;border-radius:16px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 50% 70%,rgba(255,170,40,.35),transparent 70%),linear-gradient(#17140D,#2B2414 60%,#0F0E0B);display:flex;align-items:center;justify-content:center;box-shadow:0 40px 90px -45px rgba(217,165,32,.7)}
 .ph-o::after{content:"";position:absolute;inset:0;border-radius:16px;padding:2px;background:var(--split);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none}
 .ph-o img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.ph-o .ini{font:800 clamp(4rem,10vw,6.5rem)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(100deg,#3D8BFF,#8FC2FF 42%,#FFD27A 62%,#FFA51F);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ph-o .ini{font:800 clamp(4rem,10vw,6.5rem)/1 var(--display);letter-spacing:-.04em;background:linear-gradient(100deg,#FFF4D0,#F7DC8A 42%,#EDBE45 62%,#D9A520);-webkit-background-clip:text;background-clip:text;color:transparent}
 .ow-t{display:grid;gap:14px}
 .ow-t .role{font:500 .8rem var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--cyan)}
 .ow-t p{color:var(--muted);font-size:1.03rem;max-width:58ch}
@@ -183,27 +206,27 @@ section{padding-block:72px}
 .skills span{border:1.5px solid var(--line);padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:500;background:#fff}
 
 /* traka sa sloganom */
-.wave{position:relative;overflow:hidden;height:clamp(220px,26vw,340px);background:radial-gradient(ellipse 60% 55% at 50% 56%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#030814 0%,#0B2557 55%,#040A18 56%);display:flex;align-items:flex-start}
-.wave .sun{position:absolute;left:72%;top:55%;width:clamp(150px,17vw,230px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#FFC23D 40%,#FF8A00 78%);
+.wave{position:relative;overflow:hidden;height:clamp(220px,26vw,340px);background:radial-gradient(ellipse 60% 55% at 50% 56%,rgba(255,170,40,.28),transparent 70%),linear-gradient(#0A0907 0%,#2B2414 55%,#0F0E0B 56%);display:flex;align-items:flex-start}
+.wave .sun{position:absolute;left:72%;top:55%;width:clamp(150px,17vw,230px);aspect-ratio:1;transform:translate(-50%,-80%);border-radius:50%;background:linear-gradient(#FFF0C2,#F2C230 40%,#FF8A00 78%);
   -webkit-mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%);
   mask:linear-gradient(#000 48%,transparent 48% 52%,#000 52% 60%,transparent 60% 64%,#000 64% 71%,transparent 71% 76%,#000 76% 82%,transparent 82% 88%,#000 88%)}
-.wave .floor{position:absolute;left:-50%;right:-50%;top:56%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#040A18;
-  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(60,140,255,.6) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
-.wave .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#040A18,transparent 50%)}
-.wave::before{content:"";position:absolute;left:0;right:0;top:56%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(79,163,255,.55);z-index:1}
+.wave .floor{position:absolute;left:-50%;right:-50%;top:56%;bottom:-40%;transform:perspective(320px) rotateX(62deg);transform-origin:top center;background-color:#0F0E0B;
+  background-image:linear-gradient(rgba(255,176,32,.5) 1.5px,transparent 1.5px),linear-gradient(90deg,rgba(227,178,60,.32) 1.5px,transparent 1.5px);background-size:60px 46px;animation:floor 2.6s linear infinite}
+.wave .floor::after{content:"";position:absolute;inset:0;background:linear-gradient(#0F0E0B,transparent 50%)}
+.wave::before{content:"";position:absolute;left:0;right:0;top:56%;height:2px;background:var(--split);box-shadow:0 0 22px 3px rgba(227,178,60,.5);z-index:1}
 .wave .wrap{position:relative;z-index:2;width:100%;padding-top:clamp(26px,4.5vw,56px)}
-.wave .slog{color:#F2F6FF;font:800 clamp(1.7rem,4.2vw,3rem)/1.02 var(--display);letter-spacing:-.02em;max-width:14ch;filter:drop-shadow(0 4px 20px rgba(0,0,0,.9))}
-.wave .slog .gt{background:linear-gradient(100deg,#3D8BFF 0%,#8FC2FF 42%,#FFD27A 62%,#FFA51F 100%);-webkit-background-clip:text;background-clip:text}
-.d-slu{width:clamp(140px,17vw,240px);right:max(10px,calc(50% - 600px));top:10%;--r:-12deg;--fd:8.5s;z-index:3;filter:drop-shadow(0 0 40px rgba(30,107,255,.35)) drop-shadow(0 20px 30px rgba(0,0,0,.6))}
+.wave .slog{color:#F8F4EA;font:800 clamp(1.7rem,4.2vw,3rem)/1.02 var(--display);letter-spacing:-.02em;max-width:14ch;filter:drop-shadow(0 4px 20px rgba(0,0,0,.9))}
+.wave .slog .gt{background:linear-gradient(100deg,#FFF4D0 0%,#F7DC8A 42%,#EDBE45 62%,#D9A520 100%);-webkit-background-clip:text;background-clip:text}
+.d-slu{width:clamp(140px,17vw,240px);right:max(10px,calc(50% - 600px));top:10%;--r:-12deg;--fd:8.5s;z-index:3;filter:drop-shadow(0 0 40px rgba(217,165,32,.35)) drop-shadow(0 20px 30px rgba(0,0,0,.6))}
 
 /* UKRASI */
 .has-deco{position:relative;overflow:clip}
 .has-deco>.wrap{position:relative;z-index:1}
-.deco{position:absolute;z-index:0;pointer-events:none;user-select:none;height:auto;filter:drop-shadow(0 28px 34px rgba(8,20,45,.22));animation:float var(--fd,8s) ease-in-out infinite;transform:rotate(var(--r,0deg))}
+.deco{position:absolute;z-index:0;pointer-events:none;user-select:none;height:auto;filter:drop-shadow(0 28px 34px rgba(30,24,10,.22));animation:float var(--fd,8s) ease-in-out infinite;transform:rotate(var(--r,0deg))}
 @keyframes float{0%,100%{transform:translateY(0) rotate(var(--r,0deg))}50%{transform:translateY(-14px) rotate(calc(var(--r,0deg) + 2deg))}}
 .d-mic{width:clamp(110px,12vw,180px);right:max(-20px,calc(50% - 640px));top:-30px;--r:14deg;--fd:7s;opacity:.9}
 .d-kla{width:clamp(110px,12vw,180px);right:max(10px,calc(50% - 600px));top:30px;--r:9deg;--fd:7.5s}
-@media (max-width:900px){.d-mic,.d-kla{width:22vw;opacity:.35}}
+
 
 /* GALERIJA / VIDEO / PDF (isto kao video produkcija) */
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
@@ -211,22 +234,22 @@ section{padding-block:72px}
 .tab small{font-family:var(--mono);font-weight:400}
 .tab.on{background:var(--grad);color:var(--on-hot);border-color:transparent}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px}
-.ph{aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:pointer;background:#E6ECF6;border:0;padding:0;display:block}
+.ph{aspect-ratio:1;border-radius:8px;overflow:hidden;cursor:pointer;background:#F1EBDD;border:0;padding:0;display:block}
 .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s;display:block}
 .ph:hover img{transform:scale(1.05)}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:16px}
 .card{background:var(--bg);border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;text-align:left;padding:0;font:inherit;color:inherit;transition:border-color .2s}
 .card:hover{border-color:var(--hot)}
-.card .th{aspect-ratio:3/4;background:#E6ECF6 center/cover no-repeat;position:relative;display:block}
+.card .th{aspect-ratio:3/4;background:#F1EBDD center/cover no-repeat;position:relative;display:block}
 .card .th::after{content:"PDF";position:absolute;top:10px;right:10px;background:var(--cyan);color:#fff;padding:4px 7px;border-radius:4px;font:500 .7rem var(--mono);letter-spacing:.1em}
 .card .nm{display:block;padding:12px 14px;font-weight:600;font-size:.95rem;overflow-wrap:anywhere}
 .more{margin-top:24px}
 .msg{color:var(--muted);padding:24px 0}
 .skel{animation:sk 1.2s infinite alternate}
 @keyframes sk{from{opacity:.55}to{opacity:1}}
-.soon{aspect-ratio:1;border-radius:8px;border:1px dashed #C3CFE3;display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#8592AA;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(8,20,45,.025) 12px 24px)}
+.soon{aspect-ratio:1;border-radius:8px;border:1px dashed #DCD2BB;display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#9B907A;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(30,24,10,.025) 12px 24px)}
 .cards .soon{aspect-ratio:3/4}
-.modal{position:fixed;inset:0;background:rgba(4,10,24,.94);z-index:100;display:none;align-items:center;justify-content:center}
+.modal{position:fixed;inset:0;background:rgba(15,14,11,.94);z-index:100;display:none;align-items:center;justify-content:center}
 .modal.open{display:flex}
 .modal img{max-width:92vw;max-height:84vh;border-radius:6px}
 .modal iframe{width:min(1000px,94vw);height:86vh;border:0;border-radius:6px;background:#fff}
@@ -237,39 +260,39 @@ section{padding-block:72px}
 .dl{position:absolute;top:calc(18px + env(safe-area-inset-top,0px));left:calc(18px + env(safe-area-inset-left,0px));color:#fff;font-weight:600}
 
 /* VIDEO: kino mozaik */
-#video.cine{background:#040A18;color:#F2F6FF;position:relative;overflow:hidden}
-#video.cine::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(ellipse at center,rgba(30,107,255,.22),transparent 65%);pointer-events:none}
+#video.cine{background:#0F0E0B;color:#F8F4EA;position:relative;overflow:hidden}
+#video.cine::before{content:"";position:absolute;inset:auto -10% -40% -10%;height:70%;background:radial-gradient(ellipse at center,rgba(217,165,32,.22),transparent 65%);pointer-events:none}
 #video.cine .wrap{position:relative}
-.cine .sec-head p,.cine .lbl{color:#9AA8C2}
-.cine .tab{background:#0E1A33;border-color:#1C2A47;color:#9AA8C2}
+.cine .sec-head p,.cine .lbl{color:#B5AA90}
+.cine .tab{background:#1E1B15;border-color:#2E2A21;color:#B5AA90}
 .cine .tab.on{background:var(--grad);color:var(--on-hot);border-color:transparent}
-.cine .btn.ghost{color:#F2F6FF;border-color:#34466B}
+.cine .btn.ghost{color:#F8F4EA;border-color:#4A4334}
 .mz{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));grid-auto-rows:112px;grid-auto-flow:dense;gap:10px}
-.mt{position:relative;overflow:hidden;border-radius:12px;border:0;padding:0;margin:0;cursor:pointer;background:#0E1A33;color:#fff;text-align:left;font:inherit;grid-row:span 2;opacity:0;transform:translateY(28px) scale(.94);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);isolation:isolate}
+.mt{position:relative;overflow:hidden;border-radius:12px;border:0;padding:0;margin:0;cursor:pointer;background:#1E1B15;color:#fff;text-align:left;font:inherit;grid-row:span 2;opacity:0;transform:translateY(28px) scale(.94);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1);isolation:isolate}
 .mt.in{opacity:1;transform:none}
 .mt.w{grid-column:span 2;grid-row:span 2}
 .mt.t{grid-row:span 3}
 .mt.f{grid-column:span 3;grid-row:span 3}
-.mt .bg{position:absolute;inset:-6%;background:#0E1A33 center/cover no-repeat;animation:kb var(--d,16s) ease-in-out var(--dl,0s) infinite alternate;transition:filter .4s}
+.mt .bg{position:absolute;inset:-6%;background:#1E1B15 center/cover no-repeat;animation:kb var(--d,16s) ease-in-out var(--dl,0s) infinite alternate;transition:filter .4s}
 @keyframes kb{from{transform:scale(1.02) translate(0,0)}to{transform:scale(1.16) translate(var(--x,3%),var(--y,-2%))}}
-.mt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(4,10,24,.88));z-index:1}
+.mt::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(15,14,11,.88));z-index:1}
 .mt::before{content:"";position:absolute;inset:0;border-radius:12px;padding:2px;background:var(--split);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;z-index:3;pointer-events:none}
 .mt:hover::before,.mt:focus-visible::before{opacity:1}
 .mt:focus-visible{outline:none}
 .mt .pl{position:absolute;z-index:2;left:50%;top:50%;width:54px;height:54px;margin:-27px 0 0 -27px;border-radius:50%;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;font-size:1.05rem;padding-left:3px;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,color .3s;box-shadow:0 0 0 1px rgba(255,255,255,.25)}
-.mt:hover .pl,.mt:focus-visible .pl{transform:scale(1.25);background:var(--grad);color:var(--on-hot);box-shadow:0 0 30px rgba(30,107,255,.7)}
+.mt:hover .pl,.mt:focus-visible .pl{transform:scale(1.25);background:var(--grad);color:var(--on-hot);box-shadow:0 0 30px rgba(217,165,32,.7)}
 .mt.f .pl{width:72px;height:72px;margin:-36px 0 0 -36px;font-size:1.4rem}
 .mt .meta{position:absolute;left:12px;right:12px;bottom:10px;z-index:2;display:flex;justify-content:space-between;gap:8px;align-items:flex-end}
 .mt .meta b{font:700 .95rem/1.2 var(--display);overflow-wrap:anywhere;text-shadow:0 2px 10px rgba(0,0,0,.6)}
 .mt.f .meta b{font-size:1.3rem}
 .mt .dur{font:500 .7rem var(--mono);background:rgba(0,0,0,.6);padding:3px 6px;border-radius:4px;flex:none}
-.mt.soon{display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#5E6B85;border:1px dashed #2A3A5C;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.02) 12px 24px);cursor:default;aspect-ratio:auto}
+.mt.soon{display:flex;align-items:center;justify-content:center;font:500 .7rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7A705A;border:1px dashed #3E382B;background:repeating-linear-gradient(135deg,transparent 0 12px,rgba(255,255,255,.02) 12px 24px);cursor:default;aspect-ratio:auto}
 .mt.soon::before,.mt.soon::after{content:none}
-.vwrap{position:relative;width:min(1000px,94vw);aspect-ratio:16/9;max-height:84vh;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px #1C2A47,0 40px 120px -20px rgba(30,107,255,.5)}
+.vwrap{position:relative;width:min(1000px,94vw);aspect-ratio:16/9;max-height:84vh;background:#000;border-radius:10px;overflow:hidden;box-shadow:0 0 0 1px #2E2A21,0 40px 120px -20px rgba(217,165,32,.5)}
 .vwrap.tall{width:auto;height:min(84vh,900px);aspect-ratio:9/16;max-width:94vw}
 .modal #mVidEl{position:absolute;inset:0;width:100%;height:100%;max-height:none;border:0;border-radius:0;background:transparent;opacity:0;transition:opacity .45s}
 .modal #mVidEl.on{opacity:1}
-.spin{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 20%,#1E6BFF 55%,#FFC23D);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));animation:spin .9s linear infinite}
+.spin{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:conic-gradient(from 0deg,transparent 0 20%,#D9A520 55%,#F2C230);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));mask:radial-gradient(farthest-side,transparent calc(100% - 6px),#000 calc(100% - 5px));animation:spin .9s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
 @media (max-width:700px){
   .mz{grid-template-columns:1fr 1fr;grid-auto-rows:88px;gap:8px}
@@ -280,7 +303,7 @@ section{padding-block:72px}
 }
 
 /* LOKACIJA */
-.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -50px rgba(8,20,45,.4)}
+.loc{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 30px 70px -50px rgba(30,24,10,.4)}
 .loc-i{padding:clamp(22px,3.5vw,36px);display:grid;gap:18px;align-content:start;position:relative}
 .loc-i::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--split)}
 .loc-i dl{display:grid;gap:14px;margin:0}
@@ -288,17 +311,17 @@ section{padding-block:72px}
 .loc-i dd{margin:0;font-weight:600;font-size:1.05rem}
 .loc-i .btns{display:flex;gap:8px;flex-wrap:wrap}
 .loc-i .btns .btn{padding:.65em 1.05em;font-size:.92rem}
-.map{position:relative;min-height:380px;background:#E6ECF6}
+.map{position:relative;min-height:380px;background:#F1EBDD}
 .map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.9)}
 .map-go{position:absolute;inset:0;z-index:1;display:flex;align-items:flex-end;justify-content:flex-start;padding:16px;text-decoration:none;cursor:pointer}
-.map-go .pin{display:grid;gap:2px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 14px 34px -14px rgba(8,20,45,.5);transition:transform .2s,border-color .2s}
+.map-go .pin{display:grid;gap:2px;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:10px;padding:10px 14px;box-shadow:0 14px 34px -14px rgba(30,24,10,.5);transition:transform .2s,border-color .2s}
 .map-go .pin b{font:700 1rem var(--display)}
 .map-go .pin small{font-size:.82rem;color:var(--hot-text);font-weight:600}
 .map-go:hover .pin,.map-go:focus-visible .pin{transform:translateY(-3px);border-color:var(--hot)}
 .adr-l,.tel-l,.tel2-l{text-decoration:none}
 .adr-l{border-bottom:1.5px dashed currentColor}
 .adr-l:hover{color:var(--hot-text)}
-.idc .adr-l:hover{color:#FFC94D}
+.idc .adr-l:hover{color:#F6D35B}
 .k-num2{font:800 clamp(1.4rem,3vw,1.9rem)/1 var(--display);font-variant-numeric:tabular-nums}
 .k-num2 a{text-decoration:none}
 
@@ -313,7 +336,7 @@ section{padding-block:72px}
 .k-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
 .k-btns .btn{padding:.6em 1em;font-size:.92rem}
 .k-logo{display:grid;gap:18px;justify-items:center;text-align:center}
-.k-logo img{width:100%;max-width:520px;height:auto;border-radius:12px;background:#000;box-shadow:0 30px 80px -40px rgba(30,107,255,.6)}
+.k-logo img{width:100%;max-width:440px;height:auto;border-radius:12px;background:#fff;border:1px solid var(--line);box-shadow:0 30px 80px -40px rgba(217,165,32,.6)}
 .k-logo .slog{font:800 clamp(1.6rem,3.4vw,2.4rem)/1.05 var(--display);letter-spacing:-.02em}
 
 /* GLAZBA */
@@ -321,20 +344,21 @@ section{padding-block:72px}
 .music{display:flex;align-items:center;gap:3px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px}
 .music .mlbl{font:500 .66rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);padding:0 6px 0 9px}
 .mbtn{display:inline-flex;align-items:center;gap:6px;background:transparent;border:0;color:var(--ink);font:600 .84rem var(--body);padding:6px 11px;border-radius:999px;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
-.mbtn:hover{background:#E6ECF6}
-.mbtn.on{background:var(--grad);color:var(--on-hot);box-shadow:0 6px 18px -8px rgba(255,149,0,.8)}
+.mbtn:hover{background:#F1EBDD}
+.mbtn.on{background:var(--grad);color:var(--on-hot);box-shadow:0 6px 18px -8px rgba(224,169,30,.8)}
 .mbtn .eq{display:inline-flex;align-items:flex-end;gap:2px;height:12px}
 .mbtn .eq i{width:3px;height:30%;background:currentColor;border-radius:1px}
 .mbtn.on .eq i{animation:eq .9s ease-in-out infinite}
 .mbtn.on .eq i:nth-child(2){animation-delay:.2s}.mbtn.on .eq i:nth-child(3){animation-delay:.4s}
 @keyframes eq{0%,100%{height:30%}50%{height:100%}}
-.music.float{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:90;box-shadow:0 14px 40px -14px rgba(8,20,45,.45);background:#fff}
+.music.float{position:fixed;left:max(14px,env(safe-area-inset-left,0px));bottom:max(14px,env(safe-area-inset-bottom,0px));z-index:90;box-shadow:0 14px 40px -14px rgba(30,24,10,.45);background:#fff}
 
 footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:.85rem;margin-top:72px}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 footer a{color:var(--cyan)}
 
 @media (max-width:1000px){
+  .divs{grid-template-columns:1fr 1fr}
   nav{display:none}
   .burger{display:inline-flex;order:3}
   header.open nav{display:flex;order:5;width:100%;flex-direction:column;gap:0;border-top:1px solid var(--line);padding-top:6px}
@@ -378,10 +402,10 @@ footer a{color:var(--cyan)}
 <header><div class="wrap">
   <a class="brand" href="#"><span class="logo"><img src="logo-znak.webp" alt="" width="48" height="48"></span><span>Horizont LHB<small>d.o.o.</small></span></a>
   <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Izbornik"><span></span><span></span><span></span></button>
-  <nav id="mnav"><a href="#o-nama">O nama</a><a href="#djelatnosti">Djelatnosti</a><a href="#vlasnik">Vlasnik</a><a href="#radovi">Galerija</a><a href="#video">Video</a><a href="#dokumenti">Dokumenti</a><a href="#lokacija">Lokacija</a><a href="#kontakt">Kontakt</a></nav>
+  <nav id="mnav"><a href="#o-nama">O nama</a><a href="#djelatnosti">Djelatnosti</a><a href="#projekti">Projekti</a><a href="#vlasnik">Vlasnik</a><a href="#radovi">Galerija</a><a href="#video">Video</a><a href="#dokumenti">Dokumenti</a><a href="#lokacija">Lokacija</a><a href="#kontakt">Kontakt</a></nav>
   <div class="hdr-r">
     <div class="music" id="music" role="group" aria-label="Glazba">
-      <span class="mlbl">Glazba</span>
+      
       <button type="button" class="mbtn" data-src="glazba-1.mp3" aria-pressed="false" title="Neon Sunset Drive"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Sunset</button>
       <button type="button" class="mbtn" data-src="glazba-2.mp3" aria-pressed="false" title="Neon Overdrive"><span class="eq" aria-hidden="true"><i></i><i></i><i></i></span>Overdrive</button>
     </div>
@@ -419,7 +443,7 @@ footer a{color:var(--cyan)}
         <dt>Matični br.</dt><dd data-f="mb"></dd>
         <dt>Osnovana</dt><dd data-f="osnovana"></dd>
         <dt>Direktor</dt><dd data-f="vlasnik"></dd>
-        <dt>Djelatnost</dt><dd>IT i servis, web, video, trgovina i posredovanje · <a href="#sve-djelatnosti" style="color:#FFC94D">22 djelatnosti ↓</a></dd>
+        <dt>Djelatnost</dt><dd>IT i servis, web, video, trgovina i posredovanje · <a href="#sve-djelatnosti" style="color:#F6D35B">22 djelatnosti ↓</a></dd>
         <dt>PDV</dt><dd>Nije u sustavu PDV-a</dd>
       </dl>
       <div class="ft"><span class="live">Aktivno poslujemo</span><span data-f="tel"></span></div>
@@ -445,7 +469,7 @@ footer a{color:var(--cyan)}
   </div>
 </div></section>
 
-<section id="djelatnosti" class="alt has-deco"><img class="deco d-mic" src="deco-mikrofon.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="wrap">
+<section id="djelatnosti" class="alt has-deco"><div class="wrap">
   <div class="sec-head"><span class="lbl">Djelatnosti</span><h2>Čime se bavimo</h2><p>Svaka djelatnost ima svoju stranicu. Kliknite i pogledajte uživo.</p></div>
   <div class="divs">
     <a class="dv" href="https://batinac.com/pc-servis" target="_blank" rel="noopener">
@@ -470,6 +494,17 @@ footer a{color:var(--cyan)}
         <span class="go">Otvori video produkciju ↗</span>
       </span>
     </a>
+    <a class="dv" id="distCard" href="#" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em id="distUrl">horizont distribucija</em><b>● uživo</b></span><span class="wp-vp"><iframe id="distFr" title="Pregled stranice distribucije" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe><span class="wp-soon" id="distSoon">Uskoro online</span></span></span>
+      <span class="dv-b">
+        <span class="lbl">Djelatnost 03</span>
+        <h3>Horizont distribucija</h3>
+        <p>Trgovina i posredovanje na domaćem i inozemnom tržištu, zastupanje inozemnih tvrtki i prodaja raznovrsnih proizvoda.</p>
+        <ul><li>Veleprodaja</li><li>Posredovanje</li><li>Zastupanje</li></ul>
+        <span class="url" id="distUrl2"></span>
+        <span class="go">Otvori distribuciju ↗</span>
+      </span>
+    </a>
   </div>
   <div class="extra">
     <div><h3>Web stranice ključ u ruke</h3><p>Dizajn, izrada, galerije, obrasci i administracija. Postavljeno i spremno od prvog dana.</p></div>
@@ -488,7 +523,73 @@ footer a{color:var(--cyan)}
   </div>
 </div></section>
 
-<section id="vlasnik"><div class="wrap">
+<section id="projekti"><div class="wrap">
+  <div class="sec-head"><span class="lbl">Projekti</span><h2>Naši poslovi uživo</h2><p>Web stranice koje smo izradili i postavili, za sebe i za klijente. Kliknite i pogledajte.</p></div>
+  <div class="webs">
+    <a class="wp" href="https://batinac.com/video-produkcija" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>batinac.com/video-produkcija</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/horizont-video_production/" title="Pregled stranice video produkcije" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Video produkcija</span>
+      <h3>Horizont LHB – video produkcija</h3>
+      <span class="url">batinac.com/video-produkcija</span>
+      <p>Promotivni videi, animacije i web, s upitima, nalozima, obračunom i administracijom.</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+    <a class="wp" href="https://batinac.com/pc-servis" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>batinac.com/pc-servis</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/horizont-servisi/" title="Pregled stranice sbatinac.github.io/horizont-servisi" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Servis računala</span>
+      <h3>Horizont LHB – servisi</h3>
+      <span class="url">batinac.com/pc-servis</span>
+      <p>Galerija iz Google Drivea, online servisni nalog, provjera statusa, rabljeni dijelovi i administracija.</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+    <a class="wp" href="https://sbatinac.github.io/koncept-zdravlje/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/koncept-zdravlje</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/koncept-zdravlje/" title="Pregled stranice sbatinac.github.io/koncept-zdravlje" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Zdravlje i edukacija</span>
+      <h3>Koncept Zdravlje</h3>
+      <span class="url">sbatinac.github.io/koncept-zdravlje</span>
+      <p>Stranica za predavanja i savjetovanje iz farmacije i nutricionizma: galerija slika, videa i PDF-ova s Google Drivea, kontakt forma i glazba.</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+    <a class="wp" href="https://sbatinac.github.io/hsc-skole/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/hsc-skole</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/hsc-skole/" title="Pregled stranice sbatinac.github.io/hsc-skole" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Škole i roditelji</span>
+      <h3>HSC škole</h3>
+      <span class="url">sbatinac.github.io/hsc-skole</span>
+      <p>Prezentacijska stranica HSC programa za škole i roditelje.</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+    <a class="wp" href="https://sbatinac.github.io/hsc-worldwide/" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/hsc-worldwide</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/hsc-worldwide/" title="Pregled stranice sbatinac.github.io/hsc-worldwide" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Međunarodno</span>
+      <h3>HSC Worldwide</h3>
+      <span class="url">sbatinac.github.io/hsc-worldwide</span>
+      <p>Međunarodna prezentacijska stranica HSC programa (Holographic Scalar Coherence).</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+    <a class="wp" href="https://sbatinac.github.io/intime-portal/InTime_PismoNamjere.html" target="_blank" rel="noopener">
+      <span class="wp-prev" aria-hidden="true"><span class="wp-bar"><i></i><i></i><i></i><em>sbatinac.github.io/intime-portal</em><b>● uživo</b></span><span class="wp-vp"><iframe data-src="https://sbatinac.github.io/intime-portal/InTime_PismoNamjere.html" title="Pregled stranice In Time – regija istok" tabindex="-1" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe></span></span>
+      <span class="wp-b">
+      <span class="lbl">Dostava · regija istok</span>
+      <h3>In Time d.o.o. – regija istok</h3>
+      <span class="url">sbatinac.github.io/intime-portal</span>
+      <p>Predstavljanje usluga dostave i pismo namjere za regiju Slavonija.</p>
+      <span class="go">Otvori stranicu ↗</span>
+      </span>
+    </a>
+  </div>
+</div></section>
+
+<section id="vlasnik" class="alt"><div class="wrap">
   <div class="owner">
     <div class="ph-o" id="ownPh"><span class="ini" aria-hidden="true">SB</span></div>
     <div class="ow-t">
@@ -502,7 +603,9 @@ footer a{color:var(--cyan)}
   </div>
 </div></section>
 
-<div class="wave has-deco" aria-hidden="true"><span class="sun"></span><span class="floor"></span><img class="deco d-slu" src="deco-slusalice.webp" alt="" loading="lazy" decoding="async">
+
+
+<div class="wave has-deco" aria-hidden="true"><span class="sun"></span><span class="floor"></span>
   <div class="wrap"><p class="slog">Popravljeno. Snimljeno. <span class="gt">Objavljeno.</span></p></div>
 </div>
 
@@ -520,7 +623,7 @@ footer a{color:var(--cyan)}
   <div class="more"><button class="btn ghost" id="vMore" hidden>Prikaži još videa</button></div>
 </div></section>
 
-<section id="dokumenti" class="alt has-deco"><img class="deco d-kla" src="deco-klapa.webp" alt="" aria-hidden="true" loading="lazy" decoding="async"><div class="wrap">
+<section id="dokumenti" class="alt has-deco"><div class="wrap">
   <div class="sec-head"><span class="lbl">Dokumenti</span><h2>PDF materijali</h2><p>Prezentacije, cjenici, katalozi i dokumenti firme za pregled i preuzimanje.</p></div>
   <div class="tabs" id="pTabs"></div>
   <div class="cards" id="pGrid"></div>
@@ -588,8 +691,8 @@ footer a{color:var(--cyan)}
       </div>
     </div>
     <div class="k-logo">
-      <img src="logo-video.webp" alt="Horizont LHB d.o.o." width="1400" height="788" loading="lazy">
-      <p class="slog">Jedna firma. <span class="gt">Jedan kontakt.</span></p>
+      <img src="logo-firma.webp" alt="Horizont LHB d.o.o. – od ideje do poslovne prilike" width="454" height="340" loading="lazy">
+      <p class="slog">Od ideje do <span class="gt">poslovne prilike.</span></p>
     </div>
   </div>
 </div></section>
@@ -639,6 +742,7 @@ const FIRMA = {
   foto:     ''                     // npr. 'vlasnik.webp' (ako postoji, zamjenjuje inicijale)
 };
 const SITE_URL = 'https://www.horizont-lhb.hr';
+const DIST_URL = ''; // npr. 'https://batinac.com/distribucija' – prazno = "Uskoro online"
 const DRIVE_KEY = 'AIzaSyDp6XAdizCufGZ-lhwXZyIjazfJvkQzS7Q';
 const FOLDERS = {               // ID mapa s Google Drivea (podmape = tabovi)
   gallery: '1rs8AkvO7X-WYRnJqjjy5OX5TKpeLZ23h',
@@ -682,6 +786,14 @@ const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
   $('#adrCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(val.adresaPuna); b.textContent = 'Kopirano'; } catch (x) { b.textContent = val.adresaPuna; } setTimeout(() => b.textContent = 'Kopiraj adresu', 2200); };
   $('#kCopy').onclick = async e => { const b = e.target; try { await navigator.clipboard.writeText(F.tel.replace(/\D/g, '')); b.textContent = 'Kopirano'; } catch (x) { b.textContent = F.tel; } setTimeout(() => b.textContent = 'Kopiraj broj', 2200); };
   if (F.foto) $('#ownPh').insertAdjacentHTML('beforeend', `<img src="${esc(F.foto)}" alt="${esc(F.vlasnik)}" loading="lazy">`);
+})();
+
+/* DISTRIBUCIJA: živi prikaz kad se upiše link */
+(() => {
+  const c = $('#distCard');
+  if (!DIST_URL) { c.removeAttribute('href'); c.style.cursor = 'default'; c.querySelector('.go').textContent = 'Stranica uskoro'; return; }
+  c.href = DIST_URL; const u = DIST_URL.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  $('#distUrl').textContent = u; $('#distUrl2').textContent = u; $('#distSoon').remove(); $('#distFr').dataset.src = DIST_URL;
 })();
 
 /* GOOGLE DRIVE: slike, video, PDF */
@@ -826,7 +938,7 @@ const intro = document.getElementById('intro');
   const vps = [...document.querySelectorAll('.wp-vp')]; if (!vps.length) return;
   const fit = vp => { vp.querySelector('iframe').style.transform = 'scale(' + (vp.clientWidth / 1280) + ')'; };
   const ro = 'ResizeObserver' in window ? new ResizeObserver(es => es.forEach(e => fit(e.target))) : null;
-  const ld = vp => { const f = vp.querySelector('iframe'); if (!f.src) f.src = f.dataset.src; fit(vp); ro && ro.observe(vp); };
+  const ld = vp => { const f = vp.querySelector('iframe'); if (!f.src && f.dataset.src) f.src = f.dataset.src; fit(vp); ro && ro.observe(vp); };
   if ('IntersectionObserver' in window) { const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { ld(e.target); io.unobserve(e.target); } }), { rootMargin: '300px' }); vps.forEach(v => io.observe(v)); }
   else vps.forEach(ld);
 })();
