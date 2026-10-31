@@ -141,7 +141,7 @@ main{padding:22px 0 60px}
 </main>
 
 <script>
-const ENDPOINT = 'UPISI_EXEC_LINK'; // isti /exec link kao u index.html
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzmDN344N3ieIOiL_oHPLqnZowAdKMWybhQWgpBB5Ty84D2hnNTfHsv62Z_0ncDnoxUKg/exec'; // isti /exec link kao u index.html
 const $ = s => document.querySelector(s);
 const esc = t => String(t ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 let KEY = '', D = null, filt = 'Aktivni', otvoren = new Set(), zadnjiNovo = -1;
