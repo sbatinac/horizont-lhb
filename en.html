@@ -206,21 +206,21 @@ section{padding-block:72px}
 /* CITATI: mijenjaju se svakih 15 s */
 .wave{height:auto;min-height:clamp(320px,34vw,460px);padding:0}
 .wave .wrap{padding-block:clamp(30px,5vw,60px) 40px}
-.qt{margin:0;max-width:min(30ch,58%);display:grid;gap:14px;transition:opacity .6s,transform .6s;filter:drop-shadow(0 4px 20px rgba(0,0,0,.95))}
+.qt{margin:0;max-width:min(52rem,64%);display:grid;gap:14px;transition:opacity .6s,transform .6s;filter:drop-shadow(0 4px 20px rgba(0,0,0,.95))}
 .qt.out{opacity:0;transform:translateY(8px)}
 .qt-l{font:500 .7rem var(--mono);letter-spacing:.16em;text-transform:uppercase;color:#F2C230}
-.qt blockquote{margin:0;color:#F8F4EA;font:800 clamp(1.35rem,2.8vw,2.1rem)/1.15 var(--display);letter-spacing:-.01em;text-wrap:balance}
+.qt blockquote{margin:0;font:800 clamp(1.3rem,2.5vw,2rem)/1.2 var(--display);letter-spacing:-.01em;text-wrap:pretty;background:linear-gradient(100deg,#FF8FAB 0%,#FF5A80 45%,#F23A62 75%,#E3264E 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .qt blockquote::before{content:"„"}.qt blockquote::after{content:"“"}
-.qt figcaption{font:500 .9rem var(--body);color:#E8E1CF}
+.qt figcaption{font:600 1rem var(--body);color:#fff}
 .qt figcaption::before{content:"— "}
-.qt-ctl{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:min(30ch,58%)}
+.qt-ctl{display:flex;align-items:center;gap:12px;margin-top:22px;max-width:min(52rem,64%)}
 .qt-bar{flex:1;height:2px;background:rgba(255,255,255,.18);border-radius:2px;overflow:hidden}
 .qt-bar i{display:block;height:100%;width:0;background:var(--grad)}
 .qt-bar i.run{animation:qbar var(--qd,15s) linear forwards}
 @keyframes qbar{to{width:100%}}
 #qtNext{width:34px;height:34px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(15,14,11,.5);color:#F8F4EA;font-size:1.2rem;cursor:pointer;line-height:1}
 #qtNext:hover{border-color:#F2C230;color:#F2C230}
-@media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.55}}
+@media (max-width:700px){.qt,.qt-ctl{max-width:none}.wave .sun{opacity:.22;left:80%}}
 
 /* MATERIJALI: kartice koje otvaraju slike, video i PDF */
 .mat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
