@@ -855,8 +855,10 @@ const esc = t => String(t).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>'
   $('#kMail').href = 'mailto:' + F.email;
   $('#kWa2').href = 'https://wa.me/' + F.tel2Intl;
   $('#kVb2').href = 'viber://chat?number=%2B' + F.tel2Intl;
-  document.querySelectorAll('.tel-l').forEach(a => a.href = 'tel:+' + F.telIntl);
-  document.querySelectorAll('.tel2-l').forEach(a => a.href = 'tel:+' + F.tel2Intl);
+  // poziv na klik bez href="tel:" (dodaci u pregledniku tada ne mijenjaju izgled brojeva)
+  const call = (sel, n) => document.querySelectorAll(sel).forEach(a => { a.href = '#'; a.setAttribute('role', 'link'); a.dataset.call = n;
+    a.addEventListener('click', e => { e.preventDefault(); location.href = 'tel:' + '+' + n; }); });
+  call('.tel-l', F.telIntl); call('.tel2-l', F.tel2Intl);
   const q = `${F.adresa}, ${mj}, Hrvatska`;
   const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
   $('#mapFr').src = `https://maps.google.com/maps?q=${encodeURIComponent(q)}&z=16&hl=hr&output=embed`;
