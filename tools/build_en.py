@@ -107,6 +107,9 @@ T = {
  'Od ideje do': 'From idea to', 'poslovne prilike.': 'business opportunity.',
  'Servis': 'IT service', 'Nismo u sustavu PDV-a. Osobne podatke koristimo samo za kontakt (GDPR).': 'Not registered for VAT. Personal data is used for contact only (GDPR).',
  '⬇ Preuzmi': '⬇ Download',
+ 'Djelatnost 05': 'Activity 05', '● web trgovina': '● online shop', 'Web trgovina': 'Online shop', 'Otvori trgovinu ↗': 'Open shop ↗',
+ 'Naša nova web trgovina: HSC proizvodi, Teslass naočale, Syn(c)Energy narukvice i dodaci, s dostavom na kućnu adresu.':
+   'Our new online shop: HSC products, Teslass glasses, Syn(c)Energy bracelets and accessories, delivered to your door.',
  'Djelatnost 04': 'Activity 04', 'Distribucija': 'Distribution', 'Alati i oprema': 'Tools & equipment', 'Otvori Beorol ↗': 'Open Beorol ↗',
  'Zastupanje i distribucija Beorol proizvoda u Hrvatskoj: molersko-ličilački i ručni alat, zaštitna oprema, tehnička kemija te program za dom i dvorište.':
    'Representation and distribution of Beorol products in Croatia: painting and hand tools, protective equipment, technical chemicals, and home and garden products.',
