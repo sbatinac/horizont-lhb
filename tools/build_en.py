@@ -13,6 +13,7 @@ T = {
  'društvo s ograničenom odgovornošću': 'limited liability company',
  'Popravljamo računala i konzole, snimamo i montiramo video, izrađujemo web stranice. Jedna firma, jedan kontakt, sve na jednom mjestu.':
    'We repair computers and consoles, shoot and edit video, and build websites. One company, one contact, everything in one place.',
+ 'Ono što nam stane na put postaje naš put prema uspjehu.': 'Whatever stands in our way becomes our path to success.',
  'Kontaktirajte nas →': 'Contact us →', 'Gdje se nalazimo': 'Where to find us',
  'Podaci o firmi': 'Company details', 'Naziv': 'Name', 'Sjedište': 'Registered office', 'OIB': 'VAT ID', '· OIB': '· VAT ID', 'MBS': 'Reg. no. (MBS)',
  '· Trgovački sud u Osijeku': '· Commercial Court in Osijek', 'Matični br.': 'Company no.', 'Osnovana': 'Founded', 'Direktor': 'Director',
